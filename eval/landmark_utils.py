@@ -1,3 +1,17 @@
+"""DEPRECATED (Gate G-C) — legacy landmark normalization. Do NOT use for the trained model.
+
+`normalize_landmark_points` / `HolisticSequenceEncoder` implement a DIFFERENT
+preprocessing (shoulder-centered, 49 points, fixed sequence length 16,
+nearest-neighbor matching) that does NOT match the deployed dual-hand transformer.
+Using it for that model introduces train/serve skew.
+
+The single canonical preprocessing for the landmark model is
+`landmark_baseline.preprocess.preprocess_landmark_sequence` (see
+docs/preprocessing_standard.md). The only consumer of this module,
+`benchmark_landmark_closed_set.py`, is superseded by
+`benchmark_landmark_vs_vanilla.py` (Gate G-B). Kept for historical reference only.
+"""
+
 import os
 from pathlib import Path
 

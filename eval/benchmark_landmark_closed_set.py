@@ -1,3 +1,13 @@
+"""DEPRECATED (Gate G-C) — superseded by benchmark_landmark_vs_vanilla.py.
+
+This nearest-neighbor closed-set eval uses the legacy landmark_utils encoder
+(HolisticSequenceEncoder / normalize_landmark_points), NOT the trained dual-hand
+transformer's canonical preprocessing. Its results are the source of the retired
+"landmark loses (0.45)"-style verdict. For landmark-vs-vanilla, use
+benchmark_landmark_vs_vanilla.py (Gate G-B). Kept for historical reference only.
+See docs/preprocessing_standard.md.
+"""
+
 import argparse
 import json
 import math

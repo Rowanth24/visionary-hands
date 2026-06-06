@@ -103,8 +103,14 @@ is for. G0 only asks that it *runs*.
   (plan Gate G1) and this is in-distribution WLASL — the landmark model's claimed
   cross-source/phone edge is untested here. Real verdict: G1/G3 on the grown
   benchmark. Results: `eval/benchmark/gB_landmark_vs_vanilla.json`.
-- ⬜ **G-C** (next) — lock ONE preprocessing module for train+serve
-  (`landmark_baseline/preprocess.py`, dual-hand handedness-canonical); retire/adapt
-  `eval/landmark_utils.normalize_landmark_points` to kill train/serve skew.
+- ✅ **G-C** — preprocessing standard locked. Train (`prepare_landmark_dataset.py`)
+  and serve (`inference.py`/`inference_onnx.py`/`LandmarkBackend`) all use the one
+  canonical `preprocess_landmark_sequence` (dual-hand, handedness-canonical).
+  `tests/test_preprocessing_standard.py` asserts train/serve features are
+  byte-identical; legacy `eval/landmark_utils.py` + `benchmark_landmark_closed_set.py`
+  marked DEPRECATED. See `docs/preprocessing_standard.md`.
+- ⬜ **G1** (next) — grow the benchmark to ≥150–200 clips, ≥3 sources incl. phone,
+  with per-source numbers + CIs. Needs your phone-camera eval clips. First
+  decision-grade comparison happens here.
 
 See the program plan in `docs/` for the full phased, evidence-gated roadmap.
