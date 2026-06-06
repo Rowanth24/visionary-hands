@@ -1,0 +1,34 @@
+{
+  "name": "g1_benchmark",
+  "vocab": ["bowling", "computer", "deaf", "drink", "yes"],
+  "sources": ["phone", "wlasl", "msasl"],
+  "samples": [
+    {
+      "sample_index": 0,
+      "label": "drink",
+      "source": "phone",
+      "signer_id": "s1",
+      "variant_id": "v1",
+      "local_video": "phone/phone_drink_s1_v1_01.mp4",
+      "frame_count": 52
+    },
+    {
+      "sample_index": 1,
+      "label": "drink",
+      "source": "phone",
+      "signer_id": "s2",
+      "variant_id": "v1",
+      "local_video": "phone/phone_drink_s2_v1_01.mp4",
+      "frame_count": 60
+    },
+    {
+      "sample_index": 2,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl",
+      "variant_id": "v1",
+      "local_video": "wlasl/deaf/14855.mp4",
+      "frame_count": 64
+    }
+  ]
+}
