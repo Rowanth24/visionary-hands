@@ -1,0 +1,14 @@
+# Oracle (vanilla I3D) + unified benchmark harness — runtime deps.
+# Derived from the upstream code/requirements.txt of
+# github.com/sumedhsp/Sign-Language-Recognition, trimmed to runtime-only
+# (jupyter/jupyterhub dropped) and extended with packages the harness imports
+# (mediapipe via landmark_utils, matplotlib for plots).
+# Versions are intentionally unpinned here; pin from the working venv at env-setup.
+torch
+torchvision
+opencv-python
+numpy
+scikit-learn
+matplotlib
+mediapipe
+Pillow

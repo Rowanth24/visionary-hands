@@ -1,0 +1,1228 @@
+{
+  "manifest": "/Users/rowanthselvakumaran/Vanilla Model ASL/Sign-Language-Recognition/benchmark/wlasl20_manifest.json",
+  "video_dir": "/Users/rowanthselvakumaran/Vanilla Model ASL/Sign-Language-Recognition/benchmark/videos",
+  "models": {
+    "current_vanilla": {
+      "name": "current_vanilla",
+      "accuracy": 0.7,
+      "correct": 14,
+      "total": 20,
+      "results": [
+        {
+          "sample_index": 1,
+          "video": "01_teach_57061.mp4",
+          "expected": "teach",
+          "predicted": "teach",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "teach",
+              "score": 0.9962371587753296
+            },
+            {
+              "text": "teacher",
+              "score": 0.0011237910948693752
+            },
+            {
+              "text": "sell",
+              "score": 0.0007022994104772806
+            },
+            {
+              "text": "none",
+              "score": 0.00041585532017052174
+            },
+            {
+              "text": "ok",
+              "score": 0.00028164766263216734
+            }
+          ],
+          "window_count": 4
+        },
+        {
+          "sample_index": 2,
+          "video": "02_dog_17091.mp4",
+          "expected": "dog",
+          "predicted": "dog",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "dog",
+              "score": 0.8811621069908142
+            },
+            {
+              "text": "fish",
+              "score": 0.05007109045982361
+            },
+            {
+              "text": "milk",
+              "score": 0.011683163233101368
+            },
+            {
+              "text": "where",
+              "score": 0.01121001411229372
+            },
+            {
+              "text": "bathroom",
+              "score": 0.006572553887963295
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 3,
+          "video": "03_small_52566.mp4",
+          "expected": "small",
+          "predicted": "small",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "small",
+              "score": 0.8327977657318115
+            },
+            {
+              "text": "psychology",
+              "score": 0.034714892506599426
+            },
+            {
+              "text": "candle",
+              "score": 0.024601422250270844
+            },
+            {
+              "text": "pray",
+              "score": 0.01897750236093998
+            },
+            {
+              "text": "door",
+              "score": 0.011813124641776085
+            }
+          ],
+          "window_count": 2
+        },
+        {
+          "sample_index": 4,
+          "video": "04_dad_14569.mp4",
+          "expected": "dad",
+          "predicted": "dad",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "dad",
+              "score": 0.9219854474067688
+            },
+            {
+              "text": "rooster",
+              "score": 0.03334393724799156
+            },
+            {
+              "text": "god",
+              "score": 0.0157222431153059
+            },
+            {
+              "text": "lettuce",
+              "score": 0.007461980450898409
+            },
+            {
+              "text": "noon",
+              "score": 0.002997715026140213
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 5,
+          "video": "05_america_02356.mp4",
+          "expected": "america",
+          "predicted": "america",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "america",
+              "score": 0.9009432792663574
+            },
+            {
+              "text": "match",
+              "score": 0.08406975120306015
+            },
+            {
+              "text": "run",
+              "score": 0.004121896345168352
+            },
+            {
+              "text": "coffee",
+              "score": 0.0011883621336892247
+            },
+            {
+              "text": "lawyer",
+              "score": 0.0009932391112670302
+            }
+          ],
+          "window_count": 6
+        },
+        {
+          "sample_index": 6,
+          "video": "06_sick_51503.mp4",
+          "expected": "sick",
+          "predicted": "stomach",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "stomach",
+              "score": 0.6413758993148804
+            },
+            {
+              "text": "noon",
+              "score": 0.12964601814746857
+            },
+            {
+              "text": "rooster",
+              "score": 0.0781024694442749
+            },
+            {
+              "text": "dumb",
+              "score": 0.05058872699737549
+            },
+            {
+              "text": "dad",
+              "score": 0.03306875750422478
+            }
+          ],
+          "window_count": 5
+        },
+        {
+          "sample_index": 7,
+          "video": "07_again_01463.mp4",
+          "expected": "again",
+          "predicted": "again",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "again",
+              "score": 0.7128647565841675
+            },
+            {
+              "text": "center",
+              "score": 0.19961749017238617
+            },
+            {
+              "text": "stand",
+              "score": 0.06364051252603531
+            },
+            {
+              "text": "in",
+              "score": 0.007656005676835775
+            },
+            {
+              "text": "cup",
+              "score": 0.003423518966883421
+            }
+          ],
+          "window_count": 7
+        },
+        {
+          "sample_index": 8,
+          "video": "08_benefit_05967.mp4",
+          "expected": "benefit",
+          "predicted": "benefit",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "benefit",
+              "score": 0.879641592502594
+            },
+            {
+              "text": "purple",
+              "score": 0.061664748936891556
+            },
+            {
+              "text": "down",
+              "score": 0.02179243601858616
+            },
+            {
+              "text": "nervous",
+              "score": 0.015455203130841255
+            },
+            {
+              "text": "late",
+              "score": 0.005811900831758976
+            }
+          ],
+          "window_count": 7
+        },
+        {
+          "sample_index": 9,
+          "video": "09_know_31897.mp4",
+          "expected": "know",
+          "predicted": "know",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "know",
+              "score": 0.9996616244316101
+            },
+            {
+              "text": "dumb",
+              "score": 8.664525375934318e-05
+            },
+            {
+              "text": "seem",
+              "score": 3.356487650307827e-05
+            },
+            {
+              "text": "think",
+              "score": 2.0821922589675523e-05
+            },
+            {
+              "text": "student",
+              "score": 1.2799653632100672e-05
+            }
+          ],
+          "window_count": 3
+        },
+        {
+          "sample_index": 10,
+          "video": "10_fly_22636.mp4",
+          "expected": "fly",
+          "predicted": "lucky",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "lucky",
+              "score": 0.4048222601413727
+            },
+            {
+              "text": "delicious",
+              "score": 0.1697588711977005
+            },
+            {
+              "text": "silly",
+              "score": 0.12439229339361191
+            },
+            {
+              "text": "fly",
+              "score": 0.09503675997257233
+            },
+            {
+              "text": "asl",
+              "score": 0.028788680210709572
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 11,
+          "video": "11_turtle_60048.mp4",
+          "expected": "turtle",
+          "predicted": "turtle",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "turtle",
+              "score": 0.9209602475166321
+            },
+            {
+              "text": "revenge",
+              "score": 0.015038615092635155
+            },
+            {
+              "text": "conflict",
+              "score": 0.009565787389874458
+            },
+            {
+              "text": "hard",
+              "score": 0.008640361949801445
+            },
+            {
+              "text": "appear",
+              "score": 0.00614708149805665
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 12,
+          "video": "12_answer_02710.mp4",
+          "expected": "answer",
+          "predicted": "answer",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "answer",
+              "score": 0.42887285351753235
+            },
+            {
+              "text": "people",
+              "score": 0.15988974273204803
+            },
+            {
+              "text": "star",
+              "score": 0.1595500111579895
+            },
+            {
+              "text": "up",
+              "score": 0.10840000957250595
+            },
+            {
+              "text": "honor",
+              "score": 0.01952914148569107
+            }
+          ],
+          "window_count": 6
+        },
+        {
+          "sample_index": 13,
+          "video": "13_pay_41601.mp4",
+          "expected": "pay",
+          "predicted": "rise",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "rise",
+              "score": 0.7632589340209961
+            },
+            {
+              "text": "learn",
+              "score": 0.12030242383480072
+            },
+            {
+              "text": "pay",
+              "score": 0.02662026509642601
+            },
+            {
+              "text": "thin",
+              "score": 0.020102061331272125
+            },
+            {
+              "text": "jump",
+              "score": 0.015412858687341213
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 14,
+          "video": "14_avoid_04345.mp4",
+          "expected": "avoid",
+          "predicted": "avoid",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "avoid",
+              "score": 0.650765061378479
+            },
+            {
+              "text": "quick",
+              "score": 0.2526722550392151
+            },
+            {
+              "text": "from",
+              "score": 0.06537178158760071
+            },
+            {
+              "text": "fast",
+              "score": 0.018674282357096672
+            },
+            {
+              "text": "most",
+              "score": 0.0014871428720653057
+            }
+          ],
+          "window_count": 8
+        },
+        {
+          "sample_index": 15,
+          "video": "15_caption_09091.mp4",
+          "expected": "caption",
+          "predicted": "caption",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "caption",
+              "score": 0.9990679621696472
+            },
+            {
+              "text": "story",
+              "score": 0.0004987913416698575
+            },
+            {
+              "text": "computer",
+              "score": 5.582254016189836e-05
+            },
+            {
+              "text": "meeting",
+              "score": 4.05716200475581e-05
+            },
+            {
+              "text": "price",
+              "score": 3.043357537535485e-05
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 16,
+          "video": "16_call_65556.mp4",
+          "expected": "call",
+          "predicted": "mom",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "mom",
+              "score": 0.312605619430542
+            },
+            {
+              "text": "bitter",
+              "score": 0.2704692780971527
+            },
+            {
+              "text": "plus",
+              "score": 0.05334123224020004
+            },
+            {
+              "text": "call",
+              "score": 0.0448295958340168
+            },
+            {
+              "text": "quit",
+              "score": 0.04292893409729004
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 17,
+          "video": "17_seem_66442.mp4",
+          "expected": "seem",
+          "predicted": "blue",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "blue",
+              "score": 0.9956448078155518
+            },
+            {
+              "text": "will",
+              "score": 0.00048122613225132227
+            },
+            {
+              "text": "mirror",
+              "score": 0.00040791035280562937
+            },
+            {
+              "text": "one",
+              "score": 0.00030322634847834706
+            },
+            {
+              "text": "busy",
+              "score": 0.0002755097229965031
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 18,
+          "video": "18_wind_63404.mp4",
+          "expected": "wind",
+          "predicted": "wind",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "wind",
+              "score": 0.3853188157081604
+            },
+            {
+              "text": "feedback",
+              "score": 0.296305775642395
+            },
+            {
+              "text": "jesus",
+              "score": 0.03539856895804405
+            },
+            {
+              "text": "chat",
+              "score": 0.03534655272960663
+            },
+            {
+              "text": "sew",
+              "score": 0.0308685302734375
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 19,
+          "video": "19_order_40179.mp4",
+          "expected": "order",
+          "predicted": "prepare",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "prepare",
+              "score": 0.5313568711280823
+            },
+            {
+              "text": "order",
+              "score": 0.3088206946849823
+            },
+            {
+              "text": "chase",
+              "score": 0.10999071598052979
+            },
+            {
+              "text": "plan",
+              "score": 0.021788310259580612
+            },
+            {
+              "text": "follow",
+              "score": 0.009517746046185493
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 20,
+          "video": "20_god_24914.mp4",
+          "expected": "god",
+          "predicted": "god",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "god",
+              "score": 0.9999048113822937
+            },
+            {
+              "text": "dive",
+              "score": 2.2801716113463044e-05
+            },
+            {
+              "text": "lettuce",
+              "score": 7.837244993424974e-06
+            },
+            {
+              "text": "sorry",
+              "score": 4.142480520386016e-06
+            },
+            {
+              "text": "giraffe",
+              "score": 3.6353383165987907e-06
+            }
+          ],
+          "window_count": 3
+        }
+      ]
+    },
+    "candidate_vanilla": {
+      "name": "candidate_vanilla",
+      "accuracy": 0.95,
+      "correct": 19,
+      "total": 20,
+      "results": [
+        {
+          "sample_index": 1,
+          "video": "01_teach_57061.mp4",
+          "expected": "teach",
+          "predicted": "teach",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "teach",
+              "score": 0.15241463482379913
+            },
+            {
+              "text": "sell",
+              "score": 0.07415813207626343
+            },
+            {
+              "text": "none",
+              "score": 0.06259583681821823
+            },
+            {
+              "text": "opinion",
+              "score": 0.03099088743329048
+            },
+            {
+              "text": "president",
+              "score": 0.02627485617995262
+            }
+          ],
+          "window_count": 4
+        },
+        {
+          "sample_index": 2,
+          "video": "02_dog_17091.mp4",
+          "expected": "dog",
+          "predicted": "dog",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "dog",
+              "score": 0.9736635684967041
+            },
+            {
+              "text": "fish",
+              "score": 0.0068145934492349625
+            },
+            {
+              "text": "second",
+              "score": 0.0038249834906309843
+            },
+            {
+              "text": "underwear",
+              "score": 0.0028750670608133078
+            },
+            {
+              "text": "first",
+              "score": 0.0023316892329603434
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 3,
+          "video": "03_small_52566.mp4",
+          "expected": "small",
+          "predicted": "small",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "small",
+              "score": 0.931250810623169
+            },
+            {
+              "text": "exact",
+              "score": 0.02058214321732521
+            },
+            {
+              "text": "fast",
+              "score": 0.012890150770545006
+            },
+            {
+              "text": "with",
+              "score": 0.0025638064835220575
+            },
+            {
+              "text": "meet",
+              "score": 0.0023166320752352476
+            }
+          ],
+          "window_count": 2
+        },
+        {
+          "sample_index": 4,
+          "video": "04_dad_14569.mp4",
+          "expected": "dad",
+          "predicted": "father",
+          "correct": false,
+          "candidates": [
+            {
+              "text": "father",
+              "score": 0.45276230573654175
+            },
+            {
+              "text": "dad",
+              "score": 0.41562941670417786
+            },
+            {
+              "text": "computer",
+              "score": 0.02609153464436531
+            },
+            {
+              "text": "rooster",
+              "score": 0.012909897603094578
+            },
+            {
+              "text": "understand",
+              "score": 0.008868316188454628
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 5,
+          "video": "05_america_02356.mp4",
+          "expected": "america",
+          "predicted": "america",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "america",
+              "score": 0.9382538199424744
+            },
+            {
+              "text": "heart",
+              "score": 0.02395886741578579
+            },
+            {
+              "text": "wind",
+              "score": 0.0025912143755704165
+            },
+            {
+              "text": "accident",
+              "score": 0.0017311250558122993
+            },
+            {
+              "text": "match",
+              "score": 0.0016574515029788017
+            }
+          ],
+          "window_count": 6
+        },
+        {
+          "sample_index": 6,
+          "video": "06_sick_51503.mp4",
+          "expected": "sick",
+          "predicted": "sick",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "sick",
+              "score": 0.948935866355896
+            },
+            {
+              "text": "stomach",
+              "score": 0.002600087085738778
+            },
+            {
+              "text": "hair",
+              "score": 0.002128376392647624
+            },
+            {
+              "text": "morning",
+              "score": 0.001813881448470056
+            },
+            {
+              "text": "lousy",
+              "score": 0.0016404371708631516
+            }
+          ],
+          "window_count": 5
+        },
+        {
+          "sample_index": 7,
+          "video": "07_again_01463.mp4",
+          "expected": "again",
+          "predicted": "again",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "again",
+              "score": 0.6771479249000549
+            },
+            {
+              "text": "rise",
+              "score": 0.05030262470245361
+            },
+            {
+              "text": "mean",
+              "score": 0.048681776970624924
+            },
+            {
+              "text": "center",
+              "score": 0.029499942436814308
+            },
+            {
+              "text": "arrive",
+              "score": 0.006197660695761442
+            }
+          ],
+          "window_count": 7
+        },
+        {
+          "sample_index": 8,
+          "video": "08_benefit_05967.mp4",
+          "expected": "benefit",
+          "predicted": "benefit",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "benefit",
+              "score": 0.9026127457618713
+            },
+            {
+              "text": "drop",
+              "score": 0.007638491224497557
+            },
+            {
+              "text": "queen",
+              "score": 0.007093561347573996
+            },
+            {
+              "text": "purple",
+              "score": 0.0030930382199585438
+            },
+            {
+              "text": "city",
+              "score": 0.002218127716332674
+            }
+          ],
+          "window_count": 7
+        },
+        {
+          "sample_index": 9,
+          "video": "09_know_31897.mp4",
+          "expected": "know",
+          "predicted": "know",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "know",
+              "score": 0.9212291240692139
+            },
+            {
+              "text": "seem",
+              "score": 0.03629038482904434
+            },
+            {
+              "text": "nephew",
+              "score": 0.0026849284768104553
+            },
+            {
+              "text": "tall",
+              "score": 0.0018804006977006793
+            },
+            {
+              "text": "adult",
+              "score": 0.0018108761869370937
+            }
+          ],
+          "window_count": 3
+        },
+        {
+          "sample_index": 10,
+          "video": "10_fly_22636.mp4",
+          "expected": "fly",
+          "predicted": "fly",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "fly",
+              "score": 0.9319709539413452
+            },
+            {
+              "text": "silly",
+              "score": 0.015500139445066452
+            },
+            {
+              "text": "airplane",
+              "score": 0.008742082864046097
+            },
+            {
+              "text": "pepper",
+              "score": 0.003432879224419594
+            },
+            {
+              "text": "that",
+              "score": 0.0034196325577795506
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 11,
+          "video": "11_turtle_60048.mp4",
+          "expected": "turtle",
+          "predicted": "turtle",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "turtle",
+              "score": 0.5020787715911865
+            },
+            {
+              "text": "weather",
+              "score": 0.049364350736141205
+            },
+            {
+              "text": "stress",
+              "score": 0.028022928163409233
+            },
+            {
+              "text": "translate",
+              "score": 0.02203040011227131
+            },
+            {
+              "text": "protect",
+              "score": 0.021768173202872276
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 12,
+          "video": "12_answer_02710.mp4",
+          "expected": "answer",
+          "predicted": "answer",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "answer",
+              "score": 0.862579345703125
+            },
+            {
+              "text": "star",
+              "score": 0.05959706008434296
+            },
+            {
+              "text": "contribute",
+              "score": 0.0037463109474629164
+            },
+            {
+              "text": "uncle",
+              "score": 0.0029372696299105883
+            },
+            {
+              "text": "up",
+              "score": 0.0018512435490265489
+            }
+          ],
+          "window_count": 6
+        },
+        {
+          "sample_index": 13,
+          "video": "13_pay_41601.mp4",
+          "expected": "pay",
+          "predicted": "pay",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "pay",
+              "score": 0.503005862236023
+            },
+            {
+              "text": "cake",
+              "score": 0.08385094255208969
+            },
+            {
+              "text": "rise",
+              "score": 0.04498075693845749
+            },
+            {
+              "text": "dance",
+              "score": 0.04399695619940758
+            },
+            {
+              "text": "learn",
+              "score": 0.027863552793860435
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 14,
+          "video": "14_avoid_04345.mp4",
+          "expected": "avoid",
+          "predicted": "avoid",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "avoid",
+              "score": 0.7315389513969421
+            },
+            {
+              "text": "from",
+              "score": 0.051594704389572144
+            },
+            {
+              "text": "quick",
+              "score": 0.025209177285432816
+            },
+            {
+              "text": "person",
+              "score": 0.024553382769227028
+            },
+            {
+              "text": "every",
+              "score": 0.011344050988554955
+            }
+          ],
+          "window_count": 8
+        },
+        {
+          "sample_index": 15,
+          "video": "15_caption_09091.mp4",
+          "expected": "caption",
+          "predicted": "caption",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "caption",
+              "score": 0.8608593940734863
+            },
+            {
+              "text": "function",
+              "score": 0.009743629954755306
+            },
+            {
+              "text": "measure",
+              "score": 0.00652970839291811
+            },
+            {
+              "text": "computer",
+              "score": 0.005829413887113333
+            },
+            {
+              "text": "cloud",
+              "score": 0.0041262004524469376
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 16,
+          "video": "16_call_65556.mp4",
+          "expected": "call",
+          "predicted": "call",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "call",
+              "score": 0.9070315957069397
+            },
+            {
+              "text": "phone",
+              "score": 0.011664656922221184
+            },
+            {
+              "text": "zero",
+              "score": 0.004168256651610136
+            },
+            {
+              "text": "watch",
+              "score": 0.002428996842354536
+            },
+            {
+              "text": "black",
+              "score": 0.002159837167710066
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 17,
+          "video": "17_seem_66442.mp4",
+          "expected": "seem",
+          "predicted": "seem",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "seem",
+              "score": 0.506862223148346
+            },
+            {
+              "text": "before",
+              "score": 0.1439482718706131
+            },
+            {
+              "text": "blue",
+              "score": 0.11309576779603958
+            },
+            {
+              "text": "french",
+              "score": 0.04582811892032623
+            },
+            {
+              "text": "past",
+              "score": 0.020973291248083115
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 18,
+          "video": "18_wind_63404.mp4",
+          "expected": "wind",
+          "predicted": "wind",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "wind",
+              "score": 0.8999006152153015
+            },
+            {
+              "text": "schedule",
+              "score": 0.01155322790145874
+            },
+            {
+              "text": "already",
+              "score": 0.010871319100260735
+            },
+            {
+              "text": "excited",
+              "score": 0.005431456957012415
+            },
+            {
+              "text": "encourage",
+              "score": 0.004999852739274502
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 19,
+          "video": "19_order_40179.mp4",
+          "expected": "order",
+          "predicted": "order",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "order",
+              "score": 0.3629485070705414
+            },
+            {
+              "text": "prepare",
+              "score": 0.3128895163536072
+            },
+            {
+              "text": "biology",
+              "score": 0.06035122275352478
+            },
+            {
+              "text": "every",
+              "score": 0.022047776728868484
+            },
+            {
+              "text": "travel",
+              "score": 0.018799448385834694
+            }
+          ],
+          "window_count": 1
+        },
+        {
+          "sample_index": 20,
+          "video": "20_god_24914.mp4",
+          "expected": "god",
+          "predicted": "god",
+          "correct": true,
+          "candidates": [
+            {
+              "text": "god",
+              "score": 0.8594589233398438
+            },
+            {
+              "text": "front",
+              "score": 0.017053699120879173
+            },
+            {
+              "text": "giraffe",
+              "score": 0.013867009431123734
+            },
+            {
+              "text": "man",
+              "score": 0.013336713425815105
+            },
+            {
+              "text": "goat",
+              "score": 0.0025554129388183355
+            }
+          ],
+          "window_count": 3
+        }
+      ]
+    }
+  },
+  "promotion_decision": {
+    "promote": true,
+    "from": "/Users/rowanthselvakumaran/Downloads/test_vanilla_1000.pth",
+    "to": "/Users/rowanthselvakumaran/Downloads/best_model.pth",
+    "reason": "candidate accuracy 0.950 > current accuracy 0.700"
+  }
+}

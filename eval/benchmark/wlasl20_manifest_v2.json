@@ -1,0 +1,326 @@
+{
+  "seed": 20260418,
+  "count": 20,
+  "samples": [
+    {
+      "sample_index": 1,
+      "label": "bad",
+      "filepath": "data/data_7/04723.mp4",
+      "video_id": "04723",
+      "frame_count": 86,
+      "width": 720,
+      "height": 400,
+      "duration": 2.836136,
+      "bounding_box": [
+        0.22777777777777777,
+        0.1225,
+        0.4986111111111111,
+        0.8775
+      ]
+    },
+    {
+      "sample_index": 2,
+      "label": "cough",
+      "filepath": "data/data_109/65411.mp4",
+      "video_id": "65411",
+      "frame_count": 66,
+      "width": 656,
+      "height": 370,
+      "duration": 2.752744,
+      "bounding_box": [
+        0.2606707317073171,
+        0.043243243243243246,
+        0.4893292682926829,
+        0.9567567567567568
+      ]
+    },
+    {
+      "sample_index": 3,
+      "label": "asl",
+      "filepath": "data/data_5/03638.mp4",
+      "video_id": "03638",
+      "frame_count": 54,
+      "width": 288,
+      "height": 192,
+      "duration": 1.801802,
+      "bounding_box": [
+        0.23958333333333334,
+        0.057291666666666664,
+        0.5347222222222222,
+        0.9427083333333334
+      ]
+    },
+    {
+      "sample_index": 4,
+      "label": "print",
+      "filepath": "data/data_114/66332.mp4",
+      "video_id": "66332",
+      "frame_count": 58,
+      "width": 656,
+      "height": 370,
+      "duration": 2.419078,
+      "bounding_box": [
+        0.31097560975609756,
+        0.021621621621621623,
+        0.413109756097561,
+        0.9783783783783784
+      ]
+    },
+    {
+      "sample_index": 5,
+      "label": "polite",
+      "filepath": "data/data_114/66308.mp4",
+      "video_id": "66308",
+      "frame_count": 61,
+      "width": 656,
+      "height": 370,
+      "duration": 2.5442,
+      "bounding_box": [
+        0.2926829268292683,
+        0.02702702702702703,
+        0.4176829268292683,
+        0.9621621621621621
+      ]
+    },
+    {
+      "sample_index": 6,
+      "label": "angry",
+      "filepath": "data/data_3/02569.mp4",
+      "video_id": "02569",
+      "frame_count": 104,
+      "width": 640,
+      "height": 480,
+      "duration": 3.466333,
+      "bounding_box": [
+        0.1359375,
+        0.04375,
+        0.7796875000000001,
+        0.95625
+      ]
+    },
+    {
+      "sample_index": 7,
+      "label": "blind",
+      "filepath": "data/data_10/06651.mp4",
+      "video_id": "06651",
+      "frame_count": 37,
+      "width": 1920,
+      "height": 1080,
+      "duration": 1.5432,
+      "bounding_box": [
+        0.34427083333333336,
+        0.08703703703703704,
+        0.35989583333333336,
+        0.912962962962963
+      ]
+    },
+    {
+      "sample_index": 8,
+      "label": "describe",
+      "filepath": "data/data_27/15711.mp4",
+      "video_id": "15711",
+      "frame_count": 54,
+      "width": 288,
+      "height": 192,
+      "duration": 1.801802,
+      "bounding_box": [
+        0.2604166666666667,
+        0.109375,
+        0.5208333333333333,
+        0.890625
+      ]
+    },
+    {
+      "sample_index": 9,
+      "label": "radio",
+      "filepath": "data/data_74/45907.mp4",
+      "video_id": "45907",
+      "frame_count": 92,
+      "width": 320,
+      "height": 240,
+      "duration": 3.069736,
+      "bounding_box": [
+        0.053125,
+        0.0,
+        0.76875,
+        1.0
+      ]
+    },
+    {
+      "sample_index": 10,
+      "label": "careful",
+      "filepath": "data/data_15/09182.mp4",
+      "video_id": "09182",
+      "frame_count": 119,
+      "width": 640,
+      "height": 480,
+      "duration": 3.966333,
+      "bounding_box": [
+        0.10625,
+        0.05,
+        0.7546875000000001,
+        0.95
+      ]
+    },
+    {
+      "sample_index": 11,
+      "label": "translate",
+      "filepath": "data/data_98/59405.mp4",
+      "video_id": "59405",
+      "frame_count": 102,
+      "width": 320,
+      "height": 240,
+      "duration": 3.403403,
+      "bounding_box": [
+        0.16875,
+        0.0,
+        0.7124999999999999,
+        1.0
+      ]
+    },
+    {
+      "sample_index": 12,
+      "label": "wash",
+      "filepath": "data/data_102/62365.mp4",
+      "video_id": "62365",
+      "frame_count": 49,
+      "width": 288,
+      "height": 192,
+      "duration": 1.601602,
+      "bounding_box": [
+        0.2916666666666667,
+        0.08333333333333333,
+        0.4618055555555555,
+        0.9166666666666666
+      ]
+    },
+    {
+      "sample_index": 13,
+      "label": "announce",
+      "filepath": "data/data_107/65074.mp4",
+      "video_id": "65074",
+      "frame_count": 43,
+      "width": 656,
+      "height": 370,
+      "duration": 1.793456,
+      "bounding_box": [
+        0.28810975609756095,
+        0.07837837837837838,
+        0.5182926829268293,
+        0.9216216216216216
+      ]
+    },
+    {
+      "sample_index": 14,
+      "label": "pink",
+      "filepath": "data/data_68/42832.mp4",
+      "video_id": "42832",
+      "frame_count": 40,
+      "width": 1280,
+      "height": 720,
+      "duration": 1.668333,
+      "bounding_box": [
+        0.396875,
+        0.059722222222222225,
+        0.4546875,
+        0.9333333333333333
+      ]
+    },
+    {
+      "sample_index": 15,
+      "label": "table",
+      "filepath": "data/data_92/56563.mp4",
+      "video_id": "56563",
+      "frame_count": 41,
+      "width": 288,
+      "height": 192,
+      "duration": 1.368035,
+      "bounding_box": [
+        0.22569444444444445,
+        0.09375,
+        0.513888888888889,
+        0.90625
+      ]
+    },
+    {
+      "sample_index": 16,
+      "label": "grammar",
+      "filepath": "data/data_43/25380.mp4",
+      "video_id": "25380",
+      "frame_count": 93,
+      "width": 720,
+      "height": 400,
+      "duration": 3.069703,
+      "bounding_box": [
+        0.2,
+        0.145,
+        0.5916666666666666,
+        0.855
+      ]
+    },
+    {
+      "sample_index": 17,
+      "label": "want",
+      "filepath": "data/data_119/69524.mp4",
+      "video_id": "69524",
+      "frame_count": 69,
+      "width": 1280,
+      "height": 720,
+      "duration": 2.3023,
+      "bounding_box": [
+        0.26640625,
+        0.05555555555555555,
+        0.44531249999999994,
+        0.9444444444444444
+      ]
+    },
+    {
+      "sample_index": 18,
+      "label": "king",
+      "filepath": "data/data_112/65994.mp4",
+      "video_id": "65994",
+      "frame_count": 70,
+      "width": 656,
+      "height": 370,
+      "duration": 2.919578,
+      "bounding_box": [
+        0.2652439024390244,
+        0.02702702702702703,
+        0.4725609756097561,
+        0.972972972972973
+      ]
+    },
+    {
+      "sample_index": 19,
+      "label": "top",
+      "filepath": "data/data_97/58936.mp4",
+      "video_id": "58936",
+      "frame_count": 42,
+      "width": 1920,
+      "height": 1080,
+      "duration": 1.751744,
+      "bounding_box": [
+        0.3734375,
+        0.03611111111111111,
+        0.4625,
+        0.9638888888888889
+      ]
+    },
+    {
+      "sample_index": 20,
+      "label": "clock",
+      "filepath": "data/data_19/11214.mp4",
+      "video_id": "11214",
+      "frame_count": 97,
+      "width": 720,
+      "height": 400,
+      "duration": 3.20317,
+      "bounding_box": [
+        0.25277777777777777,
+        0.1375,
+        0.5430555555555555,
+        0.8625
+      ]
+    }
+  ]
+}

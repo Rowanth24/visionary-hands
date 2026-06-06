@@ -1,0 +1,11 @@
+# Landmark pipeline env (training + MediaPipe extraction + ONNX/TorchScript export).
+# Role of the old EPICS_Project/.venv-landmarks. Python 3.11.
+# Kept SEPARATE from requirements-onnx.txt: MediaPipe and onnxruntime pull
+# conflicting protobuf versions, so live ONNX inference uses its own venv.
+# Versions unpinned; pin from the working venv at env-setup.
+torch
+mediapipe
+opencv-python
+numpy
+onnx
+kaggle

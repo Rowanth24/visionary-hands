@@ -1,0 +1,32 @@
+{
+  "bundle_name": "landmark_onnx_bundle",
+  "source_run_dir": "runs/landmark_live5_transformer_compact_dual_v1",
+  "labels": [
+    "bowling",
+    "computer",
+    "deaf",
+    "drink",
+    "yes"
+  ],
+  "files": [
+    "README.md",
+    "config.json",
+    "docs/landmark_progress.md",
+    "evaluate_landmark_video_manifest_onnx.py",
+    "labels.json",
+    "landmark_baseline/__init__.py",
+    "landmark_baseline/constants.py",
+    "landmark_baseline/extraction.py",
+    "landmark_baseline/features.py",
+    "landmark_baseline/inference_onnx.py",
+    "landmark_baseline/prediction.py",
+    "landmark_baseline/preprocess.py",
+    "metrics.json",
+    "model.onnx",
+    "model.onnx.data",
+    "predict_landmark_video_onnx.py",
+    "requirements-onnx.txt",
+    "run_landmark_webcam_onnx.py",
+    "validate_live_sign_capture_onnx.py"
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "seed": 20260419,
+  "count": 20,
+  "paired_labels": [
+    "drop",
+    "earthquake",
+    "secretary",
+    "cake",
+    "punish",
+    "wood",
+    "balloon",
+    "color",
+    "sorry",
+    "doubt"
+  ],
+  "samples": [
+    {
+      "sample_index": 1,
+      "source": "wlasl",
+      "pair_label": "drop",
+      "filepath": "data/data_31/17832.mp4",
+      "video_id": "17832",
+      "frame_count": 91,
+      "width": 720,
+      "height": 400,
+      "duration": 3.00297,
+      "bounding_box": [
+        0.25,
+        0.16,
+        0.5069444444444444,
+        0.84
+      ],
+      "local_video": "01_wlasl_drop_17832.mp4"
+    },
+    {
+      "sample_index": 2,
+      "source": "aslense",
+      "pair_label": "drop",
+      "filepath": "part_3/36143393073698404-DROP.mp4",
+      "video_id": "36143393073698404-DROP",
+      "local_video": "02_aslense_drop_36143393073698404-DROP.mp4"
+    },
+    {
+      "sample_index": 3,
+      "source": "wlasl",
+      "pair_label": "earthquake",
+      "filepath": "data/data_32/18258.mp4",
+      "video_id": "18258",
+      "frame_count": 68,
+      "width": 288,
+      "height": 192,
+      "duration": 2.235569,
+      "bounding_box": [
+        0.21180555555555555,
+        0.08854166666666667,
+        0.6597222222222222,
+        0.9114583333333334
+      ],
+      "local_video": "03_wlasl_earthquake_18258.mp4"
+    },
+    {
+      "sample_index": 4,
+      "source": "aslense",
+      "pair_label": "earthquake",
+      "filepath": "part_6/8979439062678256-EARTHQUAKE.mp4",
+      "video_id": "8979439062678256-EARTHQUAKE",
+      "local_video": "04_aslense_earthquake_8979439062678256-EARTHQUAKE.mp4"
+    },
+    {
+      "sample_index": 5,
+      "source": "wlasl",
+      "pair_label": "secretary",
+      "filepath": "data/data_81/50041.mp4",
+      "video_id": "50041",
+      "frame_count": 115,
+      "width": 640,
+      "height": 480,
+      "duration": 3.833333,
+      "bounding_box": [
+        0.1609375,
+        0.0,
+        0.7484375000000001,
+        1.0
+      ],
+      "local_video": "05_wlasl_secretary_50041.mp4"
+    },
+    {
+      "sample_index": 6,
+      "source": "aslense",
+      "pair_label": "secretary",
+      "filepath": "part_1/006465165452186117-SECRETARY.mp4",
+      "video_id": "006465165452186117-SECRETARY",
+      "local_video": "06_aslense_secretary_006465165452186117-SECRETARY.mp4"
+    },
+    {
+      "sample_index": 7,
+      "source": "wlasl",
+      "pair_label": "cake",
+      "filepath": "data/data_14/08618.mp4",
+      "video_id": "08618",
+      "frame_count": 56,
+      "width": 288,
+      "height": 192,
+      "duration": 1.801802,
+      "bounding_box": [
+        0.19444444444444445,
+        0.036458333333333336,
+        0.5486111111111112,
+        0.9635416666666666
+      ],
+      "local_video": "07_wlasl_cake_08618.mp4"
+    },
+    {
+      "sample_index": 8,
+      "source": "aslense",
+      "pair_label": "cake",
+      "filepath": "part_6/9127019395391156-CAKE.mp4",
+      "video_id": "9127019395391156-CAKE",
+      "local_video": "08_aslense_cake_9127019395391156-CAKE.mp4"
+    },
+    {
+      "sample_index": 9,
+      "source": "wlasl",
+      "pair_label": "punish",
+      "filepath": "data/data_73/45369.mp4",
+      "video_id": "45369",
+      "frame_count": 103,
+      "width": 720,
+      "height": 400,
+      "duration": 3.40337,
+      "bounding_box": [
+        0.32222222222222224,
+        0.12,
+        0.3694444444444444,
+        0.88
+      ],
+      "local_video": "09_wlasl_punish_45369.mp4"
+    },
+    {
+      "sample_index": 10,
+      "source": "aslense",
+      "pair_label": "punish",
+      "filepath": "part_1/013573733301328161-PUNISH.mp4",
+      "video_id": "013573733301328161-PUNISH",
+      "local_video": "10_aslense_punish_013573733301328161-PUNISH.mp4"
+    },
+    {
+      "sample_index": 11,
+      "source": "wlasl",
+      "pair_label": "wood",
+      "filepath": "data/data_105/63724.mp4",
+      "video_id": "63724",
+      "frame_count": 107,
+      "width": 640,
+      "height": 480,
+      "duration": 3.566333,
+      "bounding_box": [
+        0.1890625,
+        0.010416666666666666,
+        0.709375,
+        0.9895833333333334
+      ],
+      "local_video": "11_wlasl_wood_63724.mp4"
+    },
+    {
+      "sample_index": 12,
+      "source": "aslense",
+      "pair_label": "wood",
+      "filepath": "part_3/3752156246825138-WOOD.mp4",
+      "video_id": "3752156246825138-WOOD",
+      "local_video": "12_aslense_wood_3752156246825138-WOOD.mp4"
+    },
+    {
+      "sample_index": 13,
+      "source": "wlasl",
+      "pair_label": "balloon",
+      "filepath": "data/data_7/04870.mp4",
+      "video_id": "04870",
+      "frame_count": 113,
+      "width": 640,
+      "height": 480,
+      "duration": 3.766333,
+      "bounding_box": [
+        0.0953125,
+        0.04583333333333333,
+        0.8375,
+        0.9541666666666667
+      ],
+      "local_video": "13_wlasl_balloon_04870.mp4"
+    },
+    {
+      "sample_index": 14,
+      "source": "aslense",
+      "pair_label": "balloon",
+      "filepath": "part_3/3703730152151108-BALLOON.mp4",
+      "video_id": "3703730152151108-BALLOON",
+      "local_video": "14_aslense_balloon_3703730152151108-BALLOON.mp4"
+    },
+    {
+      "sample_index": 15,
+      "source": "wlasl",
+      "pair_label": "color",
+      "filepath": "data/data_20/11772.mp4",
+      "video_id": "11772",
+      "frame_count": 73,
+      "width": 288,
+      "height": 192,
+      "duration": 2.402402,
+      "bounding_box": [
+        0.1875,
+        0.046875,
+        0.5590277777777778,
+        0.953125
+      ],
+      "local_video": "15_wlasl_color_11772.mp4"
+    },
+    {
+      "sample_index": 16,
+      "source": "aslense",
+      "pair_label": "color",
+      "filepath": "part_1/005776634853680518-COLOR.mp4",
+      "video_id": "005776634853680518-COLOR",
+      "local_video": "16_aslense_color_005776634853680518-COLOR.mp4"
+    },
+    {
+      "sample_index": 17,
+      "source": "wlasl",
+      "pair_label": "sorry",
+      "filepath": "data/data_87/53367.mp4",
+      "video_id": "53367",
+      "frame_count": 80,
+      "width": 640,
+      "height": 480,
+      "duration": 2.666333,
+      "bounding_box": [
+        0.153125,
+        0.0,
+        0.6828125,
+        1.0
+      ],
+      "local_video": "17_wlasl_sorry_53367.mp4"
+    },
+    {
+      "sample_index": 18,
+      "source": "aslense",
+      "pair_label": "sorry",
+      "filepath": "part_1/010369524824967558-SORRY.mp4",
+      "video_id": "010369524824967558-SORRY",
+      "local_video": "18_aslense_sorry_010369524824967558-SORRY.mp4"
+    },
+    {
+      "sample_index": 19,
+      "source": "wlasl",
+      "pair_label": "doubt",
+      "filepath": "data/data_30/17400.mp4",
+      "video_id": "17400",
+      "frame_count": 91,
+      "width": 720,
+      "height": 400,
+      "duration": 3.00297,
+      "bounding_box": [
+        0.3347222222222222,
+        0.105,
+        0.34861111111111115,
+        0.895
+      ],
+      "local_video": "19_wlasl_doubt_17400.mp4"
+    },
+    {
+      "sample_index": 20,
+      "source": "aslense",
+      "pair_label": "doubt",
+      "filepath": "part_5/7216694804458137-DOUBT.mp4",
+      "video_id": "7216694804458137-DOUBT",
+      "local_video": "20_aslense_doubt_7216694804458137-DOUBT.mp4"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "manifest": "data/wlasl_live_5_prepared/test/manifest.jsonl",
+  "model": "runs/landmark_live5_transformer_compact_dual_v1/model.onnx",
+  "labels": "runs/landmark_live5_transformer_compact_dual_v1/labels.json",
+  "config": "runs/landmark_live5_transformer_compact_dual_v1/config.json",
+  "provider": "CPUExecutionProvider",
+  "samples": 12,
+  "accuracy": 0.5833333333333334,
+  "predictions": [
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/bowling/07383.mp4",
+      "true_label": "bowling",
+      "correct": true,
+      "predicted_label": "bowling",
+      "confidence": 0.818344829538933,
+      "topk": [
+        {
+          "label": "bowling",
+          "confidence": 0.818344829538933
+        },
+        {
+          "label": "yes",
+          "confidence": 0.09466790960588317
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.044117510865194255
+        }
+      ],
+      "dominant_hand": "left",
+      "source_num_frames": 47,
+      "kept_num_frames": 19
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/bowling/07400.mp4",
+      "true_label": "bowling",
+      "correct": false,
+      "predicted_label": "computer",
+      "confidence": 0.8696403521718593,
+      "topk": [
+        {
+          "label": "computer",
+          "confidence": 0.8696403521718593
+        },
+        {
+          "label": "bowling",
+          "confidence": 0.08233509111816756
+        },
+        {
+          "label": "yes",
+          "confidence": 0.026760670287543878
+        }
+      ],
+      "dominant_hand": "left",
+      "source_num_frames": 36,
+      "kept_num_frames": 36
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/computer/12306.mp4",
+      "true_label": "computer",
+      "correct": true,
+      "predicted_label": "computer",
+      "confidence": 0.9055276371039902,
+      "topk": [
+        {
+          "label": "computer",
+          "confidence": 0.9055276371039902
+        },
+        {
+          "label": "bowling",
+          "confidence": 0.056929263936979925
+        },
+        {
+          "label": "yes",
+          "confidence": 0.02041024482006927
+        }
+      ],
+      "dominant_hand": "left",
+      "source_num_frames": 60,
+      "kept_num_frames": 60
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/computer/12320.mp4",
+      "true_label": "computer",
+      "correct": true,
+      "predicted_label": "computer",
+      "confidence": 0.9357386052611762,
+      "topk": [
+        {
+          "label": "computer",
+          "confidence": 0.9357386052611762
+        },
+        {
+          "label": "yes",
+          "confidence": 0.023204626337665398
+        },
+        {
+          "label": "bowling",
+          "confidence": 0.019814621081734266
+        }
+      ],
+      "dominant_hand": "left",
+      "source_num_frames": 102,
+      "kept_num_frames": 56
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/deaf/14855.mp4",
+      "true_label": "deaf",
+      "correct": false,
+      "predicted_label": "drink",
+      "confidence": 0.4830668781166192,
+      "topk": [
+        {
+          "label": "drink",
+          "confidence": 0.4830668781166192
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.20040496722691034
+        },
+        {
+          "label": "yes",
+          "confidence": 0.18804501611098987
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 47,
+      "kept_num_frames": 20
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/deaf/14883.mp4",
+      "true_label": "deaf",
+      "correct": true,
+      "predicted_label": "deaf",
+      "confidence": 0.37325142753039225,
+      "topk": [
+        {
+          "label": "deaf",
+          "confidence": 0.37325142753039225
+        },
+        {
+          "label": "yes",
+          "confidence": 0.29424622397723965
+        },
+        {
+          "label": "drink",
+          "confidence": 0.20642259217192313
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 24,
+      "kept_num_frames": 18
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/deaf/14888.mp4",
+      "true_label": "deaf",
+      "correct": false,
+      "predicted_label": "drink",
+      "confidence": 0.3490974514923023,
+      "topk": [
+        {
+          "label": "drink",
+          "confidence": 0.3490974514923023
+        },
+        {
+          "label": "yes",
+          "confidence": 0.2838666987772844
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.25009978226646634
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 66,
+      "kept_num_frames": 35
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/drink/17713.mp4",
+      "true_label": "drink",
+      "correct": true,
+      "predicted_label": "drink",
+      "confidence": 0.45482379947907225,
+      "topk": [
+        {
+          "label": "drink",
+          "confidence": 0.45482379947907225
+        },
+        {
+          "label": "yes",
+          "confidence": 0.21321216054603298
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.1851837237408915
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 91,
+      "kept_num_frames": 42
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/drink/17730.mp4",
+      "true_label": "drink",
+      "correct": true,
+      "predicted_label": "drink",
+      "confidence": 0.5226578837216959,
+      "topk": [
+        {
+          "label": "drink",
+          "confidence": 0.5226578837216959
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.19183985576008375
+        },
+        {
+          "label": "yes",
+          "confidence": 0.16380776580387482
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 82,
+      "kept_num_frames": 49
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/yes/64275.mp4",
+      "true_label": "yes",
+      "correct": true,
+      "predicted_label": "yes",
+      "confidence": 0.37370762771941807,
+      "topk": [
+        {
+          "label": "yes",
+          "confidence": 0.37370762771941807
+        },
+        {
+          "label": "drink",
+          "confidence": 0.1857051021333292
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.17414914921072597
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 70,
+      "kept_num_frames": 70
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/yes/64293.mp4",
+      "true_label": "yes",
+      "correct": false,
+      "predicted_label": "drink",
+      "confidence": 0.36245992590904935,
+      "topk": [
+        {
+          "label": "drink",
+          "confidence": 0.36245992590904935
+        },
+        {
+          "label": "yes",
+          "confidence": 0.2545180609055611
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.19833840899771524
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 53,
+      "kept_num_frames": 53
+    },
+    {
+      "video_path": "data/wlasl_distinct_8_full/test/yes/64297.mp4",
+      "true_label": "yes",
+      "correct": false,
+      "predicted_label": "bowling",
+      "confidence": 0.36234819062049134,
+      "topk": [
+        {
+          "label": "bowling",
+          "confidence": 0.36234819062049134
+        },
+        {
+          "label": "yes",
+          "confidence": 0.3083859154717902
+        },
+        {
+          "label": "deaf",
+          "confidence": 0.1790470265360458
+        }
+      ],
+      "dominant_hand": "right",
+      "source_num_frames": 47,
+      "kept_num_frames": 28
+    }
+  ]
+}

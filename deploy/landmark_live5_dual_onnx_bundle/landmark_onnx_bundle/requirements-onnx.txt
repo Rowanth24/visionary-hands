@@ -1,0 +1,5 @@
+numpy
+onnxruntime
+opencv-contrib-python
+# MediaPipe wheel availability depends on the target OS/arch
+# Install the appropriate mediapipe package for the target device

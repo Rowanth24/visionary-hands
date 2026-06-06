@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv*/
+venv/
+env/
+.DS_Store
+.ipynb_checkpoints/
+
+# --- Model weights: present on disk so the gate runs, NOT version-controlled ---
+*.pt
+*.pth
+*.onnx
+*.onnx.data
+*.ts
+*.ckpt
+
+# --- Large media & data caches (regenerable / vendored locally) ---
+*.mp4
+*.avi
+*.mov
+*.zip
+data/
+**/feature_cache/
+**/cross_source_validated*/
+**/cross_source_adaptation/
+**/multisource_videos/
+**/videos/
+**/videos_v2/
+
+# Keep the small benchmark manifests + result JSONs (they ARE the eval record)
+!eval/benchmark/**/*.json

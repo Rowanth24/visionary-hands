@@ -1,0 +1,23 @@
+{
+  "model_type": "transformer",
+  "epochs": 25,
+  "batch_size": 16,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "d_model": 64,
+  "num_heads": 4,
+  "num_layers": 1,
+  "dropout": 0.2,
+  "gru_hidden_size": 96,
+  "gru_bidirectional": true,
+  "label_smoothing": 0.1,
+  "input_noise_std": 0.0,
+  "frame_dropout": 0.0,
+  "feature_dropout": 0.0,
+  "append_deltas": false,
+  "target_frames": 64,
+  "xy_only": true,
+  "layout": "dominant_both_hands",
+  "seed": 42,
+  "device": "mps"
+}

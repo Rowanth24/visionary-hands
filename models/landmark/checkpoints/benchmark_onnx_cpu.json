@@ -1,0 +1,14 @@
+{
+  "model": "runs/landmark_live5_transformer_compact_dual_v1/model.onnx",
+  "dataset": "data/wlasl_live_5_dual_prepared/test/dataset.npz",
+  "provider": "CPUExecutionProvider",
+  "samples": 12,
+  "batch_size": 1,
+  "warmup_runs": 10,
+  "timed_runs": 100,
+  "total_inferences": 1200,
+  "total_seconds": 0.39322487509343773,
+  "seconds_per_inference": 0.0003276873959111981,
+  "ms_per_inference": 0.3276873959111981,
+  "model_bytes": 14975
+}

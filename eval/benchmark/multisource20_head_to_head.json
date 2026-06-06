@@ -1,0 +1,1478 @@
+{
+  "manifest": "/Users/rowanthselvakumaran/Vanilla Model ASL/Sign-Language-Recognition/benchmark/multisource20_manifest.json",
+  "video_dir": "/Users/rowanthselvakumaran/Vanilla Model ASL/Sign-Language-Recognition/benchmark/multisource_videos",
+  "seed": 20260419,
+  "paired_labels": [
+    "drop",
+    "earthquake",
+    "secretary",
+    "cake",
+    "punish",
+    "wood",
+    "balloon",
+    "color",
+    "sorry",
+    "doubt"
+  ],
+  "models": {
+    "vanilla": {
+      "top1_accuracy": 0.45,
+      "top5_hit_rate": 0.55,
+      "mean_reciprocal_rank_top5": 0.5,
+      "mean_latency_ms": 6215.394277102314,
+      "median_latency_ms": 5601.5509373974055,
+      "max_latency_ms": 14011.250084033236,
+      "mean_score_of_expected_when_in_top5": 0.5516385564749892
+    },
+    "hybrid": {
+      "top1_accuracy": 0.45,
+      "top5_hit_rate": 0.55,
+      "mean_reciprocal_rank_top5": 0.5,
+      "mean_latency_ms": 17212.887208431493,
+      "median_latency_ms": 16339.521208428778,
+      "max_latency_ms": 27571.742415893823,
+      "mean_score_of_expected_when_in_top5": 0.5516385564749892
+    }
+  },
+  "pairwise": {
+    "both_correct": 9,
+    "vanilla_only_correct": 0,
+    "hybrid_only_correct": 0,
+    "both_wrong": 11,
+    "hybrid_changed_top1": 1,
+    "hybrid_reranked": 1,
+    "both_wrong_vanilla_better_rank": 0,
+    "both_wrong_hybrid_better_rank": 0,
+    "both_wrong_same_rank": 11
+  },
+  "source_breakdown": {
+    "aslense": {
+      "vanilla": {
+        "top1_accuracy": 0.1,
+        "top5_hit_rate": 0.2,
+        "mean_reciprocal_rank_top5": 0.15,
+        "mean_latency_ms": 6117.170812492259,
+        "median_latency_ms": 5480.563396005891,
+        "max_latency_ms": 14011.250084033236,
+        "mean_score_of_expected_when_in_top5": 0.23658741638064384
+      },
+      "hybrid": {
+        "top1_accuracy": 0.1,
+        "top5_hit_rate": 0.2,
+        "mean_reciprocal_rank_top5": 0.15,
+        "mean_latency_ms": 17794.685033522546,
+        "median_latency_ms": 15197.565604466945,
+        "max_latency_ms": 27078.56091693975,
+        "mean_score_of_expected_when_in_top5": 0.23658741638064384
+      },
+      "pairwise": {
+        "both_correct": 1,
+        "vanilla_only_correct": 0,
+        "hybrid_only_correct": 0,
+        "both_wrong": 9,
+        "hybrid_changed_top1": 1,
+        "hybrid_reranked": 1,
+        "both_wrong_vanilla_better_rank": 0,
+        "both_wrong_hybrid_better_rank": 0,
+        "both_wrong_same_rank": 9
+      }
+    },
+    "wlasl": {
+      "vanilla": {
+        "top1_accuracy": 0.8,
+        "top5_hit_rate": 0.9,
+        "mean_reciprocal_rank_top5": 0.85,
+        "mean_latency_ms": 6313.617741712369,
+        "median_latency_ms": 5651.285270461813,
+        "max_latency_ms": 13840.508167166263,
+        "mean_score_of_expected_when_in_top5": 0.6216499209403992
+      },
+      "hybrid": {
+        "top1_accuracy": 0.8,
+        "top5_hit_rate": 0.9,
+        "mean_reciprocal_rank_top5": 0.85,
+        "mean_latency_ms": 16631.08938334044,
+        "median_latency_ms": 17207.2192709893,
+        "max_latency_ms": 27571.742415893823,
+        "mean_score_of_expected_when_in_top5": 0.6216499209403992
+      },
+      "pairwise": {
+        "both_correct": 8,
+        "vanilla_only_correct": 0,
+        "hybrid_only_correct": 0,
+        "both_wrong": 2,
+        "hybrid_changed_top1": 0,
+        "hybrid_reranked": 0,
+        "both_wrong_vanilla_better_rank": 0,
+        "both_wrong_hybrid_better_rank": 0,
+        "both_wrong_same_rank": 2
+      }
+    }
+  },
+  "hybrid_mode_counts": {
+    "agreed": 19,
+    "reranked": 1
+  },
+  "results": [
+    {
+      "sample_index": 1,
+      "source": "wlasl",
+      "expected": "drop",
+      "video": "01_wlasl_drop_17832.mp4",
+      "vanilla": {
+        "predicted": "drop",
+        "correct": true,
+        "latency_ms": 5373.899499885738,
+        "window_count": 5,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.38046327233314514,
+        "top5": [
+          {
+            "text": "drop",
+            "score": 0.38046327233314514
+          },
+          {
+            "text": "during",
+            "score": 0.2629493176937103
+          },
+          {
+            "text": "australia",
+            "score": 0.025174936279654503
+          },
+          {
+            "text": "take",
+            "score": 0.018315579742193222
+          },
+          {
+            "text": "depend",
+            "score": 0.014445115812122822
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "drop",
+        "correct": true,
+        "latency_ms": 5815.286167198792,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.38046327233314514,
+        "mode": "agreed",
+        "ollama_choice": "depend",
+        "proposal_window_count": 5,
+        "top5": [
+          {
+            "text": "drop",
+            "score": 0.38046327233314514
+          },
+          {
+            "text": "during",
+            "score": 0.2629493176937103
+          },
+          {
+            "text": "australia",
+            "score": 0.025174936279654503
+          },
+          {
+            "text": "take",
+            "score": 0.018315579742193222
+          },
+          {
+            "text": "depend",
+            "score": 0.014445115812122822
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 2,
+      "source": "aslense",
+      "expected": "drop",
+      "video": "02_aslense_drop_36143393073698404-DROP.mp4",
+      "vanilla": {
+        "predicted": "australia",
+        "correct": false,
+        "latency_ms": 11551.989458035678,
+        "window_count": 12,
+        "rank_of_expected": 2,
+        "score_of_expected": 0.1220049187541008,
+        "top5": [
+          {
+            "text": "australia",
+            "score": 0.2611379027366638
+          },
+          {
+            "text": "drop",
+            "score": 0.1220049187541008
+          },
+          {
+            "text": "underwear",
+            "score": 0.04822884872555733
+          },
+          {
+            "text": "stay",
+            "score": 0.04015694931149483
+          },
+          {
+            "text": "shock",
+            "score": 0.03232024982571602
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "australia",
+        "correct": false,
+        "latency_ms": 21878.424416994676,
+        "rank_of_expected": 2,
+        "score_of_expected": 0.1220049187541008,
+        "mode": "agreed",
+        "ollama_choice": "stay",
+        "proposal_window_count": 12,
+        "top5": [
+          {
+            "text": "australia",
+            "score": 0.2611379027366638
+          },
+          {
+            "text": "drop",
+            "score": 0.1220049187541008
+          },
+          {
+            "text": "underwear",
+            "score": 0.04822884872555733
+          },
+          {
+            "text": "stay",
+            "score": 0.04015694931149483
+          },
+          {
+            "text": "shock",
+            "score": 0.03232024982571602
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 3,
+      "source": "wlasl",
+      "expected": "earthquake",
+      "video": "03_wlasl_earthquake_18258.mp4",
+      "vanilla": {
+        "predicted": "earthquake",
+        "correct": true,
+        "latency_ms": 2045.381624950096,
+        "window_count": 2,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.16742408275604248,
+        "top5": [
+          {
+            "text": "earthquake",
+            "score": 0.16742408275604248
+          },
+          {
+            "text": "depend",
+            "score": 0.041779614984989166
+          },
+          {
+            "text": "party",
+            "score": 0.03523179143667221
+          },
+          {
+            "text": "walk",
+            "score": 0.02814173325896263
+          },
+          {
+            "text": "research",
+            "score": 0.023205924779176712
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "earthquake",
+        "correct": true,
+        "latency_ms": 12376.578958006576,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.16742408275604248,
+        "mode": "agreed",
+        "ollama_choice": "research",
+        "proposal_window_count": 2,
+        "top5": [
+          {
+            "text": "earthquake",
+            "score": 0.16742408275604248
+          },
+          {
+            "text": "depend",
+            "score": 0.041779614984989166
+          },
+          {
+            "text": "party",
+            "score": 0.03523179143667221
+          },
+          {
+            "text": "walk",
+            "score": 0.02814173325896263
+          },
+          {
+            "text": "research",
+            "score": 0.023205924779176712
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 4,
+      "source": "aslense",
+      "expected": "earthquake",
+      "video": "04_aslense_earthquake_8979439062678256-EARTHQUAKE.mp4",
+      "vanilla": {
+        "predicted": "enjoy",
+        "correct": false,
+        "latency_ms": 14011.250084033236,
+        "window_count": 15,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "enjoy",
+            "score": 0.032861120998859406
+          },
+          {
+            "text": "put",
+            "score": 0.03279677778482437
+          },
+          {
+            "text": "awkward",
+            "score": 0.025325391441583633
+          },
+          {
+            "text": "afternoon",
+            "score": 0.019297348335385323
+          },
+          {
+            "text": "theory",
+            "score": 0.016672316938638687
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "enjoy",
+        "correct": false,
+        "latency_ms": 25021.804500138387,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "enjoy",
+        "proposal_window_count": 15,
+        "top5": [
+          {
+            "text": "enjoy",
+            "score": 0.032861120998859406
+          },
+          {
+            "text": "put",
+            "score": 0.03279677778482437
+          },
+          {
+            "text": "awkward",
+            "score": 0.025325391441583633
+          },
+          {
+            "text": "afternoon",
+            "score": 0.019297348335385323
+          },
+          {
+            "text": "theory",
+            "score": 0.016672316938638687
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 5,
+      "source": "wlasl",
+      "expected": "secretary",
+      "video": "05_wlasl_secretary_50041.mp4",
+      "vanilla": {
+        "predicted": "secretary",
+        "correct": true,
+        "latency_ms": 8403.007500106469,
+        "window_count": 8,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.467094361782074,
+        "top5": [
+          {
+            "text": "secretary",
+            "score": 0.467094361782074
+          },
+          {
+            "text": "university",
+            "score": 0.05603812634944916
+          },
+          {
+            "text": "cook",
+            "score": 0.03373626619577408
+          },
+          {
+            "text": "student",
+            "score": 0.029746904969215393
+          },
+          {
+            "text": "different",
+            "score": 0.02914881892502308
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "secretary",
+        "correct": true,
+        "latency_ms": 18420.115542132407,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.467094361782074,
+        "mode": "agreed",
+        "ollama_choice": "student",
+        "proposal_window_count": 8,
+        "top5": [
+          {
+            "text": "secretary",
+            "score": 0.467094361782074
+          },
+          {
+            "text": "university",
+            "score": 0.05603812634944916
+          },
+          {
+            "text": "cook",
+            "score": 0.03373626619577408
+          },
+          {
+            "text": "student",
+            "score": 0.029746904969215393
+          },
+          {
+            "text": "different",
+            "score": 0.02914881892502308
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 6,
+      "source": "aslense",
+      "expected": "secretary",
+      "video": "06_aslense_secretary_006465165452186117-SECRETARY.mp4",
+      "vanilla": {
+        "predicted": "bother",
+        "correct": false,
+        "latency_ms": 8225.656250026077,
+        "window_count": 8,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "bother",
+            "score": 0.17366965115070343
+          },
+          {
+            "text": "hour",
+            "score": 0.03592141717672348
+          },
+          {
+            "text": "function",
+            "score": 0.03136525675654411
+          },
+          {
+            "text": "yes",
+            "score": 0.028346605598926544
+          },
+          {
+            "text": "psychology",
+            "score": 0.028085434809327126
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "bother",
+        "correct": false,
+        "latency_ms": 27078.56091693975,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "yes",
+        "proposal_window_count": 8,
+        "top5": [
+          {
+            "text": "bother",
+            "score": 0.17366965115070343
+          },
+          {
+            "text": "hour",
+            "score": 0.03592141717672348
+          },
+          {
+            "text": "function",
+            "score": 0.03136525675654411
+          },
+          {
+            "text": "yes",
+            "score": 0.028346605598926544
+          },
+          {
+            "text": "psychology",
+            "score": 0.028085434809327126
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 7,
+      "source": "wlasl",
+      "expected": "cake",
+      "video": "07_wlasl_cake_08618.mp4",
+      "vanilla": {
+        "predicted": "cookie",
+        "correct": false,
+        "latency_ms": 13840.508167166263,
+        "window_count": 1,
+        "rank_of_expected": 2,
+        "score_of_expected": 0.26671919226646423,
+        "top5": [
+          {
+            "text": "cookie",
+            "score": 0.2733263075351715
+          },
+          {
+            "text": "cake",
+            "score": 0.26671919226646423
+          },
+          {
+            "text": "clean",
+            "score": 0.11908326297998428
+          },
+          {
+            "text": "copy",
+            "score": 0.022944249212741852
+          },
+          {
+            "text": "nurse",
+            "score": 0.01470311637967825
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "cookie",
+        "correct": false,
+        "latency_ms": 14728.903208160773,
+        "rank_of_expected": 2,
+        "score_of_expected": 0.26671919226646423,
+        "mode": "agreed",
+        "ollama_choice": "copy",
+        "proposal_window_count": 1,
+        "top5": [
+          {
+            "text": "cookie",
+            "score": 0.2733263075351715
+          },
+          {
+            "text": "cake",
+            "score": 0.26671919226646423
+          },
+          {
+            "text": "clean",
+            "score": 0.11908326297998428
+          },
+          {
+            "text": "copy",
+            "score": 0.022944249212741852
+          },
+          {
+            "text": "nurse",
+            "score": 0.01470311637967825
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 8,
+      "source": "aslense",
+      "expected": "cake",
+      "video": "08_aslense_cake_9127019395391156-CAKE.mp4",
+      "vanilla": {
+        "predicted": "spirit",
+        "correct": false,
+        "latency_ms": 5829.202374909073,
+        "window_count": 2,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "spirit",
+            "score": 0.45821189880371094
+          },
+          {
+            "text": "rich",
+            "score": 0.24294491112232208
+          },
+          {
+            "text": "crash",
+            "score": 0.05029991269111633
+          },
+          {
+            "text": "diamond",
+            "score": 0.03559830039739609
+          },
+          {
+            "text": "jump",
+            "score": 0.029386136680841446
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "spirit",
+        "correct": false,
+        "latency_ms": 13157.189375022426,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "diamond",
+        "proposal_window_count": 2,
+        "top5": [
+          {
+            "text": "spirit",
+            "score": 0.45821189880371094
+          },
+          {
+            "text": "rich",
+            "score": 0.24294491112232208
+          },
+          {
+            "text": "crash",
+            "score": 0.05029991269111633
+          },
+          {
+            "text": "diamond",
+            "score": 0.03559830039739609
+          },
+          {
+            "text": "jump",
+            "score": 0.029386136680841446
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 9,
+      "source": "wlasl",
+      "expected": "punish",
+      "video": "09_wlasl_punish_45369.mp4",
+      "vanilla": {
+        "predicted": "punish",
+        "correct": true,
+        "latency_ms": 5928.671041037887,
+        "window_count": 6,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.890113353729248,
+        "top5": [
+          {
+            "text": "punish",
+            "score": 0.890113353729248
+          },
+          {
+            "text": "attitude",
+            "score": 0.013913669623434544
+          },
+          {
+            "text": "arm",
+            "score": 0.010026972740888596
+          },
+          {
+            "text": "steal",
+            "score": 0.009921375662088394
+          },
+          {
+            "text": "king",
+            "score": 0.004324256908148527
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "punish",
+        "correct": true,
+        "latency_ms": 16670.369874918833,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.890113353729248,
+        "mode": "agreed",
+        "ollama_choice": "arm",
+        "proposal_window_count": 6,
+        "top5": [
+          {
+            "text": "punish",
+            "score": 0.890113353729248
+          },
+          {
+            "text": "attitude",
+            "score": 0.013913669623434544
+          },
+          {
+            "text": "arm",
+            "score": 0.010026972740888596
+          },
+          {
+            "text": "steal",
+            "score": 0.009921375662088394
+          },
+          {
+            "text": "king",
+            "score": 0.004324256908148527
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 10,
+      "source": "aslense",
+      "expected": "punish",
+      "video": "10_aslense_punish_013573733301328161-PUNISH.mp4",
+      "vanilla": {
+        "predicted": "cost",
+        "correct": false,
+        "latency_ms": 6163.8595829717815,
+        "window_count": 6,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "cost",
+            "score": 0.08741071075201035
+          },
+          {
+            "text": "lousy",
+            "score": 0.06366471201181412
+          },
+          {
+            "text": "spirit",
+            "score": 0.04505087062716484
+          },
+          {
+            "text": "price",
+            "score": 0.03847045078873634
+          },
+          {
+            "text": "cancel",
+            "score": 0.03512963652610779
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "price",
+        "correct": false,
+        "latency_ms": 17924.587917048484,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "reranked",
+        "ollama_choice": "price",
+        "proposal_window_count": 6,
+        "top5": [
+          {
+            "text": "price",
+            "score": 0.03847045078873634
+          },
+          {
+            "text": "cost",
+            "score": 0.08741071075201035
+          },
+          {
+            "text": "lousy",
+            "score": 0.06366471201181412
+          },
+          {
+            "text": "spirit",
+            "score": 0.04505087062716484
+          },
+          {
+            "text": "cancel",
+            "score": 0.03512963652610779
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 11,
+      "source": "wlasl",
+      "expected": "wood",
+      "video": "11_wlasl_wood_63724.mp4",
+      "vanilla": {
+        "predicted": "wood",
+        "correct": true,
+        "latency_ms": 7619.8006249032915,
+        "window_count": 7,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.9260002970695496,
+        "top5": [
+          {
+            "text": "wood",
+            "score": 0.9260002970695496
+          },
+          {
+            "text": "enter",
+            "score": 0.004801900591701269
+          },
+          {
+            "text": "soccer",
+            "score": 0.0031620345544070005
+          },
+          {
+            "text": "across",
+            "score": 0.0018087236676365137
+          },
+          {
+            "text": "no",
+            "score": 0.0017334327567368746
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "wood",
+        "correct": true,
+        "latency_ms": 18574.575667036697,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.9260002970695496,
+        "mode": "agreed",
+        "ollama_choice": "no",
+        "proposal_window_count": 7,
+        "top5": [
+          {
+            "text": "wood",
+            "score": 0.9260002970695496
+          },
+          {
+            "text": "enter",
+            "score": 0.004801900591701269
+          },
+          {
+            "text": "soccer",
+            "score": 0.0031620345544070005
+          },
+          {
+            "text": "across",
+            "score": 0.0018087236676365137
+          },
+          {
+            "text": "no",
+            "score": 0.0017334327567368746
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 12,
+      "source": "aslense",
+      "expected": "wood",
+      "video": "12_aslense_wood_3752156246825138-WOOD.mp4",
+      "vanilla": {
+        "predicted": "wood",
+        "correct": true,
+        "latency_ms": 2295.889957807958,
+        "window_count": 2,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.3511699140071869,
+        "top5": [
+          {
+            "text": "wood",
+            "score": 0.3511699140071869
+          },
+          {
+            "text": "enjoy",
+            "score": 0.1511572003364563
+          },
+          {
+            "text": "dress",
+            "score": 0.018812991678714752
+          },
+          {
+            "text": "chocolate",
+            "score": 0.01034505944699049
+          },
+          {
+            "text": "grapes",
+            "score": 0.009807644411921501
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "wood",
+        "correct": true,
+        "latency_ms": 14385.84675011225,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.3511699140071869,
+        "mode": "agreed",
+        "ollama_choice": "dress",
+        "proposal_window_count": 2,
+        "top5": [
+          {
+            "text": "wood",
+            "score": 0.3511699140071869
+          },
+          {
+            "text": "enjoy",
+            "score": 0.1511572003364563
+          },
+          {
+            "text": "dress",
+            "score": 0.018812991678714752
+          },
+          {
+            "text": "chocolate",
+            "score": 0.01034505944699049
+          },
+          {
+            "text": "grapes",
+            "score": 0.009807644411921501
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 13,
+      "source": "wlasl",
+      "expected": "balloon",
+      "video": "13_wlasl_balloon_04870.mp4",
+      "vanilla": {
+        "predicted": "balloon",
+        "correct": true,
+        "latency_ms": 9479.071207810193,
+        "window_count": 8,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.6555885672569275,
+        "top5": [
+          {
+            "text": "balloon",
+            "score": 0.6555885672569275
+          },
+          {
+            "text": "overwhelm",
+            "score": 0.03243409842252731
+          },
+          {
+            "text": "ugly",
+            "score": 0.029092643409967422
+          },
+          {
+            "text": "president",
+            "score": 0.021679647266864777
+          },
+          {
+            "text": "toast",
+            "score": 0.008646763861179352
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "balloon",
+        "correct": true,
+        "latency_ms": 27571.742415893823,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.6555885672569275,
+        "mode": "agreed",
+        "ollama_choice": "ugly",
+        "proposal_window_count": 8,
+        "top5": [
+          {
+            "text": "balloon",
+            "score": 0.6555885672569275
+          },
+          {
+            "text": "overwhelm",
+            "score": 0.03243409842252731
+          },
+          {
+            "text": "ugly",
+            "score": 0.029092643409967422
+          },
+          {
+            "text": "president",
+            "score": 0.021679647266864777
+          },
+          {
+            "text": "toast",
+            "score": 0.008646763861179352
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 14,
+      "source": "aslense",
+      "expected": "balloon",
+      "video": "14_aslense_balloon_3703730152151108-BALLOON.mp4",
+      "vanilla": {
+        "predicted": "clear",
+        "correct": false,
+        "latency_ms": 5131.924417102709,
+        "window_count": 4,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "clear",
+            "score": 0.23577919602394104
+          },
+          {
+            "text": "cloud",
+            "score": 0.1643637865781784
+          },
+          {
+            "text": "rude",
+            "score": 0.04498035088181496
+          },
+          {
+            "text": "feedback",
+            "score": 0.025733528658747673
+          },
+          {
+            "text": "information",
+            "score": 0.019789371639490128
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "clear",
+        "correct": false,
+        "latency_ms": 16008.672541938722,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "feedback",
+        "proposal_window_count": 4,
+        "top5": [
+          {
+            "text": "clear",
+            "score": 0.23577919602394104
+          },
+          {
+            "text": "cloud",
+            "score": 0.1643637865781784
+          },
+          {
+            "text": "rude",
+            "score": 0.04498035088181496
+          },
+          {
+            "text": "feedback",
+            "score": 0.025733528658747673
+          },
+          {
+            "text": "information",
+            "score": 0.019789371639490128
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 15,
+      "source": "wlasl",
+      "expected": "color",
+      "video": "15_wlasl_color_11772.mp4",
+      "vanilla": {
+        "predicted": "secretary",
+        "correct": false,
+        "latency_ms": 2461.3499171100557,
+        "window_count": 2,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "secretary",
+            "score": 0.6657251715660095
+          },
+          {
+            "text": "accident",
+            "score": 0.11471680551767349
+          },
+          {
+            "text": "warm",
+            "score": 0.020696647465229034
+          },
+          {
+            "text": "dissolve",
+            "score": 0.008618013933300972
+          },
+          {
+            "text": "pretty",
+            "score": 0.007057250943034887
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "secretary",
+        "correct": false,
+        "latency_ms": 14059.466582955793,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "warm",
+        "proposal_window_count": 2,
+        "top5": [
+          {
+            "text": "secretary",
+            "score": 0.6657251715660095
+          },
+          {
+            "text": "accident",
+            "score": 0.11471680551767349
+          },
+          {
+            "text": "warm",
+            "score": 0.020696647465229034
+          },
+          {
+            "text": "dissolve",
+            "score": 0.008618013933300972
+          },
+          {
+            "text": "pretty",
+            "score": 0.007057250943034887
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 16,
+      "source": "aslense",
+      "expected": "color",
+      "video": "16_aslense_color_005776634853680518-COLOR.mp4",
+      "vanilla": {
+        "predicted": "study",
+        "correct": false,
+        "latency_ms": 2902.40616700612,
+        "window_count": 3,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "study",
+            "score": 0.33025431632995605
+          },
+          {
+            "text": "feedback",
+            "score": 0.11169514060020447
+          },
+          {
+            "text": "psychology",
+            "score": 0.092473603785038
+          },
+          {
+            "text": "movie",
+            "score": 0.0522102415561676
+          },
+          {
+            "text": "list",
+            "score": 0.022104652598500252
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "study",
+        "correct": false,
+        "latency_ms": 14386.458666995168,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "psychology",
+        "proposal_window_count": 3,
+        "top5": [
+          {
+            "text": "study",
+            "score": 0.33025431632995605
+          },
+          {
+            "text": "feedback",
+            "score": 0.11169514060020447
+          },
+          {
+            "text": "psychology",
+            "score": 0.092473603785038
+          },
+          {
+            "text": "movie",
+            "score": 0.0522102415561676
+          },
+          {
+            "text": "list",
+            "score": 0.022104652598500252
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 17,
+      "source": "wlasl",
+      "expected": "sorry",
+      "video": "17_wlasl_sorry_53367.mp4",
+      "vanilla": {
+        "predicted": "sorry",
+        "correct": true,
+        "latency_ms": 2989.1659589484334,
+        "window_count": 3,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.9226999878883362,
+        "top5": [
+          {
+            "text": "sorry",
+            "score": 0.9226999878883362
+          },
+          {
+            "text": "please",
+            "score": 0.015568857081234455
+          },
+          {
+            "text": "travel",
+            "score": 0.004117544740438461
+          },
+          {
+            "text": "dream",
+            "score": 0.0023025714326649904
+          },
+          {
+            "text": "single",
+            "score": 0.0021485071629285812
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "sorry",
+        "correct": true,
+        "latency_ms": 17744.068667059764,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.9226999878883362,
+        "mode": "agreed",
+        "ollama_choice": "sorry",
+        "proposal_window_count": 3,
+        "top5": [
+          {
+            "text": "sorry",
+            "score": 0.9226999878883362
+          },
+          {
+            "text": "please",
+            "score": 0.015568857081234455
+          },
+          {
+            "text": "travel",
+            "score": 0.004117544740438461
+          },
+          {
+            "text": "dream",
+            "score": 0.0023025714326649904
+          },
+          {
+            "text": "single",
+            "score": 0.0021485071629285812
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 18,
+      "source": "aslense",
+      "expected": "sorry",
+      "video": "18_aslense_sorry_010369524824967558-SORRY.mp4",
+      "vanilla": {
+        "predicted": "enjoy",
+        "correct": false,
+        "latency_ms": 2757.4167500715703,
+        "window_count": 1,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "enjoy",
+            "score": 0.19257813692092896
+          },
+          {
+            "text": "emotion",
+            "score": 0.11695897579193115
+          },
+          {
+            "text": "army",
+            "score": 0.08462890982627869
+          },
+          {
+            "text": "which",
+            "score": 0.04356065392494202
+          },
+          {
+            "text": "bread",
+            "score": 0.023902662098407745
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "enjoy",
+        "correct": false,
+        "latency_ms": 14007.515750126913,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "enjoy",
+        "proposal_window_count": 1,
+        "top5": [
+          {
+            "text": "enjoy",
+            "score": 0.19257813692092896
+          },
+          {
+            "text": "emotion",
+            "score": 0.11695897579193115
+          },
+          {
+            "text": "army",
+            "score": 0.08462890982627869
+          },
+          {
+            "text": "which",
+            "score": 0.04356065392494202
+          },
+          {
+            "text": "bread",
+            "score": 0.023902662098407745
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 19,
+      "source": "wlasl",
+      "expected": "doubt",
+      "video": "19_wlasl_doubt_17400.mp4",
+      "vanilla": {
+        "predicted": "doubt",
+        "correct": true,
+        "latency_ms": 4995.3218752052635,
+        "window_count": 5,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.9187461733818054,
+        "top5": [
+          {
+            "text": "doubt",
+            "score": 0.9187461733818054
+          },
+          {
+            "text": "cat",
+            "score": 0.025196144357323647
+          },
+          {
+            "text": "blind",
+            "score": 0.015579275786876678
+          },
+          {
+            "text": "flower",
+            "score": 0.0038161936681717634
+          },
+          {
+            "text": "delicious",
+            "score": 0.0029857822228223085
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "doubt",
+        "correct": true,
+        "latency_ms": 20349.78675004095,
+        "rank_of_expected": 1,
+        "score_of_expected": 0.9187461733818054,
+        "mode": "agreed",
+        "ollama_choice": "doubt",
+        "proposal_window_count": 5,
+        "top5": [
+          {
+            "text": "doubt",
+            "score": 0.9187461733818054
+          },
+          {
+            "text": "cat",
+            "score": 0.025196144357323647
+          },
+          {
+            "text": "blind",
+            "score": 0.015579275786876678
+          },
+          {
+            "text": "flower",
+            "score": 0.0038161936681717634
+          },
+          {
+            "text": "delicious",
+            "score": 0.0029857822228223085
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 20,
+      "source": "aslense",
+      "expected": "doubt",
+      "video": "20_aslense_doubt_7216694804458137-DOUBT.mp4",
+      "vanilla": {
+        "predicted": "hot",
+        "correct": false,
+        "latency_ms": 2302.1130829583853,
+        "window_count": 1,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "top5": [
+          {
+            "text": "hot",
+            "score": 0.7517988085746765
+          },
+          {
+            "text": "perfect",
+            "score": 0.08099504560232162
+          },
+          {
+            "text": "sit",
+            "score": 0.015514696948230267
+          },
+          {
+            "text": "warm",
+            "score": 0.008692151866853237
+          },
+          {
+            "text": "chicken",
+            "score": 0.0064705973491072655
+          }
+        ]
+      },
+      "hybrid": {
+        "predicted": "hot",
+        "correct": false,
+        "latency_ms": 14097.789499908686,
+        "rank_of_expected": null,
+        "score_of_expected": null,
+        "mode": "agreed",
+        "ollama_choice": "warm",
+        "proposal_window_count": 1,
+        "top5": [
+          {
+            "text": "hot",
+            "score": 0.7517988085746765
+          },
+          {
+            "text": "perfect",
+            "score": 0.08099504560232162
+          },
+          {
+            "text": "sit",
+            "score": 0.015514696948230267
+          },
+          {
+            "text": "warm",
+            "score": 0.008692151866853237
+          },
+          {
+            "text": "chicken",
+            "score": 0.0064705973491072655
+          }
+        ]
+      }
+    }
+  ]
+}

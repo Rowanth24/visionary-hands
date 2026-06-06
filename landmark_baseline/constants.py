@@ -1,0 +1,45 @@
+"""Shared constants for WLASL landmark extraction and preprocessing."""
+
+from __future__ import annotations
+
+import numpy as np
+
+ROWS_PER_FRAME = 543
+LANDMARK_DIMS = 3
+TARGET_FRAME_COUNT = 64
+LANDMARK_LAYOUT_NAME = 'mediapipe_holistic_543_face_left_pose_right'
+
+FACE_SLICE = slice(0, 468)
+LEFT_HAND_SLICE = slice(468, 489)
+POSE_SLICE = slice(489, 522)
+RIGHT_HAND_SLICE = slice(522, 543)
+
+LIPS_IDXS0 = np.array(
+    [
+        61, 185, 40, 39, 37, 0, 267, 269, 270, 409,
+        291, 146, 91, 181, 84, 17, 314, 405, 321, 375,
+        78, 191, 80, 81, 82, 13, 312, 311, 310, 415,
+        95, 88, 178, 87, 14, 317, 402, 318, 324, 308,
+    ],
+    dtype=np.int32,
+)
+LEFT_HAND_IDXS0 = np.arange(LEFT_HAND_SLICE.start, LEFT_HAND_SLICE.stop, dtype=np.int32)
+RIGHT_HAND_IDXS0 = np.arange(RIGHT_HAND_SLICE.start, RIGHT_HAND_SLICE.stop, dtype=np.int32)
+LEFT_POSE_IDXS0 = np.array([502, 504, 506, 508, 510], dtype=np.int32)
+RIGHT_POSE_IDXS0 = np.array([503, 505, 507, 509, 511], dtype=np.int32)
+
+LANDMARK_IDXS_LEFT_DOMINANT0 = np.concatenate((LIPS_IDXS0, LEFT_HAND_IDXS0, LEFT_POSE_IDXS0))
+LANDMARK_IDXS_RIGHT_DOMINANT0 = np.concatenate((LIPS_IDXS0, RIGHT_HAND_IDXS0, RIGHT_POSE_IDXS0))
+LANDMARK_IDXS_LEFT_DOMINANT_BOTH0 = np.concatenate(
+    (LIPS_IDXS0, LEFT_HAND_IDXS0, LEFT_POSE_IDXS0, RIGHT_HAND_IDXS0, RIGHT_POSE_IDXS0)
+)
+LANDMARK_IDXS_RIGHT_DOMINANT_BOTH0 = np.concatenate(
+    (LIPS_IDXS0, RIGHT_HAND_IDXS0, RIGHT_POSE_IDXS0, LEFT_HAND_IDXS0, LEFT_POSE_IDXS0)
+)
+
+LIPS_COUNT = int(LIPS_IDXS0.size)
+HAND_COUNT = int(LEFT_HAND_IDXS0.size)
+POSE_COUNT = int(LEFT_POSE_IDXS0.size)
+PROCESSED_LANDMARK_COUNT = int(LANDMARK_IDXS_LEFT_DOMINANT0.size)
+PROCESSED_LANDMARK_COUNT_BOTH = int(LANDMARK_IDXS_LEFT_DOMINANT_BOTH0.size)
+NON_LIP_X_OFFSET = LIPS_COUNT

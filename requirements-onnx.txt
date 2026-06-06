@@ -1,0 +1,9 @@
+# Live ONNX inference env (role of the old EPICS_Project/.venv-onnx). Python 3.11.
+# Separate from requirements-landmarks.txt because onnxruntime and MediaPipe
+# disagree on protobuf. If you must extract landmarks AND run ONNX in one process,
+# resolve the protobuf pin here first (known friction point — see docs/landmark_progress.md).
+# Versions unpinned; pin from the working venv at env-setup.
+onnxruntime
+opencv-python
+numpy
+mediapipe
