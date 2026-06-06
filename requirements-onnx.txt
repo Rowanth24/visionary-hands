@@ -1,9 +1,13 @@
 # Live ONNX inference env (role of the old EPICS_Project/.venv-onnx). Python 3.11.
-# Separate from requirements-landmarks.txt because onnxruntime and MediaPipe
-# disagree on protobuf. If you must extract landmarks AND run ONNX in one process,
-# resolve the protobuf pin here first (known friction point — see docs/landmark_progress.md).
-# Versions unpinned; pin from the working venv at env-setup.
+# This is the single-process live path: it extracts landmarks (MediaPipe) AND
+# runs ONNX inference in one process. Verified at G0 — mediapipe 0.10.9 and
+# onnxruntime 1.26 coexist here (protobuf settles at 3.20.3); the older
+# "they can't share a venv" friction did not bite for this combo.
+# mediapipe is PINNED to 0.10.9: it still ships the legacy `mp.solutions.holistic`
+# API that landmark_baseline/extraction.py uses; >=0.10.15 removed it.
+# torch is required transitively (landmark_baseline/features.py imports it).
 onnxruntime
 opencv-python
 numpy
-mediapipe
+mediapipe==0.10.9
+torch
