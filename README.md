@@ -109,6 +109,12 @@ is for. G0 only asks that it *runs*.
   `tests/test_preprocessing_standard.py` asserts train/serve features are
   byte-identical; legacy `eval/landmark_utils.py` + `benchmark_landmark_closed_set.py`
   marked DEPRECATED. See `docs/preprocessing_standard.md`.
+- ✅ **G-D (audit)** — cross-source code reviewed: `prepare_cross_source_finetune_data.py`
+  (WLASL+ASLense via HuggingFace/urllib, leakage-aware) + `train_vanilla_cross_source.py`
+  (L2-SP anchored head fine-tune, frozen I3D, source-aware eval) are a reusable
+  foundation. Gaps to fix before G2/G4: layout-skewed default paths, signer-disjoint
+  splitting (not implemented), landmark-side adaptation (doesn't exist yet). Full
+  findings: `docs/g_d_cross_source_audit.md`.
 - ⬜ **G1** (next) — grow the benchmark to ≥150–200 clips, ≥3 sources incl. phone,
   with per-source numbers + CIs. Scaffolding ready (`eval/benchmark_g1.py`,
   `eval/build_g1_manifest.py`, `docs/g1_benchmark_and_recording.md`). Needs your
