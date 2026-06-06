@@ -3,12 +3,17 @@
 # github.com/sumedhsp/Sign-Language-Recognition, trimmed to runtime-only
 # (jupyter/jupyterhub dropped) and extended with packages the harness imports
 # (mediapipe via landmark_utils, matplotlib for plots).
-# Versions are intentionally unpinned here; pin from the working venv at env-setup.
+# Versions are intentionally unpinned here EXCEPT mediapipe; pin from the working
+# venv at env-setup.
+# mediapipe is PINNED to 0.10.9 so the harness's landmark backend (LandmarkBackend
+# -> landmark_baseline/extraction.py) can use the legacy mp.solutions.holistic API;
+# >=0.10.15 removed it. The I3D path itself does not use mediapipe unless
+# --frame-normalization mediapipe is requested.
 torch
 torchvision
 opencv-python
 numpy
 scikit-learn
 matplotlib
-mediapipe
+mediapipe==0.10.9
 Pillow

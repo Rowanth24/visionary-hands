@@ -341,6 +341,64 @@ class VanillaASLBackend(BaseASLBackend):
         return f"{self.name}:{self.device.type}:{self.frame_normalization}{suffix}"
 
 
+class LandmarkBackend(BaseASLBackend):
+    """EPICS dual-hand landmark transformer (TorchScript), as a harness backend.
+
+    frames (cv2 BGR) -> MediaPipe Holistic -> dual-hand canonical features
+    -> TorchScript model -> BackendResult. This is the strong model the prior
+    invalid "landmark loses (0.45)" comparison never actually ran (that used the
+    weaker HolisticSequenceEncoder in landmark_utils.py). Closed-set by nature:
+    its vocabulary is exactly the labels it was trained on.
+    """
+
+    name = "landmark"
+    supports_window_voting = False
+
+    def __init__(self, model_path, labels_path, device_name, target_frames=64, xy_only=True,
+                 append_deltas=None, layout=None, config_path=None):
+        from landmark_baseline.extraction import extract_landmarks_from_frames
+        from landmark_baseline.features import load_runtime_config
+        from landmark_baseline.inference import (
+            load_torchscript_model,
+            load_labels as load_landmark_labels,
+            predict_from_landmarks,
+            resolve_device,
+        )
+
+        self._extract = extract_landmarks_from_frames
+        self._predict = predict_from_landmarks
+        self.device = resolve_device(device_name)
+        self.model = load_torchscript_model(Path(model_path), self.device)
+        self.labels = load_landmark_labels(Path(labels_path))
+
+        cfg_path = Path(config_path) if config_path else (Path(model_path).parent / "config.json")
+        cfg = load_runtime_config(cfg_path) if cfg_path.exists() else {}
+        self.target_frames = target_frames
+        self.xy_only = xy_only
+        self.append_deltas = bool(cfg.get("append_deltas", False)) if append_deltas is None else append_deltas
+        self.layout = str(cfg.get("layout", "dominant_hand")) if layout is None else layout
+
+    def infer_clip(self, frames, top_k):
+        landmarks = self._extract(frames, frame_stride=1, frames_are_bgr=True)
+        result = self._predict(
+            model=self.model,
+            labels=self.labels,
+            landmarks=landmarks,
+            device=self.device,
+            target_frames=self.target_frames,
+            xy_only=self.xy_only,
+            append_deltas=self.append_deltas,
+            layout=self.layout,
+            topk=max(1, top_k),
+        )
+        candidates = [Candidate(text=row["label"], score=float(row["confidence"])) for row in result.topk]
+        raw = result.to_dict() if hasattr(result, "to_dict") else None
+        return BackendResult(text=candidates[0].text, candidates=candidates, raw={"landmark_prediction": raw})
+
+    def describe(self):
+        return f"{self.name}:{self.device.type}:{len(self.labels)}cls"
+
+
 def make_windows(frames, clip_length, stride):
     if len(frames) < clip_length:
         return [frames + [frames[-1]] * (clip_length - len(frames))]
@@ -1000,9 +1058,21 @@ def add_backend_args(parser):
         checkpoint_help += " Required for --backend vanilla."
     parser.add_argument(
         "--backend",
-        choices=("vanilla", "ollama", "ollama_hybrid"),
+        choices=("vanilla", "ollama", "ollama_hybrid", "landmark"),
         default="vanilla",
         help="Inference backend to use.",
+    )
+    parser.add_argument(
+        "--landmark-model",
+        help="Path to the TorchScript landmark model (.ts) for --backend landmark.",
+    )
+    parser.add_argument(
+        "--landmark-labels",
+        help="Path to the landmark labels.json for --backend landmark.",
+    )
+    parser.add_argument(
+        "--landmark-config",
+        help="Optional landmark config.json (layout/append_deltas). Defaults to the model's sibling config.json.",
     )
     parser.add_argument(
         "--checkpoint",
@@ -1133,6 +1203,16 @@ def create_backend_from_args(args):
             mediapipe_sample_count=args.mediapipe_sample_count,
             candidate_labels=args.candidate_labels,
             candidate_labels_file=args.candidate_labels_file,
+        )
+
+    if args.backend == "landmark":
+        if not args.landmark_model or not args.landmark_labels:
+            raise ValueError("--landmark-model and --landmark-labels are required when --backend landmark.")
+        return LandmarkBackend(
+            model_path=args.landmark_model,
+            labels_path=args.landmark_labels,
+            device_name=args.device,
+            config_path=args.landmark_config,
         )
 
     ollama_backend = OllamaASLBackend(

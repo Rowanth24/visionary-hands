@@ -133,6 +133,8 @@ def main():
     elif args.backend == "ollama_hybrid":
         print(f"Ollama model: {args.ollama_model}")
         print(f"Proposal checkpoint: {args.ollama_proposal_checkpoint}")
+    elif args.backend == "landmark":
+        print(f"Landmark model: {args.landmark_model}")
     else:
         print(f"Ollama model: {args.ollama_model}")
 
@@ -157,7 +159,8 @@ def main():
             result = backend.infer_clip(frames, args.top_k)
             candidates = [(candidate.text, candidate.score) for candidate in result.candidates]
             predicted_text = result.text
-            print(f"sampled_frames={min(len(frames), args.ollama_sample_count)}")
+            if args.backend != "landmark":
+                print(f"sampled_frames={min(len(frames), args.ollama_sample_count)}")
 
         expected_idx = expected_labels.get(video_path.stem)
         if expected_idx is not None and expected_idx < len(label_lookup):

@@ -1,0 +1,371 @@
+{
+  "gate": "G-B",
+  "purpose": "Plumbing/methodology experiment \u2014 one harness judges both models. NOT decision-grade (small n; see Gate G1).",
+  "config": {
+    "test_dir": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test",
+    "vanilla_checkpoint": "oracle/checkpoints/best_model_original_backup.pth",
+    "landmark_model": "models/landmark/checkpoints/model.ts",
+    "device": "auto",
+    "clip_length": 64,
+    "stride": 8,
+    "top_k": 5
+  },
+  "vanilla_describe": "vanilla:mps:none",
+  "landmark_describe": "landmark:mps:5cls",
+  "summary": {
+    "n_clips": 12,
+    "shared_vocab": [
+      "bowling",
+      "computer",
+      "deaf",
+      "drink",
+      "yes"
+    ],
+    "top1_accuracy": {
+      "vanilla_open": 0.3333333333333333,
+      "vanilla_closed": 1.0,
+      "landmark": 0.5833333333333334
+    },
+    "mean_latency_ms": {
+      "vanilla": 1125.8704269994269,
+      "landmark": 1774.6247465838678
+    },
+    "per_word_accuracy": {
+      "vanilla_open": {
+        "bowling": {
+          "n": 2,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "computer": {
+          "n": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "deaf": {
+          "n": 3,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "drink": {
+          "n": 2,
+          "correct": 1,
+          "accuracy": 0.5
+        },
+        "yes": {
+          "n": 3,
+          "correct": 1,
+          "accuracy": 0.3333333333333333
+        }
+      },
+      "vanilla_closed": {
+        "bowling": {
+          "n": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "computer": {
+          "n": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "deaf": {
+          "n": 3,
+          "correct": 3,
+          "accuracy": 1.0
+        },
+        "drink": {
+          "n": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "yes": {
+          "n": 3,
+          "correct": 3,
+          "accuracy": 1.0
+        }
+      },
+      "landmark": {
+        "bowling": {
+          "n": 2,
+          "correct": 1,
+          "accuracy": 0.5
+        },
+        "computer": {
+          "n": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "deaf": {
+          "n": 3,
+          "correct": 1,
+          "accuracy": 0.3333333333333333
+        },
+        "drink": {
+          "n": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "yes": {
+          "n": 3,
+          "correct": 1,
+          "accuracy": 0.3333333333333333
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "index": 0,
+      "expected": "bowling",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/bowling/07383.mp4",
+      "vanilla_open": {
+        "top1": "tease",
+        "correct": false,
+        "latency_ms": 529.2242079995049,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "bowling",
+        "correct": true,
+        "confidence": 0.8183448910713196,
+        "latency_ms": 2638.3227500009525
+      }
+    },
+    {
+      "index": 1,
+      "expected": "bowling",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/bowling/07400.mp4",
+      "vanilla_open": {
+        "top1": "travel",
+        "correct": false,
+        "latency_ms": 536.5297079988522,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.8696402311325073,
+        "latency_ms": 965.4518339993956
+      }
+    },
+    {
+      "index": 2,
+      "expected": "computer",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/computer/12306.mp4",
+      "vanilla_open": {
+        "top1": "computer",
+        "correct": true,
+        "latency_ms": 514.4714579982974,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": true,
+        "confidence": 0.905527651309967,
+        "latency_ms": 1656.6283749998547
+      }
+    },
+    {
+      "index": 3,
+      "expected": "computer",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/computer/12320.mp4",
+      "vanilla_open": {
+        "top1": "computer",
+        "correct": true,
+        "latency_ms": 3070.9858750014973,
+        "windows": 6
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": true,
+        "confidence": 0.9357385635375977,
+        "latency_ms": 2764.4982499987236
+      }
+    },
+    {
+      "index": 4,
+      "expected": "deaf",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/deaf/14855.mp4",
+      "vanilla_open": {
+        "top1": "first",
+        "correct": false,
+        "latency_ms": 558.616999998776,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": false,
+        "confidence": 0.4830668270587921,
+        "latency_ms": 1243.5403750023397
+      }
+    },
+    {
+      "index": 5,
+      "expected": "deaf",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/deaf/14883.mp4",
+      "vanilla_open": {
+        "top1": "meet",
+        "correct": false,
+        "latency_ms": 539.0935830000672,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "deaf",
+        "correct": true,
+        "confidence": 0.37325140833854675,
+        "latency_ms": 781.4270410017343
+      }
+    },
+    {
+      "index": 6,
+      "expected": "deaf",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/deaf/14888.mp4",
+      "vanilla_open": {
+        "top1": "invest",
+        "correct": false,
+        "latency_ms": 1026.0643330002495,
+        "windows": 2
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": false,
+        "confidence": 0.3490973711013794,
+        "latency_ms": 1947.543834001408
+      }
+    },
+    {
+      "index": 7,
+      "expected": "drink",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/drink/17713.mp4",
+      "vanilla_open": {
+        "top1": "christmas",
+        "correct": false,
+        "latency_ms": 2566.1174999986542,
+        "windows": 5
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": true,
+        "confidence": 0.4548237919807434,
+        "latency_ms": 2431.6615000025195
+      }
+    },
+    {
+      "index": 8,
+      "expected": "drink",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/drink/17730.mp4",
+      "vanilla_open": {
+        "top1": "drink",
+        "correct": true,
+        "latency_ms": 2064.789041996846,
+        "windows": 4
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": true,
+        "confidence": 0.5226578712463379,
+        "latency_ms": 2275.9621669974877
+      }
+    },
+    {
+      "index": 9,
+      "expected": "yes",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/yes/64275.mp4",
+      "vanilla_open": {
+        "top1": "yes",
+        "correct": true,
+        "latency_ms": 1037.71845799929,
+        "windows": 2
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "yes",
+        "correct": true,
+        "confidence": 0.3737076222896576,
+        "latency_ms": 1854.1926670004614
+      }
+    },
+    {
+      "index": 10,
+      "expected": "yes",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/yes/64293.mp4",
+      "vanilla_open": {
+        "top1": "must",
+        "correct": false,
+        "latency_ms": 528.5656250016473,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": false,
+        "confidence": 0.36245986819267273,
+        "latency_ms": 1439.7207080000953
+      }
+    },
+    {
+      "index": 11,
+      "expected": "yes",
+      "clip": "/Users/rowanthselvakumaran/EPICS_Project/data/wlasl_distinct_8_full/test/yes/64297.mp4",
+      "vanilla_open": {
+        "top1": "need",
+        "correct": false,
+        "latency_ms": 538.2683339994401,
+        "windows": 1
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": true
+      },
+      "landmark": {
+        "top1": "bowling",
+        "correct": false,
+        "confidence": 0.36234819889068604,
+        "latency_ms": 1296.5474580014416
+      }
+    }
+  ]
+}

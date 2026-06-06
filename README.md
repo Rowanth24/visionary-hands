@@ -94,8 +94,17 @@ is for. G0 only asks that it *runs*.
 - ✅ **G0 gate** — both run, one command each. I3D → `secretary 0.467` (in-vocab,
   correct); landmark ONNX runs end-to-end (MediaPipe extraction → ONNX). Verified
   on `.venv-oracle` + `.venv-onnx`, Python 3.11.9.
-- ⬜ **G-B** (next) — run the EPICS dual-hand landmark transformer through *this*
-  harness head-to-head vs the I3D. The prior "landmark loses (0.45)" used a
-  weaker encoder; that verdict is invalid until redone here.
+- ✅ **G-B** — EPICS dual-hand landmark transformer vs vanilla I3D through *one*
+  harness (new `LandmarkBackend` in `eval/asl_backends.py`; runner
+  `eval/benchmark_landmark_vs_vanilla.py`). On n=12 held-out WLASL (5 shared
+  words): I3D closed-set **1.00**, landmark **0.58** (= its training acc), I3D
+  open-set 0.33. The invalid "landmark loses (0.45)" verdict (weaker
+  `HolisticSequenceEncoder`) is **retired**. ⚠️ n=12 is *not* decision-grade
+  (plan Gate G1) and this is in-distribution WLASL — the landmark model's claimed
+  cross-source/phone edge is untested here. Real verdict: G1/G3 on the grown
+  benchmark. Results: `eval/benchmark/gB_landmark_vs_vanilla.json`.
+- ⬜ **G-C** (next) — lock ONE preprocessing module for train+serve
+  (`landmark_baseline/preprocess.py`, dual-hand handedness-canonical); retire/adapt
+  `eval/landmark_utils.normalize_landmark_points` to kill train/serve skew.
 
 See the program plan in `docs/` for the full phased, evidence-gated roadmap.
