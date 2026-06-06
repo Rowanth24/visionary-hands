@@ -9,6 +9,17 @@ the layout-skewed default paths and decide on dataset downloads; for G2 add
 signer-disjoint splitting (not implemented); for the landmark model a parallel
 adaptation path still has to be written (these scripts are vanilla/I3D-only).
 
+> **Update (post-audit):** two of these gaps are now closed.
+> - ✅ **Layout-skewed default paths fixed** in `prepare_cross_source_finetune_data.py`,
+>   `asl_backends.py`, and `benchmark_landmark_closed_set.py` (all now resolve
+>   `benchmark/` and `preprocess/` under `eval/`).
+> - ✅ **Signer-disjoint splitting implemented** — `--signer-disjoint` +
+>   `--wlasl-annotations` join canonical WLASL v0.3 `signer_id` (119 signers) by
+>   `video_id`; signers are globally partitioned so none crosses train/val (invariant
+>   verified in `tests/test_signer_disjoint.py`). ASLense has no signer metadata, so it
+>   remains clip-disjoint only (printed at runtime + recorded in `summary.json`).
+> Still open: HF download go/no-go, and a landmark-side cross-source adaptation path.
+
 ---
 
 ## 1. `prepare_cross_source_finetune_data.py` (341 lines)

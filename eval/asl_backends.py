@@ -51,7 +51,7 @@ OLLAMA_RESPONSE_SCHEMA = {
 }
 
 DEFAULT_VANILLA_CHECKPOINT = Path.home() / "Downloads" / "best_model.pth"
-MEDIAPIPE_HOLISTIC_MODEL_PATH = Path(__file__).resolve().parents[1] / "benchmark" / "models" / "mediapipe" / "holistic_landmarker.task"
+MEDIAPIPE_HOLISTIC_MODEL_PATH = Path(__file__).resolve().parent / "benchmark" / "models" / "mediapipe" / "holistic_landmarker.task"
 MEDIAPIPE_HOLISTIC_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/holistic_landmarker/holistic_landmarker/float16/1/holistic_landmarker.task"
 
 

@@ -26,8 +26,7 @@ WLASL_BASE_URL = "https://huggingface.co/datasets/Voxel51/WLASL/resolve/main/"
 
 
 def build_parser():
-    workspace_root = Path(__file__).resolve().parents[2]
-    repo_root = Path(__file__).resolve().parents[1]
+    code_dir = Path(__file__).resolve().parent  # eval/ — benchmark/ and preprocess/ live here post-merge
     parser = argparse.ArgumentParser(
         description="Benchmark landmark-only and landmark-fused closed-set inference on a held-out manifest."
     )
@@ -35,7 +34,7 @@ def build_parser():
     parser.add_argument("--video-dir", required=True, help="Directory containing the query videos.")
     parser.add_argument(
         "--wlasl-metadata",
-        default=str(workspace_root / "wlasl_samples.json"),
+        default=str(code_dir / "benchmark" / "wlasl_samples.json"),
         help="Local WLASL metadata JSON used to build support sets.",
     )
     parser.add_argument(
@@ -45,7 +44,7 @@ def build_parser():
     )
     parser.add_argument(
         "--labels-file",
-        default=str(repo_root / "code" / "preprocess" / "wlasl_class_list.txt"),
+        default=str(code_dir / "preprocess" / "wlasl_class_list.txt"),
         help="Path to the WLASL class label file.",
     )
     parser.add_argument(
@@ -86,7 +85,7 @@ def build_parser():
     )
     parser.add_argument(
         "--work-dir",
-        default=str(repo_root / "benchmark" / "landmark_closed_set"),
+        default=str(code_dir / "benchmark" / "landmark_closed_set"),
         help="Directory for support videos and cached landmarks.",
     )
     parser.add_argument(
