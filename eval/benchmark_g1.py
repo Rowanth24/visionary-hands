@@ -48,6 +48,12 @@ from infer_videos import read_video_frames
 MIN_DECISION_GRADE_CLIPS = 150
 
 
+def topk_from_probs(probs, labels, k):
+    """Top-k [{label, score}] from a probability vector over `labels`."""
+    vals, idxs = torch.topk(probs, min(k, probs.numel()))
+    return [{"label": labels[int(i)], "score": float(v)} for v, i in zip(vals.tolist(), idxs.tolist())]
+
+
 def build_parser():
     code_dir = Path(__file__).resolve().parent
     p = argparse.ArgumentParser(description="Gate G1: per-source landmark vs vanilla benchmark with CIs.")
@@ -141,12 +147,22 @@ def main():
         t0 = time.perf_counter()
         probs_mean, windows = vanilla_mean_probs(vanilla, frames, args.clip_length, args.stride, args.top_k)
         v_ms = (time.perf_counter() - t0) * 1000.0
-        open_top1 = vanilla.labels[int(torch.argmax(probs_mean))]
-        closed_top1 = closed_labels[int(torch.argmax(probs_mean[closed_index_tensor]))] if closed_labels else None
+        open_topk = topk_from_probs(probs_mean, vanilla.labels, args.top_k)
+        open_top1 = open_topk[0]["label"]
+        if closed_labels:
+            closed_probs = probs_mean[closed_index_tensor]
+            total = float(closed_probs.sum())
+            if total > 0:
+                closed_probs = closed_probs / total
+            closed_topk = topk_from_probs(closed_probs, closed_labels, args.top_k)
+            closed_top1 = closed_topk[0]["label"]
+        else:
+            closed_topk, closed_top1 = [], None
 
         t0 = time.perf_counter()
         lm = landmark.infer_clip(frames, args.top_k)
         l_ms = (time.perf_counter() - t0) * 1000.0
+        landmark_topk = [{"label": c.text, "score": c.score} for c in lm.candidates]
 
         records.append({
             "sample_index": s.get("sample_index"),
@@ -156,11 +172,12 @@ def main():
             "variant_id": s.get("variant_id"),
             "clip": s["local_video"],
             "vanilla_open": {"top1": open_top1, "correct": normalize_prediction_text(open_top1) == expected_norm,
-                             "latency_ms": v_ms, "windows": windows},
+                             "latency_ms": v_ms, "windows": windows, "topk": open_topk},
             "vanilla_closed": {"top1": closed_top1,
-                               "correct": closed_top1 is not None and normalize_prediction_text(closed_top1) == expected_norm},
+                               "correct": closed_top1 is not None and normalize_prediction_text(closed_top1) == expected_norm,
+                               "topk": closed_topk},
             "landmark": {"top1": lm.text, "correct": normalize_prediction_text(lm.text) == expected_norm,
-                         "confidence": lm.candidates[0].score, "latency_ms": l_ms},
+                         "confidence": lm.candidates[0].score, "latency_ms": l_ms, "topk": landmark_topk},
         })
         print(f"{s.get('sample_index'):>3} [{s.get('source','?'):<6}] {expected:<10} "
               f"open={open_top1:<14} closed={str(closed_top1):<10} landmark={lm.text:<10}({lm.candidates[0].score:.2f})",

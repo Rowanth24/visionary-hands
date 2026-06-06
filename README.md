@@ -110,7 +110,12 @@ is for. G0 only asks that it *runs*.
   byte-identical; legacy `eval/landmark_utils.py` + `benchmark_landmark_closed_set.py`
   marked DEPRECATED. See `docs/preprocessing_standard.md`.
 - ⬜ **G1** (next) — grow the benchmark to ≥150–200 clips, ≥3 sources incl. phone,
-  with per-source numbers + CIs. Needs your phone-camera eval clips. First
-  decision-grade comparison happens here.
+  with per-source numbers + CIs. Scaffolding ready (`eval/benchmark_g1.py`,
+  `eval/build_g1_manifest.py`, `docs/g1_benchmark_and_recording.md`). Needs your
+  phone-camera eval clips. First decision-grade comparison happens here.
+- 🔁 **Abstention** (cross-cutting, shipping precondition) — `eval/abstention.py`
+  (confidence + margin), calibration tool, selective metrics (coverage / selective
+  accuracy / confident-wrong rate). Mechanism + tests done; calibrate on G1 data,
+  then wire into live inference (Phase 5). See `docs/abstention.md`.
 
 See the program plan in `docs/` for the full phased, evidence-gated roadmap.
