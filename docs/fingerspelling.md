@@ -57,6 +57,23 @@ Accepts plain letter dirs (`A/`) and `<LETTER>-samples/` dirs. J and Z are exclu
 abstention targets (n, m, s, p, q, v, u, t). (Eval JSON: `data/fingerspelling/eval_on_C.json`,
 gitignored.)
 
+## F2 results — abstention calibration (held-out C)
+
+- **A single global confidence threshold fails:** confident-wrong ≤ 2% requires τ≈1.0 →
+  ~0 coverage. The model is *confidently* wrong on the folded cluster (n→m), so confidence
+  alone can't separate errors. (τ=0.90 → coverage 0.83, confident-wrong 0.073.)
+- **Per-letter precision calibration (target 0.95) salvages 18/24 letters:** a,c,d,f,g,h,s,t,
+  v,x,y need no gate; b,e,k,o,p,q,w need a higher threshold.
+- **6 letters can't reach precision at any confidence → always-abstain on this data:
+  i, l, m, n, r, u** (the confusion sinks). Escape hatches triggered for these: F4 real-data
+  and/or targeted hybrid (image detail for the folded cluster only).
+- **Caveat:** held-out n is tiny (predicted-`n` = 4; ~20–30/letter), so the always-abstain set
+  is partly small-n artifact. Robust signal = n→m (24×). Final set firms up at F4.
+
+**F2 GATE: PASS-WITH-CAVEAT → F3.** Per-letter thresholds in `models/fingerspelling/
+checkpoints/abstention.json` (gitignored). Recognizer abstains on the 6 unreliable letters
+until the F4 real-data gate / targeted hybrid resolves them.
+
 ## Medical-trust gate (carried)
 
 Cross-dataset eval (train A+B, test C) is the **overfit alarm**, not the green light. Before any
