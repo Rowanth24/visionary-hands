@@ -29,5 +29,9 @@ data/
 **/videos/
 **/videos_v2/
 
+# Fingerspelling: downloaded image datasets + extracted features + weights (regenerable)
+data/fingerspelling/
+models/fingerspelling/checkpoints/
+
 # Keep the small benchmark manifests + result JSONs (they ARE the eval record)
 !eval/benchmark/**/*.json
