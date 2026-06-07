@@ -34,15 +34,23 @@ closed-vocab medical communication system — when a word isn't in the closed vo
 
 ```
 camera frame
-  → MediaPipe Holistic (existing extraction)         # 21 hand landmarks/hand
-  → preprocess_landmark_sequence(1 frame,            # REUSE the G-C standard:
-       layout="dominant_hand", xyz)                  # dominant-hand, handedness-canonical, normalized
-  → feature vector (xyz)                             # depth INCLUDED (debate mod #1)
+  → MediaPipe Holistic (existing extract_landmarks_from_frames)   # 21 hand landmarks/hand
+  → handshape_features(landmarks)                    # NEW small shared fn: dominant 21 hand pts,
+                                                     #   wrist-centered, scale-normalized,
+                                                     #   handedness-canonical mirror, xyz (mod #1)
+  → feature vector (63-D: 21 x xyz)
   → small MLP  →  softmax over 24 letters
   → serve-time hold-window majority vote             # temporal stability w/o temporal training
   → AbstentionPolicy (per-letter / per-cluster thresholds)   # REUSE eval/abstention.py (mod #3)
   → letter OR "not confident, repeat"
 ```
+
+**Feature note:** the word model's `preprocess_landmark_sequence` (dominant_hand layout =
+40 lip + 21 hand + 5 pose points, no wrist-centred scaling) is *not* reused here — static
+handshape needs hand-centric translation/scale invariance the word layout lacks. Instead a
+small `handshape_features()` function provides it, reusing `extract_landmarks_from_frames`
+and the hand-slice constants. Per the G-C principle it is **one function used identically at
+train and serve** (no skew) — just task-appropriate for fingerspelling.
 
 **Why landmark MLP (not CNN):** appearance-invariant (mitigates the public-data overfit
 risk the user flagged), tiny/fast on Jetson, and reuses the entire landmark + abstention +
@@ -68,13 +76,20 @@ the overfit risk and breaks the project's landmark-first philosophy.
 Static handshape on ~21 landmarks (≈63 features xyz) needs only **hundreds–low-thousands of
 clean frames/letter** for 24 well-separated classes — public data far exceeds this.
 
-- **Sign Language MNIST** — 24 classes, **letter-only, J & Z already excluded** (≈1k/letter).
-  Near-perfect match; primary starter set.
-- **Kaggle "ASL Alphabet"** (Akash) — ≈3k images/letter; second source.
-- **A third public set** (Massey / ASL-FS / similar) held out **for cross-dataset eval**.
+**Datasets must be MediaPipe-extractable** — decent-resolution RGB with the hand visible.
+(Sign Language MNIST is **excluded**: 28×28 cropped grayscale, too low-res for MediaPipe hand
+detection — it would only serve an image-CNN, which we rejected.)
 
-**Pipeline:** public images → MediaPipe Holistic → 21 hand landmarks →
-`preprocess_landmark_sequence` (1 frame, dominant_hand, xyz) → feature `.npz` per split.
+- **Kaggle "ASL Alphabet"** (Akash/grassknoted) — 87k images, 200×200 RGB, 29 classes (use
+  the 24 static letters). Primary training set. *(Largely single-signer → overfit risk.)*
+- **A second RGB hand set** (e.g. a Roboflow ASL-alphabet set / synthetic ASL alphabet) — adds
+  signer/background diversity to training.
+- **A third RGB hand set** (e.g. **Massey** gesture dataset / **ASL-FS Surrey**) held out
+  **for cross-dataset eval** (different signers/conditions).
+
+**Pipeline:** public images → `extract_landmarks_from_frames([img])` (MediaPipe) →
+`handshape_features` (dominant 21 hand pts, wrist-centred, scale-normalized, xyz) →
+feature `.npz` per (dataset, split).
 
 **Frame-budget target:** ≥ **500–1,000 usable landmark frames/letter** after extraction
 (MediaPipe fails to detect a hand on some images — track per-letter **yield**), balanced
@@ -90,23 +105,26 @@ cross-dataset is the *alarm*, the real-data spot-check is the *trust gate*.)
 - **Routing:** the closed-vocab word backend abstains (low confidence) → system suggests
   spell mode (auto-fallback); clinician can also flip a manual **spell-mode toggle**.
   Reuses `eval/abstention.py` for the abstain signal.
-- **Reuse, don't rebuild:** MediaPipe extraction, `preprocess_landmark_sequence` (G-C
-  standard — no new preprocessing, no train/serve skew), and the abstention layer are all
-  reused. Only the classifier + its data prep + eval are new.
+- **Reuse, don't rebuild:** MediaPipe extraction (`extract_landmarks_from_frames`), the
+  hand-slice constants, and the abstention layer are reused. The only new shared code is
+  `handshape_features()` (one function, train+serve, no skew — G-C principle) plus the
+  classifier, its data prep, and eval.
 
 ## 6. Repo layout (minimal, Karpathy-lean)
 
 ```
 models/fingerspelling/
   labels.json                  # the 24 letters
-  prepare_alphabet_dataset.py  # public images -> landmarks -> npz  (reuses landmark_baseline)
-  train_fingerspelling.py      # small MLP on landmark features
+  features.py                  # handshape_features(): dominant 21 hand pts, wrist-centred,
+                               #   scale-normalized, handedness-canonical, xyz (shared train+serve)
+  prepare_alphabet_dataset.py  # public images -> extract_landmarks_from_frames -> handshape_features -> npz
+  train_fingerspelling.py      # small MLP on handshape features
   eval_fingerspelling.py       # cross-dataset acc + per-letter confusion matrix + abstention curve
   checkpoints/                 # gitignored (weights)
-tests/test_fingerspelling.py   # preprocessing-reuse + classifier I/O + abstention wiring
+tests/test_fingerspelling.py   # features (invariance) + classifier I/O + abstention wiring
 docs/fingerspelling.md         # usage + data sourcing + the medical-trust gate
 ```
-Reused unchanged: `landmark_baseline/` (extraction, preprocess, features), `eval/abstention.py`.
+Reused unchanged: `landmark_baseline/extraction.py` + `constants.py`, `eval/abstention.py`.
 
 ## 7. Coding approach (Karpathy guidelines)
 
@@ -115,9 +133,9 @@ Reused unchanged: `landmark_baseline/` (extraction, preprocess, features), `eval
 - **Simplicity first:** start with the *smallest* model that works — a shallow MLP (or even a
   kNN/logistic baseline first to set the floor). No temporal model, no CNN, no augmentation
   framework until the data proves they're needed.
-- **Surgical / reuse:** no new preprocessing (reuse the G-C standard), no new abstention
-  (reuse `eval/abstention.py`), no changes to the word-model code. New code is confined to
-  `models/fingerspelling/`.
+- **Surgical / reuse:** reuse MediaPipe extraction + abstention; the only new shared code is
+  one `handshape_features()` function (single train+serve fn, no skew). No changes to the
+  word-model code; new code confined to `models/fingerspelling/`.
 - **Goal-driven, verifiable:** every phase has a measurable gate (below). Build the eval
   (confusion matrix + abstention curve) *before/with* the model, then iterate to pass it.
 
