@@ -52,6 +52,18 @@ def test_no_hand_returns_none():
     assert handshape_features(np.full((543, 3), np.nan, dtype=np.float32)) is None
 
 
+def test_letter_dirs_filters_and_parses(tmp_path=None):
+    import tempfile
+    from pathlib import Path
+    from models.fingerspelling.prepare_alphabet_dataset import letter_dirs
+    with tempfile.TemporaryDirectory() as d:
+        root = Path(d)
+        for name in ["A", "B", "J", "Z", "space", "C", "M-samples", "X_test", "nothing"]:
+            (root / name).mkdir()
+        got = sorted(letter_dirs(root).keys())
+        assert got == ["a", "b", "c", "m", "x"]  # J,Z,space,nothing excluded; suffixes parsed
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):

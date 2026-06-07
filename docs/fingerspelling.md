@@ -1,0 +1,51 @@
+# Fingerspelling track — usage, data, gates
+
+Phase-1 isolated 24-letter recognizer. Spec: `docs/superpowers/specs/2026-06-06-fingerspelling-design.md`.
+Plan: `docs/superpowers/plans/2026-06-06-fingerspelling.md`.
+
+## Extractor: MediaPipe **Hands** (not Holistic)
+
+The word model uses MediaPipe **Holistic** (face+pose+hands) — right for full-body sign
+videos. But Holistic locates hands via the body ROI and **fails on hand-crop alphabet
+images**. Measured on the held-out set's confusable letters: **Holistic 15% vs Hands 90%**
+hand-detection. So fingerspelling extraction uses `models/fingerspelling/extraction.py`
+(`extract_hand_landmarks_from_frames`, MediaPipe Hands), placing the detected hand into the
+same 543-row layout so `handshape_features` is unchanged. *(Supersedes the spec's earlier
+mention of `extract_landmarks_from_frames`.)*
+
+## Datasets (downloads done; raw lives under gitignored `data/fingerspelling/`)
+
+| Role | Kaggle slug | Notes |
+|---|---|---|
+| **A — train** | `grassknoted/asl-alphabet` | 87k imgs, 3000/letter, 200×200 RGB (largely single-signer) |
+| **B — train (diversity)** | `dorukdemirci/asl-alphabet-dataset` | ~100/letter, independent source |
+| **C — held-out eval** | `danrasband/asl-alphabet-test` | independent photos; **eval-only, NEVER train** |
+
+Extraction caps: A at 350/letter (foreground time), B/C uncapped. License note: grassknoted is
+GPL-2.0 — for internal research/eval use; revisit before any redistribution (see ATTRIBUTION.md).
+
+## F0 extraction yield (handshape features kept)
+
+- **set_a:** N=7,390 (most letters 350; low-yield: **n=51, m=164** — folded-thumb letters)
+- **set_b:** N=2,390 (~96–102/letter, balanced)
+- **set_c (held-out):** N=684 (~20–30/letter)
+
+The low-yield confusable letters (n, m) are flagged for the F1 confusion-matrix analysis and
+the F2 per-letter abstention thresholds — exactly the cluster the design expects to guard.
+
+## Pipeline
+
+```bash
+. .venv-oracle/bin/activate && source env.sh
+# images -> Hands landmarks -> handshape features -> npz + yield report
+python models/fingerspelling/prepare_alphabet_dataset.py \
+  --images-dir <letter-subfolders> --dataset-name set_x --out data/fingerspelling/set_x.npz
+```
+Accepts plain letter dirs (`A/`) and `<LETTER>-samples/` dirs. J and Z are excluded (dynamic).
+
+## Medical-trust gate (carried)
+
+Cross-dataset eval (train A+B, test C) is the **overfit alarm**, not the green light. Before any
+"this works" medical claim, a small **real-data spot-check** (user-recorded) must corroborate
+the cross-dataset numbers (spec F4). Public sets share biases; cross-public eval alone is
+insufficient for clinical trust.
