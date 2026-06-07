@@ -64,6 +64,19 @@ def test_letter_dirs_filters_and_parses(tmp_path=None):
         assert got == ["a", "b", "c", "m", "x"]  # J,Z,space,nothing excluded; suffixes parsed
 
 
+def test_mlp_forward_shape_and_learns():
+    import torch
+    from models.fingerspelling.train_fingerspelling import MLP, train_loop
+    rng = np.random.default_rng(0)
+    centers = rng.normal(size=(24, 63)).astype("float32") * 3   # 24 separable clusters in 63-D
+    X = np.repeat(centers, 8, axis=0) + rng.normal(size=(192, 63)).astype("float32") * 0.1
+    y = np.repeat(np.arange(24), 8).astype("int64")
+    model = MLP(63, 24)
+    assert model(torch.from_numpy(X)).shape == (192, 24)
+    acc = train_loop(model, X, y, X, y, epochs=80, lr=1e-2, batch_size=64)
+    assert acc > 0.95   # must fit a trivially separable set
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):
