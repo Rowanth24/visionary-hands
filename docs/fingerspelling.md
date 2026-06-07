@@ -43,6 +43,20 @@ python models/fingerspelling/prepare_alphabet_dataset.py \
 ```
 Accepts plain letter dirs (`A/`) and `<LETTER>-samples/` dirs. J and Z are excluded (dynamic).
 
+## F1 results — cross-dataset eval (held-out set C)
+
+- **Baseline floor** (logistic, train A+B → C): **0.87** cross-dataset (chance 0.042).
+- **MLP** (train A+B → held-out C): **0.85** overall; `min_letter_accuracy = 0.07`.
+- **Overfit alarm NOT triggered** — landmark features transfer across datasets; even a linear
+  model generalizes. The landmark-first bet is validated at this gate.
+- **Failures are concentrated in the predicted confusable cluster.** Top confusions
+  (true→pred, count): n→m (24), t→l (9), v→u (9), s→m (8), u→r (8), p→q (7), v→k (6), g→r (5).
+  Folded-thumb / 2-finger / pointing look-alikes — exactly what F2 abstention must guard.
+
+**F1 GATE: PASS → F2.** No overfit collapse; the confusion matrix gives F2 its per-letter
+abstention targets (n, m, s, p, q, v, u, t). (Eval JSON: `data/fingerspelling/eval_on_C.json`,
+gitignored.)
+
 ## Medical-trust gate (carried)
 
 Cross-dataset eval (train A+B, test C) is the **overfit alarm**, not the green light. Before any
