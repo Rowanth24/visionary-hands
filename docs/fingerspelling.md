@@ -74,6 +74,29 @@ gitignored.)
 checkpoints/abstention.json` (gitignored). Recognizer abstains on the 6 unreliable letters
 until the F4 real-data gate / targeted hybrid resolves them.
 
+## Targeted hybrid — geometric finger-state features (appearance-invariant first)
+
+Before reaching for image pixels (which reintroduce appearance/overfit risk), we added
+**geometric finger-state features** (`features.geometric_features`): per-finger curl (cos at
+PIP), tip-to-wrist extension, adjacent inter-fingertip spread, thumb-to-index — 15 features
+appended to the 63-D coords (→78-D), standardized (mean/std saved in the checkpoint).
+
+Result (train A+B → held-out C): overall holds **~0.84–0.85** (no accuracy cost, no overfit),
+and it **rescues several confusable letters** (i, l, r, p, q, t moved to reliable in the
+experiment). But:
+- **`n` stays fundamentally broken** (n→m, ~27): n vs m differ only by whether the *ring
+  finger* folds over the thumb — occluded, so MediaPipe can't localize it. This is a genuine
+  landmark limit, the real candidate for image-detail.
+- The rest of the marginal set (c/m/o/p/r/u/v/s) is **unstable run-to-run** — the held-out
+  set is tiny (~20–30/letter), so per-letter precision calibration at 0.95 is brittle and the
+  "always-abstain" membership swings. We cannot lock the confusable set on this data.
+
+**Conclusion:** geometric features are integrated (clean win, kept). Pure image-detail on
+*public* data is now questionable: `n`'s problem may resist pixels too, and the rest is too
+noisy at this held-out size to know what to fix. **Real data (F4) is the higher-value next
+step** to (a) disambiguate which residual letters are public-data quirks vs real limits, and
+(b) lock abstention. Image-detail stays reserved for letters that remain broken on real data.
+
 ## Medical-trust gate (carried)
 
 Cross-dataset eval (train A+B, test C) is the **overfit alarm**, not the green light. Before any

@@ -61,8 +61,12 @@ def main():
     X, y = data["X"].astype(np.float32), data["y"].astype(np.int64)
 
     import torch
+    from models.fingerspelling.features import augment_features
     from models.fingerspelling.train_fingerspelling import MLP
-    ckpt = torch.load(args.model, map_location="cpu")
+    ckpt = torch.load(args.model, map_location="cpu", weights_only=False)  # trusted local ckpt w/ numpy mean/std
+    if ckpt.get("geometric"):
+        X = augment_features(X)
+        X = ((X - ckpt["mean"]) / ckpt["std"]).astype(np.float32)
     model = MLP(ckpt["input_dim"], ckpt["num_classes"])
     model.load_state_dict(ckpt["state_dict"]); model.eval()
     with torch.no_grad():

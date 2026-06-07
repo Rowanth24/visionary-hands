@@ -64,6 +64,18 @@ def test_letter_dirs_filters_and_parses(tmp_path=None):
         assert got == ["a", "b", "c", "m", "x"]  # J,Z,space,nothing excluded; suffixes parsed
 
 
+def test_geometric_and_augment_dims():
+    from models.fingerspelling.features import (
+        geometric_features, augment_features, GEOMETRIC_FEATURE_DIM, FULL_FEATURE_DIM,
+    )
+    f = handshape_features(_frame_with_left_hand(seed=3))
+    g = geometric_features(f)
+    assert g.shape == (GEOMETRIC_FEATURE_DIM,) == (15,)
+    X = np.stack([f, handshape_features(_frame_with_left_hand(seed=4))])
+    aug = augment_features(X)
+    assert aug.shape == (2, FULL_FEATURE_DIM) == (2, 78)
+
+
 def test_mlp_forward_shape_and_learns():
     import torch
     from models.fingerspelling.train_fingerspelling import MLP, train_loop

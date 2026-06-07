@@ -66,14 +66,22 @@ def main():
     ap.add_argument("--epochs", type=int, default=60)
     args = ap.parse_args()
 
+    from models.fingerspelling.features import augment_features
+
     Xtr, ytr = _load_concat(args.train)
     Xval, yval = _load_concat([args.val])
+    # Append appearance-invariant geometric finger-state features, then standardize (mu/sd from train).
+    Xtr, Xval = augment_features(Xtr), augment_features(Xval)
+    mean = Xtr.mean(axis=0); std = Xtr.std(axis=0) + 1e-6
+    Xtr = ((Xtr - mean) / std).astype("float32"); Xval = ((Xval - mean) / std).astype("float32")
+
     torch.manual_seed(42)
     model = MLP(Xtr.shape[1], len(LETTERS))
     acc = train_loop(model, Xtr, ytr, Xval, yval, epochs=args.epochs)
     out = Path(args.out); out.parent.mkdir(parents=True, exist_ok=True)
     torch.save({"state_dict": model.state_dict(), "input_dim": Xtr.shape[1],
-                "num_classes": len(LETTERS), "letters": LETTERS}, out)
+                "num_classes": len(LETTERS), "letters": LETTERS,
+                "geometric": True, "mean": mean.astype("float32"), "std": std.astype("float32")}, out)
     print(f"cross-dataset val acc (train={args.train}, val={args.val}) = {round(acc, 4)}")
     print(f"wrote {out}")
 
