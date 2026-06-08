@@ -15,3 +15,23 @@ Planned contents (later):
 
 For now this is empty by design. The current runnable ONNX bundle that will seed
 this work lives at `landmark_live5_dual_onnx_bundle/` (copied here in G0).
+
+## `run_demo.py` — end-to-end demo (word model + fingerspelling fallback)
+
+A clip-based orchestration of the full path, in one process (`.venv-oracle`):
+closed-vocab word model (`LandmarkBackend`) → abstention (`eval/abstention.py`) →
+on abstain or `--manual-spell`, fingerspelling (`FingerspellingRecognizer`). Holistic
+(word) and Hands (fingerspelling) MediaPipe models coexist in one process.
+
+```bash
+. .venv-oracle/bin/activate && source env.sh
+# confident word -> WORD
+python deploy/run_demo.py --word-clip eval/benchmark/g1/videos/wlasl/computer/12306.mp4
+# low-confidence word -> AUTO fallback to spelling
+python deploy/run_demo.py --word-clip <low-conf clip> --spell-input <letter images / video>
+# force spelling
+python deploy/run_demo.py --word-clip <clip> --manual-spell --spell-input <letter images / video>
+```
+
+Verified routing: confident→WORD, word-abstains→LETTER (auto), manual→LETTER. This is the
+clip-based precursor to the Phase-5 live `run_live.py` (capture → … → TTS).
