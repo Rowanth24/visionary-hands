@@ -97,6 +97,30 @@ noisy at this held-out size to know what to fix. **Real data (F4) is the higher-
 step** to (a) disambiguate which residual letters are public-data quirks vs real limits, and
 (b) lock abstention. Image-detail stays reserved for letters that remain broken on real data.
 
+## F3 — serve-time recognizer + routing
+
+`models/fingerspelling/recognizer.py`:
+- `FingerspellingRecognizer.predict_clip(frames)` — Hands → `handshape_features`+geometry
+  (standardized from the checkpoint) → MLP → mean-aggregate over the held frames →
+  per-letter abstention → a letter or "not confident". Verified: held `a`→'a' (0.93),
+  `l`→'l' (1.00) accept; `n`/`m` abstain.
+- `should_fingerspell(word_candidates, word_policy, manual)` — routing hook: True when the
+  closed-vocab word model abstains (reuses `eval/abstention.py`) or manual spell-mode is on.
+- 13 tests pass (decision core + routing tested without MediaPipe via injected probs).
+
+### Per-letter ceiling (documented, directional)
+
+With the current F2 thresholds the recognizer **emits 17 letters** and **abstains on 7**:
+- **Reliable (emits):** a b d e f g h i k l q s t v w x y
+- **Abstain-only (ceiling):** c m n o p r u
+
+⚠️ This ceiling is **conservative / over-inclusive** — the held-out set is tiny (~20–30/letter)
+so per-letter calibration is noisy and marks some genuinely-reliable letters (e.g. `r`, which
+scored 1.0 elsewhere) as abstain. The **only robustly-capped letter across all runs is `n`**
+(occluded ring finger — a representational limit, accepted; no CNN). The abstain set will
+tighten when calibrated on more/real eval data. Safe failure mode: abstain-and-repeat, never
+a confident-wrong letter.
+
 ## Medical-trust gate (carried)
 
 Cross-dataset eval (train A+B, test C) is the **overfit alarm**, not the green light. Before any

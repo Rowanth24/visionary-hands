@@ -89,6 +89,56 @@ def test_mlp_forward_shape_and_learns():
     assert acc > 0.95   # must fit a trivially separable set
 
 
+def _stub_recognizer(per_letter=None, global_thr=0.5):
+    from models.fingerspelling.recognizer import FingerspellingRecognizer
+    from models.fingerspelling.labels import LETTERS as L
+    r = object.__new__(FingerspellingRecognizer)  # no model load
+    r.letters = L
+    r.global_threshold = global_thr
+    r.per_letter_threshold = per_letter or {}
+    return r
+
+
+def _onehot_probs(letter, conf, n=3):
+    from models.fingerspelling.labels import LETTER_TO_INDEX
+    rows = np.full((n, 24), (1 - conf) / 23, dtype=np.float32)
+    rows[:, LETTER_TO_INDEX[letter]] = conf
+    return rows
+
+
+def test_decide_accepts_confident_reliable_letter():
+    r = _stub_recognizer()
+    letter, conf, reason = r.decide_from_probs(_onehot_probs("a", 0.9))
+    assert letter == "a" and reason == "accept"
+
+
+def test_decide_abstains_low_confidence():
+    r = _stub_recognizer(global_thr=0.5)
+    letter, conf, reason = r.decide_from_probs(_onehot_probs("a", 0.4))
+    assert letter is None and reason.startswith("abstain")
+
+
+def test_decide_abstains_capped_letter_even_if_confident():
+    r = _stub_recognizer(per_letter={"n": 1.0})  # n is at the ceiling -> always abstain
+    letter, conf, reason = r.decide_from_probs(_onehot_probs("n", 0.99))
+    assert letter is None  # never emits a capped letter
+
+
+def test_decide_no_hand_on_empty():
+    r = _stub_recognizer()
+    letter, conf, reason = r.decide_from_probs(np.empty((0, 24), dtype=np.float32))
+    assert letter is None and reason == "no_hand"
+
+
+def test_should_fingerspell_routing():
+    from abstention import AbstentionPolicy
+    from models.fingerspelling.recognizer import should_fingerspell
+    policy = AbstentionPolicy(conf_threshold=0.5)
+    assert should_fingerspell([("pain", 0.9), ("hurt", 0.05)], policy) is False   # word confident
+    assert should_fingerspell([("pain", 0.4), ("hurt", 0.3)], policy) is True     # word abstains -> spell
+    assert should_fingerspell([("pain", 0.9)], policy, manual_spell_mode=True) is True  # manual
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):
