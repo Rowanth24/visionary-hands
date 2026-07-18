@@ -114,13 +114,27 @@ is for. G0 only asks that it *runs*.
   and **signer-disjoint splitting implemented** (`--signer-disjoint` + `--wlasl-annotations`
   join WLASL v0.3 `signer_id`; invariant tested). Still open: HF download go/no-go,
   landmark-side adaptation. Findings: `docs/g_d_cross_source_audit.md`.
-- ⬜ **G1** (next) — grow the benchmark to ≥150–200 clips, ≥3 sources incl. phone,
-  with per-source numbers + CIs. Scaffolding ready (`eval/benchmark_g1.py`,
-  `eval/build_g1_manifest.py`, `docs/g1_benchmark_and_recording.md`). Needs your
-  phone-camera eval clips. First decision-grade comparison happens here.
-- 🔁 **Abstention** (cross-cutting, shipping precondition) — `eval/abstention.py`
-  (confidence + margin), calibration tool, selective metrics (coverage / selective
-  accuracy / confident-wrong rate). Mechanism + tests done; calibrate on G1 data,
-  then wire into live inference (Phase 5). See `docs/abstention.md`.
+- 🔁 **G1** — directional run DONE (2026-07-17): 32 clips, 2 sources, both models,
+  per-source CIs (`eval/benchmark/g1/g1_directional_report.json`; landmark 0.32
+  wlasl / **0.0 aslense** — the cross-domain gap is now measured, not suspected).
+  Still ⬜ decision-grade: needs ≥150 clips, ≥3 sources (phone clips + ASL Citizen;
+  see `docs/g2_data_status.md` for the exact acquisition steps).
+- ✅ **Abstention wired live** (2026-07-17) — word model calibrated on the mixed
+  directional benchmark: only conf ≥ 0.95 keeps confident-wrong ≤ 5%, so the live
+  path abstains → falls back to fingerspelling by default (fingerspelling-first,
+  enforced by data). Thresholds: `models/landmark/checkpoints/abstention.json`
+  (marked directional), read by `deploy/run_live.py`. See `docs/abstention.md`.
+- ✅ **F4 fingerspelling real-data gate PASS** (2026-07-17) — held-out set_c
+  (n=684): selective precision **0.984** at 0.632 coverage; thresholds unchanged;
+  confusable cluster is c/m/n/o/p/r/u. Report:
+  `models/fingerspelling/checkpoints/f4_gate_report.json`, doc: `docs/fingerspelling_f4.md`.
+- ✅ **Live pipeline (W7, laptop)** (2026-07-17) — `deploy/run_live.py`: capture
+  (webcam/clip) → word model → abstention → fingerspelling fallback → TTS
+  (`pipeline/tts.py`: say → pyttsx3 → null, debounced). Jetson remains Phase 5.
+- 🔁 **Multi-source data (W1/W2)** — MS-ASL adapter flowing (annotations local,
+  C-UDA license; yt-dlp probe: ~58% dead links); ASL Citizen documented as a
+  one-time 42.8 GB human step. Adapters + signer-disjoint splits tested offline.
+  Roadmap + numbers: `docs/g2_data_status.md`.
 
-See the program plan in `docs/` for the full phased, evidence-gated roadmap.
+See the program plan in `docs/` for the full phased, evidence-gated roadmap; the
+current execution plan is `docs/superpowers/plans/2026-07-17-fall2026-execution.md`.
