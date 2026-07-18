@@ -1,0 +1,270 @@
+{
+  "name": "g1_directional",
+  "decision_grade": false,
+  "note": "directional only \u2014 no phone source, signer_ids are proxies; see module docstring",
+  "vocab": [
+    "bowling",
+    "computer",
+    "deaf",
+    "drink",
+    "yes"
+  ],
+  "samples": [
+    {
+      "sample_index": 0,
+      "label": "bowling",
+      "source": "wlasl",
+      "signer_id": "wlasl_07383",
+      "variant_id": "v1",
+      "local_video": "wlasl/bowling/07383.mp4"
+    },
+    {
+      "sample_index": 1,
+      "label": "bowling",
+      "source": "wlasl",
+      "signer_id": "wlasl_07400",
+      "variant_id": "v1",
+      "local_video": "wlasl/bowling/07400.mp4"
+    },
+    {
+      "sample_index": 2,
+      "label": "computer",
+      "source": "wlasl",
+      "signer_id": "wlasl_12306",
+      "variant_id": "v1",
+      "local_video": "wlasl/computer/12306.mp4"
+    },
+    {
+      "sample_index": 3,
+      "label": "computer",
+      "source": "wlasl",
+      "signer_id": "wlasl_12320",
+      "variant_id": "v1",
+      "local_video": "wlasl/computer/12320.mp4"
+    },
+    {
+      "sample_index": 4,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl_14855",
+      "variant_id": "v1",
+      "local_video": "wlasl/deaf/14855.mp4"
+    },
+    {
+      "sample_index": 5,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl_14883",
+      "variant_id": "v1",
+      "local_video": "wlasl/deaf/14883.mp4"
+    },
+    {
+      "sample_index": 6,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl_14888",
+      "variant_id": "v1",
+      "local_video": "wlasl/deaf/14888.mp4"
+    },
+    {
+      "sample_index": 7,
+      "label": "drink",
+      "source": "wlasl",
+      "signer_id": "wlasl_17713",
+      "variant_id": "v1",
+      "local_video": "wlasl/drink/17713.mp4"
+    },
+    {
+      "sample_index": 8,
+      "label": "drink",
+      "source": "wlasl",
+      "signer_id": "wlasl_17730",
+      "variant_id": "v1",
+      "local_video": "wlasl/drink/17730.mp4"
+    },
+    {
+      "sample_index": 9,
+      "label": "yes",
+      "source": "wlasl",
+      "signer_id": "wlasl_64275",
+      "variant_id": "v1",
+      "local_video": "wlasl/yes/64275.mp4"
+    },
+    {
+      "sample_index": 10,
+      "label": "yes",
+      "source": "wlasl",
+      "signer_id": "wlasl_64293",
+      "variant_id": "v1",
+      "local_video": "wlasl/yes/64293.mp4"
+    },
+    {
+      "sample_index": 11,
+      "label": "yes",
+      "source": "wlasl",
+      "signer_id": "wlasl_64297",
+      "variant_id": "v1",
+      "local_video": "wlasl/yes/64297.mp4"
+    },
+    {
+      "sample_index": 12,
+      "label": "drop",
+      "source": "wlasl",
+      "signer_id": "wlasl_17832",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/01_wlasl_drop_17832.mp4"
+    },
+    {
+      "sample_index": 13,
+      "label": "drop",
+      "source": "aslense",
+      "signer_id": "aslense_36143393073698404-DROP",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/02_aslense_drop_36143393073698404-DROP.mp4"
+    },
+    {
+      "sample_index": 14,
+      "label": "earthquake",
+      "source": "wlasl",
+      "signer_id": "wlasl_18258",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/03_wlasl_earthquake_18258.mp4"
+    },
+    {
+      "sample_index": 15,
+      "label": "earthquake",
+      "source": "aslense",
+      "signer_id": "aslense_8979439062678256-EARTHQUAKE",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/04_aslense_earthquake_8979439062678256-EARTHQUAKE.mp4"
+    },
+    {
+      "sample_index": 16,
+      "label": "secretary",
+      "source": "wlasl",
+      "signer_id": "wlasl_50041",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/05_wlasl_secretary_50041.mp4"
+    },
+    {
+      "sample_index": 17,
+      "label": "secretary",
+      "source": "aslense",
+      "signer_id": "aslense_006465165452186117-SECRETARY",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/06_aslense_secretary_006465165452186117-SECRETARY.mp4"
+    },
+    {
+      "sample_index": 18,
+      "label": "cake",
+      "source": "wlasl",
+      "signer_id": "wlasl_08618",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/07_wlasl_cake_08618.mp4"
+    },
+    {
+      "sample_index": 19,
+      "label": "cake",
+      "source": "aslense",
+      "signer_id": "aslense_9127019395391156-CAKE",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/08_aslense_cake_9127019395391156-CAKE.mp4"
+    },
+    {
+      "sample_index": 20,
+      "label": "punish",
+      "source": "wlasl",
+      "signer_id": "wlasl_45369",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/09_wlasl_punish_45369.mp4"
+    },
+    {
+      "sample_index": 21,
+      "label": "punish",
+      "source": "aslense",
+      "signer_id": "aslense_013573733301328161-PUNISH",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/10_aslense_punish_013573733301328161-PUNISH.mp4"
+    },
+    {
+      "sample_index": 22,
+      "label": "wood",
+      "source": "wlasl",
+      "signer_id": "wlasl_63724",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/11_wlasl_wood_63724.mp4"
+    },
+    {
+      "sample_index": 23,
+      "label": "wood",
+      "source": "aslense",
+      "signer_id": "aslense_3752156246825138-WOOD",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/12_aslense_wood_3752156246825138-WOOD.mp4"
+    },
+    {
+      "sample_index": 24,
+      "label": "balloon",
+      "source": "wlasl",
+      "signer_id": "wlasl_04870",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/13_wlasl_balloon_04870.mp4"
+    },
+    {
+      "sample_index": 25,
+      "label": "balloon",
+      "source": "aslense",
+      "signer_id": "aslense_3703730152151108-BALLOON",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/14_aslense_balloon_3703730152151108-BALLOON.mp4"
+    },
+    {
+      "sample_index": 26,
+      "label": "color",
+      "source": "wlasl",
+      "signer_id": "wlasl_11772",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/15_wlasl_color_11772.mp4"
+    },
+    {
+      "sample_index": 27,
+      "label": "color",
+      "source": "aslense",
+      "signer_id": "aslense_005776634853680518-COLOR",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/16_aslense_color_005776634853680518-COLOR.mp4"
+    },
+    {
+      "sample_index": 28,
+      "label": "sorry",
+      "source": "wlasl",
+      "signer_id": "wlasl_53367",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/17_wlasl_sorry_53367.mp4"
+    },
+    {
+      "sample_index": 29,
+      "label": "sorry",
+      "source": "aslense",
+      "signer_id": "aslense_010369524824967558-SORRY",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/18_aslense_sorry_010369524824967558-SORRY.mp4"
+    },
+    {
+      "sample_index": 30,
+      "label": "doubt",
+      "source": "wlasl",
+      "signer_id": "wlasl_17400",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/19_wlasl_doubt_17400.mp4"
+    },
+    {
+      "sample_index": 31,
+      "label": "doubt",
+      "source": "aslense",
+      "signer_id": "aslense_7216694804458137-DOUBT",
+      "variant_id": "v1",
+      "local_video": "../../multisource_videos/20_aslense_doubt_7216694804458137-DOUBT.mp4"
+    }
+  ]
+}
