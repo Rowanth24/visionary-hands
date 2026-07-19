@@ -1,6 +1,7 @@
-# deploy/ — edge runtime (stub)
+# deploy/ — runnable demos + edge runtime (Jetson still Phase 5)
 
-Placeholder for the on-device deployment story. Populated in **Phase 5**, not now.
+`run_live.py` (streaming) and `run_demo.py` (clip-based) run today on a laptop.
+The Jetson/TensorRT story remains **Phase 5**, not now.
 
 Target device: **Jetson Orin Nano** (Ampere GPU, ~40 TOPS, 8 GB) — treated as a
 *tunable* constraint, not a gate. Per the accuracy-first objective hierarchy
@@ -10,11 +11,32 @@ runtime to the most accurate model, not the other way around.
 Planned contents (later):
 - ONNX / TensorRT export + quantization recipes for the chosen model
 - MediaPipe extraction runtime (the live bottleneck) tuning
-- Text-to-speech (TTS) output for the two-way medical exchange
-- A single `run_live.py` that ties capture → model → shortlist → abstention → TTS
 
-For now this is empty by design. The current runnable ONNX bundle that will seed
-this work lives at `landmark_live5_dual_onnx_bundle/` (copied here in G0).
+The runnable ONNX bundle that will seed the Jetson work lives at
+`landmark_live5_dual_onnx_bundle/` (copied here in G0).
+
+## `run_live.py` — live demo (capture → word model → abstain → fingerspelling → TTS)
+
+Streaming version of the full path over a sliding window (default 48 frames,
+stride 24), speaking recognized words/letters via `pipeline/tts.py`
+(macOS `say` → `pyttsx3` → silent, auto-selected; identical text debounced 3 s).
+Uses the same canonical `LandmarkBackend` path as the benchmark harness — no
+separate live preprocessing. Runs in `.venv-onnx` or any env with
+mediapipe+cv2+torch.
+
+```bash
+source env.sh
+# clip mode (headless, what tests/test_run_live_clip.py exercises)
+.venv-onnx/bin/python deploy/run_live.py --source eval/benchmark/multisource_videos/<clip>.mp4 --no-tts
+# webcam, speaking
+.venv-onnx/bin/python deploy/run_live.py --source webcam
+```
+
+Decision lines: `[t=  1.60s] WORD drink (0.87)` / `LETTER A (0.93)` /
+`ABSTAIN (<reason>)`. Word-model abstention thresholds are read from
+`models/landmark/checkpoints/abstention.json` when present (see the fall 2026
+execution plan, Task E); until then a `--word-conf-threshold` default applies —
+expect overconfident WORD lines on out-of-vocab signs until calibrated.
 
 ## `run_demo.py` — end-to-end demo (word model + fingerspelling fallback)
 

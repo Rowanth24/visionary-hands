@@ -1,0 +1,4076 @@
+{
+  "gate": "G1",
+  "decision_grade": false,
+  "n_clips": 32,
+  "n_sources": 2,
+  "sources": [
+    "aslense",
+    "wlasl"
+  ],
+  "vocab": [
+    "bowling",
+    "computer",
+    "deaf",
+    "drink",
+    "yes"
+  ],
+  "config": {
+    "vanilla_checkpoint": "oracle/checkpoints/best_model_original_backup.pth",
+    "landmark_model": "models/landmark/checkpoints/model.ts",
+    "device": "auto",
+    "clip_length": 64,
+    "stride": 8
+  },
+  "overall": {
+    "vanilla_open": {
+      "n": 32,
+      "correct": 13,
+      "top1_accuracy": 0.4062,
+      "ci95_wilson": [
+        0.2552,
+        0.5774
+      ]
+    },
+    "vanilla_closed": {
+      "n": 32,
+      "correct": 12,
+      "top1_accuracy": 0.375,
+      "ci95_wilson": [
+        0.2293,
+        0.5475
+      ]
+    },
+    "landmark": {
+      "n": 32,
+      "correct": 7,
+      "top1_accuracy": 0.2188,
+      "ci95_wilson": [
+        0.1102,
+        0.3876
+      ]
+    }
+  },
+  "per_source": {
+    "aslense": {
+      "vanilla_open": {
+        "n": 10,
+        "correct": 1,
+        "top1_accuracy": 0.1,
+        "ci95_wilson": [
+          0.0179,
+          0.4042
+        ]
+      },
+      "vanilla_closed": {
+        "n": 10,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.2775
+        ]
+      },
+      "landmark": {
+        "n": 10,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.2775
+        ]
+      }
+    },
+    "wlasl": {
+      "vanilla_open": {
+        "n": 22,
+        "correct": 12,
+        "top1_accuracy": 0.5455,
+        "ci95_wilson": [
+          0.3466,
+          0.7308
+        ]
+      },
+      "vanilla_closed": {
+        "n": 22,
+        "correct": 12,
+        "top1_accuracy": 0.5455,
+        "ci95_wilson": [
+          0.3466,
+          0.7308
+        ]
+      },
+      "landmark": {
+        "n": 22,
+        "correct": 7,
+        "top1_accuracy": 0.3182,
+        "ci95_wilson": [
+          0.1636,
+          0.5268
+        ]
+      }
+    }
+  },
+  "per_signer": {
+    "aslense_005776634853680518-COLOR": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_006465165452186117-SECRETARY": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_010369524824967558-SORRY": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_013573733301328161-PUNISH": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_36143393073698404-DROP": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_3703730152151108-BALLOON": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_3752156246825138-WOOD": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_7216694804458137-DOUBT": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_8979439062678256-EARTHQUAKE": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "aslense_9127019395391156-CAKE": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_04870": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_07383": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_07400": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_08618": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_11772": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_12306": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_12320": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_14855": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_14883": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_14888": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_17400": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_17713": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_17730": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_17832": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_18258": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_45369": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_50041": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_53367": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_63724": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_64275": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      }
+    },
+    "wlasl_64293": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    },
+    "wlasl_64297": {
+      "vanilla_open": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      },
+      "vanilla_closed": {
+        "n": 1,
+        "correct": 1,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.2065,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 1,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.7935
+        ]
+      }
+    }
+  },
+  "per_word": {
+    "bowling": {
+      "vanilla_open": {
+        "n": 2,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.6576
+        ]
+      },
+      "vanilla_closed": {
+        "n": 2,
+        "correct": 2,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.3424,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 2,
+        "correct": 1,
+        "top1_accuracy": 0.5,
+        "ci95_wilson": [
+          0.0945,
+          0.9055
+        ]
+      }
+    },
+    "computer": {
+      "vanilla_open": {
+        "n": 2,
+        "correct": 2,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.3424,
+          1.0
+        ]
+      },
+      "vanilla_closed": {
+        "n": 2,
+        "correct": 2,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.3424,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 2,
+        "correct": 2,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.3424,
+          1.0
+        ]
+      }
+    },
+    "deaf": {
+      "vanilla_open": {
+        "n": 3,
+        "correct": 0,
+        "top1_accuracy": 0.0,
+        "ci95_wilson": [
+          0.0,
+          0.5615
+        ]
+      },
+      "vanilla_closed": {
+        "n": 3,
+        "correct": 3,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.4385,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 3,
+        "correct": 1,
+        "top1_accuracy": 0.3333,
+        "ci95_wilson": [
+          0.0615,
+          0.7923
+        ]
+      }
+    },
+    "drink": {
+      "vanilla_open": {
+        "n": 2,
+        "correct": 1,
+        "top1_accuracy": 0.5,
+        "ci95_wilson": [
+          0.0945,
+          0.9055
+        ]
+      },
+      "vanilla_closed": {
+        "n": 2,
+        "correct": 2,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.3424,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 2,
+        "correct": 2,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.3424,
+          1.0
+        ]
+      }
+    },
+    "yes": {
+      "vanilla_open": {
+        "n": 3,
+        "correct": 1,
+        "top1_accuracy": 0.3333,
+        "ci95_wilson": [
+          0.0615,
+          0.7923
+        ]
+      },
+      "vanilla_closed": {
+        "n": 3,
+        "correct": 3,
+        "top1_accuracy": 1.0,
+        "ci95_wilson": [
+          0.4385,
+          1.0
+        ]
+      },
+      "landmark": {
+        "n": 3,
+        "correct": 1,
+        "top1_accuracy": 0.3333,
+        "ci95_wilson": [
+          0.0615,
+          0.7923
+        ]
+      }
+    }
+  },
+  "mean_latency_ms": {
+    "vanilla": 1949.3,
+    "landmark": 2294.3
+  },
+  "results": [
+    {
+      "sample_index": 0,
+      "label": "bowling",
+      "source": "wlasl",
+      "signer_id": "wlasl_07383",
+      "variant_id": "v1",
+      "clip": "wlasl/bowling/07383.mp4",
+      "vanilla_open": {
+        "top1": "tease",
+        "correct": false,
+        "latency_ms": 2381.9730831310153,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "tease",
+            "score": 0.4818677306175232
+          },
+          {
+            "label": "discuss",
+            "score": 0.08788763731718063
+          },
+          {
+            "label": "good",
+            "score": 0.035582445561885834
+          },
+          {
+            "label": "friendly",
+            "score": 0.014493758790194988
+          },
+          {
+            "label": "wife",
+            "score": 0.013037008233368397
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": true,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.6434857249259949
+          },
+          {
+            "label": "computer",
+            "score": 0.2984504997730255
+          },
+          {
+            "label": "yes",
+            "score": 0.03175375610589981
+          },
+          {
+            "label": "deaf",
+            "score": 0.01866620033979416
+          },
+          {
+            "label": "drink",
+            "score": 0.007643749006092548
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "bowling",
+        "correct": true,
+        "confidence": 0.8183448910713196,
+        "latency_ms": 2795.7437089644372,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.8183448910713196
+          },
+          {
+            "label": "yes",
+            "score": 0.09466784447431564
+          },
+          {
+            "label": "deaf",
+            "score": 0.044117480516433716
+          },
+          {
+            "label": "computer",
+            "score": 0.03255205601453781
+          },
+          {
+            "label": "drink",
+            "score": 0.010317669250071049
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 1,
+      "label": "bowling",
+      "source": "wlasl",
+      "signer_id": "wlasl_07400",
+      "variant_id": "v1",
+      "clip": "wlasl/bowling/07400.mp4",
+      "vanilla_open": {
+        "top1": "travel",
+        "correct": false,
+        "latency_ms": 484.0827500447631,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "travel",
+            "score": 0.3295740485191345
+          },
+          {
+            "label": "side",
+            "score": 0.24360260367393494
+          },
+          {
+            "label": "any",
+            "score": 0.06155172735452652
+          },
+          {
+            "label": "invite",
+            "score": 0.024312974885106087
+          },
+          {
+            "label": "other",
+            "score": 0.02215670794248581
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": true,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.9796662330627441
+          },
+          {
+            "label": "deaf",
+            "score": 0.012938805855810642
+          },
+          {
+            "label": "yes",
+            "score": 0.0032201276626437902
+          },
+          {
+            "label": "drink",
+            "score": 0.002912671072408557
+          },
+          {
+            "label": "computer",
+            "score": 0.001262117293663323
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.8696402311325073,
+        "latency_ms": 1072.2096250392497,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.8696402311325073
+          },
+          {
+            "label": "bowling",
+            "score": 0.08233513683080673
+          },
+          {
+            "label": "yes",
+            "score": 0.026760676875710487
+          },
+          {
+            "label": "deaf",
+            "score": 0.013290408067405224
+          },
+          {
+            "label": "drink",
+            "score": 0.007973485626280308
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 2,
+      "label": "computer",
+      "source": "wlasl",
+      "signer_id": "wlasl_12306",
+      "variant_id": "v1",
+      "clip": "wlasl/computer/12306.mp4",
+      "vanilla_open": {
+        "top1": "computer",
+        "correct": true,
+        "latency_ms": 499.93687495589256,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.6054471731185913
+          },
+          {
+            "label": "sheep",
+            "score": 0.07337367534637451
+          },
+          {
+            "label": "energy",
+            "score": 0.06502518802881241
+          },
+          {
+            "label": "character",
+            "score": 0.028143156319856644
+          },
+          {
+            "label": "police",
+            "score": 0.008013187907636166
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": true,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9991071820259094
+          },
+          {
+            "label": "drink",
+            "score": 0.0005394530016928911
+          },
+          {
+            "label": "deaf",
+            "score": 0.0002074981457553804
+          },
+          {
+            "label": "bowling",
+            "score": 0.00013303989544510841
+          },
+          {
+            "label": "yes",
+            "score": 1.2721630810119677e-05
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": true,
+        "confidence": 0.905527651309967,
+        "latency_ms": 1627.786291996017,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.905527651309967
+          },
+          {
+            "label": "bowling",
+            "score": 0.05692928656935692
+          },
+          {
+            "label": "yes",
+            "score": 0.02041024900972843
+          },
+          {
+            "label": "deaf",
+            "score": 0.011499187909066677
+          },
+          {
+            "label": "drink",
+            "score": 0.005633669905364513
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 3,
+      "label": "computer",
+      "source": "wlasl",
+      "signer_id": "wlasl_12320",
+      "variant_id": "v1",
+      "clip": "wlasl/computer/12320.mp4",
+      "vanilla_open": {
+        "top1": "computer",
+        "correct": true,
+        "latency_ms": 2696.5336250141263,
+        "windows": 6,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.8427131175994873
+          },
+          {
+            "label": "evaluate",
+            "score": 0.017085274681448936
+          },
+          {
+            "label": "sunday",
+            "score": 0.01611047424376011
+          },
+          {
+            "label": "cloud",
+            "score": 0.006214905064553022
+          },
+          {
+            "label": "rain",
+            "score": 0.0035124055575579405
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": true,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9996048212051392
+          },
+          {
+            "label": "deaf",
+            "score": 0.0001706467301119119
+          },
+          {
+            "label": "drink",
+            "score": 0.00015257923223543912
+          },
+          {
+            "label": "bowling",
+            "score": 5.69369294680655e-05
+          },
+          {
+            "label": "yes",
+            "score": 1.4966976777941454e-05
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": true,
+        "confidence": 0.9357385635375977,
+        "latency_ms": 2829.80616716668,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9357385635375977
+          },
+          {
+            "label": "yes",
+            "score": 0.023204641416668892
+          },
+          {
+            "label": "bowling",
+            "score": 0.019814640283584595
+          },
+          {
+            "label": "deaf",
+            "score": 0.011177418753504753
+          },
+          {
+            "label": "drink",
+            "score": 0.010064748115837574
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 4,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl_14855",
+      "variant_id": "v1",
+      "clip": "wlasl/deaf/14855.mp4",
+      "vanilla_open": {
+        "top1": "first",
+        "correct": false,
+        "latency_ms": 496.6135418508202,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "first",
+            "score": 0.6863186359405518
+          },
+          {
+            "label": "losear",
+            "score": 0.012119501829147339
+          },
+          {
+            "label": "second",
+            "score": 0.010018470697104931
+          },
+          {
+            "label": "see",
+            "score": 0.009629570879042149
+          },
+          {
+            "label": "match",
+            "score": 0.009552381932735443
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": true,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.7891831398010254
+          },
+          {
+            "label": "bowling",
+            "score": 0.1504901647567749
+          },
+          {
+            "label": "drink",
+            "score": 0.035303931683301926
+          },
+          {
+            "label": "yes",
+            "score": 0.012995433993637562
+          },
+          {
+            "label": "computer",
+            "score": 0.01202737633138895
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": false,
+        "confidence": 0.4830668270587921,
+        "latency_ms": 1507.4547498952597,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.4830668270587921
+          },
+          {
+            "label": "deaf",
+            "score": 0.20040500164031982
+          },
+          {
+            "label": "yes",
+            "score": 0.1880449801683426
+          },
+          {
+            "label": "computer",
+            "score": 0.11605062335729599
+          },
+          {
+            "label": "bowling",
+            "score": 0.0124325230717659
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 5,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl_14883",
+      "variant_id": "v1",
+      "clip": "wlasl/deaf/14883.mp4",
+      "vanilla_open": {
+        "top1": "meet",
+        "correct": false,
+        "latency_ms": 515.398166840896,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "meet",
+            "score": 0.34567365050315857
+          },
+          {
+            "label": "ask",
+            "score": 0.29469236731529236
+          },
+          {
+            "label": "deaf",
+            "score": 0.12323910742998123
+          },
+          {
+            "label": "one",
+            "score": 0.029124146327376366
+          },
+          {
+            "label": "period",
+            "score": 0.024031031876802444
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": true,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.9930263757705688
+          },
+          {
+            "label": "bowling",
+            "score": 0.006265919655561447
+          },
+          {
+            "label": "computer",
+            "score": 0.0003711747704073787
+          },
+          {
+            "label": "yes",
+            "score": 0.0002496626111678779
+          },
+          {
+            "label": "drink",
+            "score": 8.689479727763683e-05
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "deaf",
+        "correct": true,
+        "confidence": 0.37325140833854675,
+        "latency_ms": 1154.550334205851,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.37325140833854675
+          },
+          {
+            "label": "yes",
+            "score": 0.29424622654914856
+          },
+          {
+            "label": "drink",
+            "score": 0.2064226120710373
+          },
+          {
+            "label": "computer",
+            "score": 0.07917634397745132
+          },
+          {
+            "label": "bowling",
+            "score": 0.046903401613235474
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 6,
+      "label": "deaf",
+      "source": "wlasl",
+      "signer_id": "wlasl_14888",
+      "variant_id": "v1",
+      "clip": "wlasl/deaf/14888.mp4",
+      "vanilla_open": {
+        "top1": "invest",
+        "correct": false,
+        "latency_ms": 1034.1987498104572,
+        "windows": 2,
+        "topk": [
+          {
+            "label": "invest",
+            "score": 0.12176265567541122
+          },
+          {
+            "label": "travel",
+            "score": 0.07838839292526245
+          },
+          {
+            "label": "australia",
+            "score": 0.030985936522483826
+          },
+          {
+            "label": "since",
+            "score": 0.02110179141163826
+          },
+          {
+            "label": "during",
+            "score": 0.019187569618225098
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": true,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.6871605515480042
+          },
+          {
+            "label": "yes",
+            "score": 0.2336699217557907
+          },
+          {
+            "label": "bowling",
+            "score": 0.0412464439868927
+          },
+          {
+            "label": "computer",
+            "score": 0.030663009732961655
+          },
+          {
+            "label": "drink",
+            "score": 0.007260039448738098
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": false,
+        "confidence": 0.3490973711013794,
+        "latency_ms": 1874.4609171990305,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.3490973711013794
+          },
+          {
+            "label": "yes",
+            "score": 0.2838667333126068
+          },
+          {
+            "label": "deaf",
+            "score": 0.25009986758232117
+          },
+          {
+            "label": "computer",
+            "score": 0.0823504626750946
+          },
+          {
+            "label": "bowling",
+            "score": 0.0345856174826622
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 7,
+      "label": "drink",
+      "source": "wlasl",
+      "signer_id": "wlasl_17713",
+      "variant_id": "v1",
+      "clip": "wlasl/drink/17713.mp4",
+      "vanilla_open": {
+        "top1": "christmas",
+        "correct": false,
+        "latency_ms": 2258.006000192836,
+        "windows": 5,
+        "topk": [
+          {
+            "label": "christmas",
+            "score": 0.3169640004634857
+          },
+          {
+            "label": "rainbow",
+            "score": 0.08508840948343277
+          },
+          {
+            "label": "sunrise",
+            "score": 0.07342018932104111
+          },
+          {
+            "label": "drink",
+            "score": 0.02392779104411602
+          },
+          {
+            "label": "white",
+            "score": 0.014679895713925362
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": true,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.9303460121154785
+          },
+          {
+            "label": "computer",
+            "score": 0.06324452906847
+          },
+          {
+            "label": "deaf",
+            "score": 0.0024315358605235815
+          },
+          {
+            "label": "bowling",
+            "score": 0.002226427663117647
+          },
+          {
+            "label": "yes",
+            "score": 0.0017514833016321063
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": true,
+        "confidence": 0.4548237919807434,
+        "latency_ms": 2535.292125074193,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.4548237919807434
+          },
+          {
+            "label": "yes",
+            "score": 0.21321214735507965
+          },
+          {
+            "label": "deaf",
+            "score": 0.18518371880054474
+          },
+          {
+            "label": "computer",
+            "score": 0.1250554472208023
+          },
+          {
+            "label": "bowling",
+            "score": 0.021724894642829895
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 8,
+      "label": "drink",
+      "source": "wlasl",
+      "signer_id": "wlasl_17730",
+      "variant_id": "v1",
+      "clip": "wlasl/drink/17730.mp4",
+      "vanilla_open": {
+        "top1": "drink",
+        "correct": true,
+        "latency_ms": 1956.9610841572285,
+        "windows": 4,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.9669361114501953
+          },
+          {
+            "label": "balloon",
+            "score": 0.0024035172536969185
+          },
+          {
+            "label": "fox",
+            "score": 0.002393076429143548
+          },
+          {
+            "label": "duck",
+            "score": 0.001417179824784398
+          },
+          {
+            "label": "peach",
+            "score": 0.0009094297420233488
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": true,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.9999789595603943
+          },
+          {
+            "label": "deaf",
+            "score": 7.300903234863654e-06
+          },
+          {
+            "label": "computer",
+            "score": 4.856808573094895e-06
+          },
+          {
+            "label": "bowling",
+            "score": 4.549204277282115e-06
+          },
+          {
+            "label": "yes",
+            "score": 4.296826773497742e-06
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": true,
+        "confidence": 0.5226578712463379,
+        "latency_ms": 2270.038457820192,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.5226578712463379
+          },
+          {
+            "label": "deaf",
+            "score": 0.19183984398841858
+          },
+          {
+            "label": "yes",
+            "score": 0.16380774974822998
+          },
+          {
+            "label": "computer",
+            "score": 0.10659626126289368
+          },
+          {
+            "label": "bowling",
+            "score": 0.015098207630217075
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 9,
+      "label": "yes",
+      "source": "wlasl",
+      "signer_id": "wlasl_64275",
+      "variant_id": "v1",
+      "clip": "wlasl/yes/64275.mp4",
+      "vanilla_open": {
+        "top1": "yes",
+        "correct": true,
+        "latency_ms": 926.2908750679344,
+        "windows": 2,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.9319401383399963
+          },
+          {
+            "label": "aunt",
+            "score": 0.006957587786018848
+          },
+          {
+            "label": "apartment",
+            "score": 0.0056785885244607925
+          },
+          {
+            "label": "need",
+            "score": 0.0030546486377716064
+          },
+          {
+            "label": "should",
+            "score": 0.002293054014444351
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": true,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.9996433258056641
+          },
+          {
+            "label": "deaf",
+            "score": 0.0001881116913864389
+          },
+          {
+            "label": "bowling",
+            "score": 0.00010841251059900969
+          },
+          {
+            "label": "computer",
+            "score": 3.0513769161188975e-05
+          },
+          {
+            "label": "drink",
+            "score": 2.969292108900845e-05
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "yes",
+        "correct": true,
+        "confidence": 0.3737076222896576,
+        "latency_ms": 2137.775707989931,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.3737076222896576
+          },
+          {
+            "label": "drink",
+            "score": 0.18570511043071747
+          },
+          {
+            "label": "deaf",
+            "score": 0.17414915561676025
+          },
+          {
+            "label": "bowling",
+            "score": 0.1559552401304245
+          },
+          {
+            "label": "computer",
+            "score": 0.11048290878534317
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 10,
+      "label": "yes",
+      "source": "wlasl",
+      "signer_id": "wlasl_64293",
+      "variant_id": "v1",
+      "clip": "wlasl/yes/64293.mp4",
+      "vanilla_open": {
+        "top1": "must",
+        "correct": false,
+        "latency_ms": 633.3052921108902,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "must",
+            "score": 0.7612213492393494
+          },
+          {
+            "label": "puzzled",
+            "score": 0.05515594780445099
+          },
+          {
+            "label": "yes",
+            "score": 0.03195447847247124
+          },
+          {
+            "label": "north",
+            "score": 0.010673089884221554
+          },
+          {
+            "label": "think",
+            "score": 0.0056764958426356316
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": true,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.9984179139137268
+          },
+          {
+            "label": "bowling",
+            "score": 0.000701231649145484
+          },
+          {
+            "label": "computer",
+            "score": 0.0004677553952205926
+          },
+          {
+            "label": "deaf",
+            "score": 0.00036439739051274955
+          },
+          {
+            "label": "drink",
+            "score": 4.8596277338219807e-05
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "drink",
+        "correct": false,
+        "confidence": 0.36245986819267273,
+        "latency_ms": 1454.6905839815736,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.36245986819267273
+          },
+          {
+            "label": "yes",
+            "score": 0.2545180916786194
+          },
+          {
+            "label": "deaf",
+            "score": 0.19833846390247345
+          },
+          {
+            "label": "computer",
+            "score": 0.15109193325042725
+          },
+          {
+            "label": "bowling",
+            "score": 0.033591680228710175
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 11,
+      "label": "yes",
+      "source": "wlasl",
+      "signer_id": "wlasl_64297",
+      "variant_id": "v1",
+      "clip": "wlasl/yes/64297.mp4",
+      "vanilla_open": {
+        "top1": "need",
+        "correct": false,
+        "latency_ms": 469.7841671295464,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "need",
+            "score": 0.8141829967498779
+          },
+          {
+            "label": "should",
+            "score": 0.08134138584136963
+          },
+          {
+            "label": "yes",
+            "score": 0.03696799650788307
+          },
+          {
+            "label": "down",
+            "score": 0.02369679883122444
+          },
+          {
+            "label": "apartment",
+            "score": 0.0050925808027386665
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": true,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.9980947375297546
+          },
+          {
+            "label": "bowling",
+            "score": 0.0012915978441014886
+          },
+          {
+            "label": "deaf",
+            "score": 0.00031869596568867564
+          },
+          {
+            "label": "computer",
+            "score": 0.00016460161714348942
+          },
+          {
+            "label": "drink",
+            "score": 0.00013021357881370932
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "bowling",
+        "correct": false,
+        "confidence": 0.36234819889068604,
+        "latency_ms": 1255.180959124118,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.36234819889068604
+          },
+          {
+            "label": "yes",
+            "score": 0.3083859086036682
+          },
+          {
+            "label": "deaf",
+            "score": 0.17904703319072723
+          },
+          {
+            "label": "drink",
+            "score": 0.12157892435789108
+          },
+          {
+            "label": "computer",
+            "score": 0.02863994613289833
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 12,
+      "label": "drop",
+      "source": "wlasl",
+      "signer_id": "wlasl_17832",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/01_wlasl_drop_17832.mp4",
+      "vanilla_open": {
+        "top1": "drop",
+        "correct": true,
+        "latency_ms": 2272.9063329752535,
+        "windows": 5,
+        "topk": [
+          {
+            "label": "drop",
+            "score": 0.38046327233314514
+          },
+          {
+            "label": "during",
+            "score": 0.2629493176937103
+          },
+          {
+            "label": "australia",
+            "score": 0.0251749400049448
+          },
+          {
+            "label": "take",
+            "score": 0.018315579742193222
+          },
+          {
+            "label": "depend",
+            "score": 0.014445115812122822
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": false,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.6219865679740906
+          },
+          {
+            "label": "yes",
+            "score": 0.24893945455551147
+          },
+          {
+            "label": "computer",
+            "score": 0.07296013832092285
+          },
+          {
+            "label": "deaf",
+            "score": 0.0399572029709816
+          },
+          {
+            "label": "drink",
+            "score": 0.016156690195202827
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9326608180999756,
+        "latency_ms": 2391.5783329866827,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9326608180999756
+          },
+          {
+            "label": "bowling",
+            "score": 0.02982562780380249
+          },
+          {
+            "label": "yes",
+            "score": 0.019087951630353928
+          },
+          {
+            "label": "deaf",
+            "score": 0.009976528584957123
+          },
+          {
+            "label": "drink",
+            "score": 0.008449045941233635
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 13,
+      "label": "drop",
+      "source": "aslense",
+      "signer_id": "aslense_36143393073698404-DROP",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/02_aslense_drop_36143393073698404-DROP.mp4",
+      "vanilla_open": {
+        "top1": "australia",
+        "correct": false,
+        "latency_ms": 6906.11004200764,
+        "windows": 12,
+        "topk": [
+          {
+            "label": "australia",
+            "score": 0.2611379027366638
+          },
+          {
+            "label": "drop",
+            "score": 0.1220049187541008
+          },
+          {
+            "label": "underwear",
+            "score": 0.04822884872555733
+          },
+          {
+            "label": "stay",
+            "score": 0.04015694931149483
+          },
+          {
+            "label": "shock",
+            "score": 0.03232024982571602
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.5525529980659485
+          },
+          {
+            "label": "bowling",
+            "score": 0.27084967494010925
+          },
+          {
+            "label": "deaf",
+            "score": 0.12848766148090363
+          },
+          {
+            "label": "drink",
+            "score": 0.026191620156168938
+          },
+          {
+            "label": "computer",
+            "score": 0.021918024867773056
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9160405397415161,
+        "latency_ms": 4080.8498749975115,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9160405397415161
+          },
+          {
+            "label": "bowling",
+            "score": 0.04026025906205177
+          },
+          {
+            "label": "yes",
+            "score": 0.023664118722081184
+          },
+          {
+            "label": "deaf",
+            "score": 0.010873519815504551
+          },
+          {
+            "label": "drink",
+            "score": 0.009161576628684998
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 14,
+      "label": "earthquake",
+      "source": "wlasl",
+      "signer_id": "wlasl_18258",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/03_wlasl_earthquake_18258.mp4",
+      "vanilla_open": {
+        "top1": "earthquake",
+        "correct": true,
+        "latency_ms": 1005.0457918550819,
+        "windows": 2,
+        "topk": [
+          {
+            "label": "earthquake",
+            "score": 0.16742408275604248
+          },
+          {
+            "label": "depend",
+            "score": 0.041779614984989166
+          },
+          {
+            "label": "party",
+            "score": 0.03523179143667221
+          },
+          {
+            "label": "walk",
+            "score": 0.02814173325896263
+          },
+          {
+            "label": "research",
+            "score": 0.023205924779176712
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.5842094421386719
+          },
+          {
+            "label": "computer",
+            "score": 0.16811762750148773
+          },
+          {
+            "label": "deaf",
+            "score": 0.12738579511642456
+          },
+          {
+            "label": "drink",
+            "score": 0.06999994069337845
+          },
+          {
+            "label": "bowling",
+            "score": 0.05028728023171425
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.8878271579742432,
+        "latency_ms": 1859.0035419911146,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.8878271579742432
+          },
+          {
+            "label": "bowling",
+            "score": 0.06145678460597992
+          },
+          {
+            "label": "yes",
+            "score": 0.029145939275622368
+          },
+          {
+            "label": "deaf",
+            "score": 0.013256242498755455
+          },
+          {
+            "label": "drink",
+            "score": 0.008313947357237339
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 15,
+      "label": "earthquake",
+      "source": "aslense",
+      "signer_id": "aslense_8979439062678256-EARTHQUAKE",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/04_aslense_earthquake_8979439062678256-EARTHQUAKE.mp4",
+      "vanilla_open": {
+        "top1": "enjoy",
+        "correct": false,
+        "latency_ms": 6767.42379181087,
+        "windows": 15,
+        "topk": [
+          {
+            "label": "enjoy",
+            "score": 0.032861120998859406
+          },
+          {
+            "label": "put",
+            "score": 0.03279677778482437
+          },
+          {
+            "label": "awkward",
+            "score": 0.025325391441583633
+          },
+          {
+            "label": "afternoon",
+            "score": 0.019297348335385323
+          },
+          {
+            "label": "theory",
+            "score": 0.016672316938638687
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": false,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.5264942646026611
+          },
+          {
+            "label": "bowling",
+            "score": 0.22706860303878784
+          },
+          {
+            "label": "yes",
+            "score": 0.09848150610923767
+          },
+          {
+            "label": "deaf",
+            "score": 0.08284477144479752
+          },
+          {
+            "label": "drink",
+            "score": 0.06511083245277405
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9191874861717224,
+        "latency_ms": 4724.277290981263,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9191874861717224
+          },
+          {
+            "label": "bowling",
+            "score": 0.036702319979667664
+          },
+          {
+            "label": "yes",
+            "score": 0.023378632962703705
+          },
+          {
+            "label": "deaf",
+            "score": 0.011599196121096611
+          },
+          {
+            "label": "drink",
+            "score": 0.009132414124906063
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 16,
+      "label": "secretary",
+      "source": "wlasl",
+      "signer_id": "wlasl_50041",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/05_wlasl_secretary_50041.mp4",
+      "vanilla_open": {
+        "top1": "secretary",
+        "correct": true,
+        "latency_ms": 3654.6216658316553,
+        "windows": 8,
+        "topk": [
+          {
+            "label": "secretary",
+            "score": 0.467094361782074
+          },
+          {
+            "label": "university",
+            "score": 0.05603812634944916
+          },
+          {
+            "label": "cook",
+            "score": 0.03373626619577408
+          },
+          {
+            "label": "student",
+            "score": 0.029746904969215393
+          },
+          {
+            "label": "different",
+            "score": 0.02914881892502308
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": false,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.3980066180229187
+          },
+          {
+            "label": "drink",
+            "score": 0.22004924714565277
+          },
+          {
+            "label": "bowling",
+            "score": 0.16181118786334991
+          },
+          {
+            "label": "yes",
+            "score": 0.11624395847320557
+          },
+          {
+            "label": "computer",
+            "score": 0.10388900339603424
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9118177890777588,
+        "latency_ms": 3069.301249925047,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9118177890777588
+          },
+          {
+            "label": "bowling",
+            "score": 0.04437854140996933
+          },
+          {
+            "label": "yes",
+            "score": 0.02471267804503441
+          },
+          {
+            "label": "deaf",
+            "score": 0.011289234273135662
+          },
+          {
+            "label": "drink",
+            "score": 0.007801772095263004
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 17,
+      "label": "secretary",
+      "source": "aslense",
+      "signer_id": "aslense_006465165452186117-SECRETARY",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/06_aslense_secretary_006465165452186117-SECRETARY.mp4",
+      "vanilla_open": {
+        "top1": "bother",
+        "correct": false,
+        "latency_ms": 3649.4089169427752,
+        "windows": 8,
+        "topk": [
+          {
+            "label": "bother",
+            "score": 0.17366965115070343
+          },
+          {
+            "label": "hour",
+            "score": 0.03592141717672348
+          },
+          {
+            "label": "function",
+            "score": 0.03136525675654411
+          },
+          {
+            "label": "yes",
+            "score": 0.028346605598926544
+          },
+          {
+            "label": "psychology",
+            "score": 0.028085434809327126
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.7069862484931946
+          },
+          {
+            "label": "computer",
+            "score": 0.2797758877277374
+          },
+          {
+            "label": "deaf",
+            "score": 0.008897545747458935
+          },
+          {
+            "label": "bowling",
+            "score": 0.003192636650055647
+          },
+          {
+            "label": "drink",
+            "score": 0.0011476196814328432
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.8749887347221375,
+        "latency_ms": 2669.379458995536,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.8749887347221375
+          },
+          {
+            "label": "yes",
+            "score": 0.05207432806491852
+          },
+          {
+            "label": "bowling",
+            "score": 0.036657191812992096
+          },
+          {
+            "label": "deaf",
+            "score": 0.0206722654402256
+          },
+          {
+            "label": "drink",
+            "score": 0.015607422217726707
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 18,
+      "label": "cake",
+      "source": "wlasl",
+      "signer_id": "wlasl_08618",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/07_wlasl_cake_08618.mp4",
+      "vanilla_open": {
+        "top1": "cookie",
+        "correct": false,
+        "latency_ms": 475.53849988617003,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "cookie",
+            "score": 0.2733263075351715
+          },
+          {
+            "label": "cake",
+            "score": 0.26671919226646423
+          },
+          {
+            "label": "clean",
+            "score": 0.11908326297998428
+          },
+          {
+            "label": "copy",
+            "score": 0.022944247350096703
+          },
+          {
+            "label": "nurse",
+            "score": 0.014703115448355675
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": false,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.48905736207962036
+          },
+          {
+            "label": "deaf",
+            "score": 0.20961570739746094
+          },
+          {
+            "label": "bowling",
+            "score": 0.11012640595436096
+          },
+          {
+            "label": "yes",
+            "score": 0.10232274234294891
+          },
+          {
+            "label": "computer",
+            "score": 0.08887774497270584
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9305769801139832,
+        "latency_ms": 1365.0455828756094,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9305769801139832
+          },
+          {
+            "label": "bowling",
+            "score": 0.03411367908120155
+          },
+          {
+            "label": "yes",
+            "score": 0.018153727054595947
+          },
+          {
+            "label": "deaf",
+            "score": 0.00978646706789732
+          },
+          {
+            "label": "drink",
+            "score": 0.00736922025680542
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 19,
+      "label": "cake",
+      "source": "aslense",
+      "signer_id": "aslense_9127019395391156-CAKE",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/08_aslense_cake_9127019395391156-CAKE.mp4",
+      "vanilla_open": {
+        "top1": "spirit",
+        "correct": false,
+        "latency_ms": 915.0467501021922,
+        "windows": 2,
+        "topk": [
+          {
+            "label": "spirit",
+            "score": 0.45821189880371094
+          },
+          {
+            "label": "rich",
+            "score": 0.24294492602348328
+          },
+          {
+            "label": "crash",
+            "score": 0.05029991269111633
+          },
+          {
+            "label": "diamond",
+            "score": 0.03559830039739609
+          },
+          {
+            "label": "jump",
+            "score": 0.029386138543486595
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": false,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.40330570936203003
+          },
+          {
+            "label": "yes",
+            "score": 0.2821896970272064
+          },
+          {
+            "label": "computer",
+            "score": 0.11946713924407959
+          },
+          {
+            "label": "bowling",
+            "score": 0.10915138572454453
+          },
+          {
+            "label": "drink",
+            "score": 0.08588609844446182
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9323171973228455,
+        "latency_ms": 1769.5558751001954,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9323171973228455
+          },
+          {
+            "label": "yes",
+            "score": 0.02186054363846779
+          },
+          {
+            "label": "bowling",
+            "score": 0.02150682359933853
+          },
+          {
+            "label": "drink",
+            "score": 0.01319799106568098
+          },
+          {
+            "label": "deaf",
+            "score": 0.011117401532828808
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 20,
+      "label": "punish",
+      "source": "wlasl",
+      "signer_id": "wlasl_45369",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/09_wlasl_punish_45369.mp4",
+      "vanilla_open": {
+        "top1": "punish",
+        "correct": true,
+        "latency_ms": 2713.5171252302825,
+        "windows": 6,
+        "topk": [
+          {
+            "label": "punish",
+            "score": 0.890113353729248
+          },
+          {
+            "label": "attitude",
+            "score": 0.013913669623434544
+          },
+          {
+            "label": "arm",
+            "score": 0.010026972740888596
+          },
+          {
+            "label": "steal",
+            "score": 0.009921375662088394
+          },
+          {
+            "label": "king",
+            "score": 0.004324256908148527
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": false,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9167754650115967
+          },
+          {
+            "label": "yes",
+            "score": 0.03506330028176308
+          },
+          {
+            "label": "bowling",
+            "score": 0.027336077764630318
+          },
+          {
+            "label": "deaf",
+            "score": 0.015448490157723427
+          },
+          {
+            "label": "drink",
+            "score": 0.005376698914915323
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9318938255310059,
+        "latency_ms": 2853.5422920249403,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9318938255310059
+          },
+          {
+            "label": "bowling",
+            "score": 0.023169273510575294
+          },
+          {
+            "label": "yes",
+            "score": 0.02149754948914051
+          },
+          {
+            "label": "deaf",
+            "score": 0.012132403440773487
+          },
+          {
+            "label": "drink",
+            "score": 0.01130700297653675
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 21,
+      "label": "punish",
+      "source": "aslense",
+      "signer_id": "aslense_013573733301328161-PUNISH",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/10_aslense_punish_013573733301328161-PUNISH.mp4",
+      "vanilla_open": {
+        "top1": "cost",
+        "correct": false,
+        "latency_ms": 2780.5043749976903,
+        "windows": 6,
+        "topk": [
+          {
+            "label": "cost",
+            "score": 0.08741071075201035
+          },
+          {
+            "label": "lousy",
+            "score": 0.06366471201181412
+          },
+          {
+            "label": "spirit",
+            "score": 0.04505087062716484
+          },
+          {
+            "label": "price",
+            "score": 0.03847045078873634
+          },
+          {
+            "label": "cancel",
+            "score": 0.03512963652610779
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": false,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.885631263256073
+          },
+          {
+            "label": "deaf",
+            "score": 0.061299413442611694
+          },
+          {
+            "label": "bowling",
+            "score": 0.03622005879878998
+          },
+          {
+            "label": "drink",
+            "score": 0.010541345924139023
+          },
+          {
+            "label": "yes",
+            "score": 0.006307925097644329
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9072073698043823,
+        "latency_ms": 2978.0101659707725,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9072073698043823
+          },
+          {
+            "label": "yes",
+            "score": 0.03376917913556099
+          },
+          {
+            "label": "bowling",
+            "score": 0.023804673925042152
+          },
+          {
+            "label": "deaf",
+            "score": 0.01846902444958687
+          },
+          {
+            "label": "drink",
+            "score": 0.01674976758658886
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 22,
+      "label": "wood",
+      "source": "wlasl",
+      "signer_id": "wlasl_63724",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/11_wlasl_wood_63724.mp4",
+      "vanilla_open": {
+        "top1": "wood",
+        "correct": true,
+        "latency_ms": 3206.180667039007,
+        "windows": 7,
+        "topk": [
+          {
+            "label": "wood",
+            "score": 0.9260002970695496
+          },
+          {
+            "label": "enter",
+            "score": 0.004801901523023844
+          },
+          {
+            "label": "soccer",
+            "score": 0.003162035020068288
+          },
+          {
+            "label": "across",
+            "score": 0.0018087236676365137
+          },
+          {
+            "label": "no",
+            "score": 0.0017334327567368746
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.3951162099838257
+          },
+          {
+            "label": "drink",
+            "score": 0.34053826332092285
+          },
+          {
+            "label": "bowling",
+            "score": 0.20573526620864868
+          },
+          {
+            "label": "computer",
+            "score": 0.04088623449206352
+          },
+          {
+            "label": "deaf",
+            "score": 0.017724033445119858
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.944329023361206,
+        "latency_ms": 2839.87195789814,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.944329023361206
+          },
+          {
+            "label": "bowling",
+            "score": 0.018332768231630325
+          },
+          {
+            "label": "yes",
+            "score": 0.017782585695385933
+          },
+          {
+            "label": "deaf",
+            "score": 0.0100833335891366
+          },
+          {
+            "label": "drink",
+            "score": 0.009472297504544258
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 23,
+      "label": "wood",
+      "source": "aslense",
+      "signer_id": "aslense_3752156246825138-WOOD",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/12_aslense_wood_3752156246825138-WOOD.mp4",
+      "vanilla_open": {
+        "top1": "wood",
+        "correct": true,
+        "latency_ms": 932.2191670071334,
+        "windows": 2,
+        "topk": [
+          {
+            "label": "wood",
+            "score": 0.3511699140071869
+          },
+          {
+            "label": "enjoy",
+            "score": 0.1511572003364563
+          },
+          {
+            "label": "dress",
+            "score": 0.018812991678714752
+          },
+          {
+            "label": "chocolate",
+            "score": 0.010345060378313065
+          },
+          {
+            "label": "grapes",
+            "score": 0.009807645343244076
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.5621180534362793
+          },
+          {
+            "label": "computer",
+            "score": 0.23210708796977997
+          },
+          {
+            "label": "bowling",
+            "score": 0.14335085451602936
+          },
+          {
+            "label": "drink",
+            "score": 0.04708823189139366
+          },
+          {
+            "label": "deaf",
+            "score": 0.015335754491388798
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9217634797096252,
+        "latency_ms": 2562.112082960084,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9217634797096252
+          },
+          {
+            "label": "bowling",
+            "score": 0.03500532731413841
+          },
+          {
+            "label": "yes",
+            "score": 0.02279072254896164
+          },
+          {
+            "label": "deaf",
+            "score": 0.011316974647343159
+          },
+          {
+            "label": "drink",
+            "score": 0.00912350881844759
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 24,
+      "label": "balloon",
+      "source": "wlasl",
+      "signer_id": "wlasl_04870",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/13_wlasl_balloon_04870.mp4",
+      "vanilla_open": {
+        "top1": "balloon",
+        "correct": true,
+        "latency_ms": 3927.7472090907395,
+        "windows": 8,
+        "topk": [
+          {
+            "label": "balloon",
+            "score": 0.6555885672569275
+          },
+          {
+            "label": "overwhelm",
+            "score": 0.03243409842252731
+          },
+          {
+            "label": "ugly",
+            "score": 0.029092643409967422
+          },
+          {
+            "label": "president",
+            "score": 0.021679647266864777
+          },
+          {
+            "label": "toast",
+            "score": 0.008646763861179352
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": false,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.5668253898620605
+          },
+          {
+            "label": "deaf",
+            "score": 0.15302211046218872
+          },
+          {
+            "label": "bowling",
+            "score": 0.14307145774364471
+          },
+          {
+            "label": "computer",
+            "score": 0.102391317486763
+          },
+          {
+            "label": "yes",
+            "score": 0.03468966484069824
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9190148711204529,
+        "latency_ms": 2940.60729094781,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9190148711204529
+          },
+          {
+            "label": "yes",
+            "score": 0.031071985140442848
+          },
+          {
+            "label": "drink",
+            "score": 0.0206985492259264
+          },
+          {
+            "label": "deaf",
+            "score": 0.01738361269235611
+          },
+          {
+            "label": "bowling",
+            "score": 0.011830886825919151
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 25,
+      "label": "balloon",
+      "source": "aslense",
+      "signer_id": "aslense_3703730152151108-BALLOON",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/14_aslense_balloon_3703730152151108-BALLOON.mp4",
+      "vanilla_open": {
+        "top1": "clear",
+        "correct": false,
+        "latency_ms": 1823.7112078350037,
+        "windows": 4,
+        "topk": [
+          {
+            "label": "clear",
+            "score": 0.23577919602394104
+          },
+          {
+            "label": "cloud",
+            "score": 0.1643637865781784
+          },
+          {
+            "label": "rude",
+            "score": 0.04498035088181496
+          },
+          {
+            "label": "feedback",
+            "score": 0.025733528658747673
+          },
+          {
+            "label": "information",
+            "score": 0.019789371639490128
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.4204278290271759
+          },
+          {
+            "label": "computer",
+            "score": 0.4192166030406952
+          },
+          {
+            "label": "deaf",
+            "score": 0.08708066493272781
+          },
+          {
+            "label": "bowling",
+            "score": 0.044698771089315414
+          },
+          {
+            "label": "drink",
+            "score": 0.02857605367898941
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.9097265005111694,
+        "latency_ms": 2024.8282907996327,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.9097265005111694
+          },
+          {
+            "label": "yes",
+            "score": 0.034832663834095
+          },
+          {
+            "label": "bowling",
+            "score": 0.020472437143325806
+          },
+          {
+            "label": "drink",
+            "score": 0.018396444618701935
+          },
+          {
+            "label": "deaf",
+            "score": 0.016571950167417526
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 26,
+      "label": "color",
+      "source": "wlasl",
+      "signer_id": "wlasl_11772",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/15_wlasl_color_11772.mp4",
+      "vanilla_open": {
+        "top1": "secretary",
+        "correct": false,
+        "latency_ms": 932.8545420430601,
+        "windows": 2,
+        "topk": [
+          {
+            "label": "secretary",
+            "score": 0.6657251715660095
+          },
+          {
+            "label": "accident",
+            "score": 0.11471680551767349
+          },
+          {
+            "label": "warm",
+            "score": 0.020696647465229034
+          },
+          {
+            "label": "dissolve",
+            "score": 0.008618013933300972
+          },
+          {
+            "label": "pretty",
+            "score": 0.007057251408696175
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": false,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.34707242250442505
+          },
+          {
+            "label": "drink",
+            "score": 0.250567764043808
+          },
+          {
+            "label": "computer",
+            "score": 0.21751710772514343
+          },
+          {
+            "label": "deaf",
+            "score": 0.12627655267715454
+          },
+          {
+            "label": "yes",
+            "score": 0.05856611207127571
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.8321829438209534,
+        "latency_ms": 1881.0504169669002,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.8321829438209534
+          },
+          {
+            "label": "yes",
+            "score": 0.06883370131254196
+          },
+          {
+            "label": "deaf",
+            "score": 0.04152534529566765
+          },
+          {
+            "label": "drink",
+            "score": 0.03847026452422142
+          },
+          {
+            "label": "bowling",
+            "score": 0.01898767426609993
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 27,
+      "label": "color",
+      "source": "aslense",
+      "signer_id": "aslense_005776634853680518-COLOR",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/16_aslense_color_005776634853680518-COLOR.mp4",
+      "vanilla_open": {
+        "top1": "study",
+        "correct": false,
+        "latency_ms": 1370.5271661747247,
+        "windows": 3,
+        "topk": [
+          {
+            "label": "study",
+            "score": 0.33025431632995605
+          },
+          {
+            "label": "feedback",
+            "score": 0.11169514060020447
+          },
+          {
+            "label": "psychology",
+            "score": 0.092473603785038
+          },
+          {
+            "label": "movie",
+            "score": 0.0522102415561676
+          },
+          {
+            "label": "list",
+            "score": 0.022104650735855103
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "computer",
+        "correct": false,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.7247615456581116
+          },
+          {
+            "label": "deaf",
+            "score": 0.13068392872810364
+          },
+          {
+            "label": "drink",
+            "score": 0.07607413828372955
+          },
+          {
+            "label": "yes",
+            "score": 0.0531117208302021
+          },
+          {
+            "label": "bowling",
+            "score": 0.015368780121207237
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "computer",
+        "correct": false,
+        "confidence": 0.7518416047096252,
+        "latency_ms": 2755.247625056654,
+        "topk": [
+          {
+            "label": "computer",
+            "score": 0.7518416047096252
+          },
+          {
+            "label": "yes",
+            "score": 0.10176420956850052
+          },
+          {
+            "label": "deaf",
+            "score": 0.07017477601766586
+          },
+          {
+            "label": "drink",
+            "score": 0.03859401121735573
+          },
+          {
+            "label": "bowling",
+            "score": 0.03762538358569145
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 28,
+      "label": "sorry",
+      "source": "wlasl",
+      "signer_id": "wlasl_53367",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/17_wlasl_sorry_53367.mp4",
+      "vanilla_open": {
+        "top1": "sorry",
+        "correct": true,
+        "latency_ms": 1460.2344580926,
+        "windows": 3,
+        "topk": [
+          {
+            "label": "sorry",
+            "score": 0.9226999878883362
+          },
+          {
+            "label": "please",
+            "score": 0.015568857081234455
+          },
+          {
+            "label": "travel",
+            "score": 0.004117544740438461
+          },
+          {
+            "label": "dream",
+            "score": 0.0023025714326649904
+          },
+          {
+            "label": "single",
+            "score": 0.0021485071629285812
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "deaf",
+        "correct": false,
+        "topk": [
+          {
+            "label": "deaf",
+            "score": 0.6755819320678711
+          },
+          {
+            "label": "bowling",
+            "score": 0.19404733180999756
+          },
+          {
+            "label": "yes",
+            "score": 0.07552289962768555
+          },
+          {
+            "label": "computer",
+            "score": 0.03080671653151512
+          },
+          {
+            "label": "drink",
+            "score": 0.0240410678088665
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "bowling",
+        "correct": false,
+        "confidence": 0.5656425356864929,
+        "latency_ms": 2241.451583104208,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.5656425356864929
+          },
+          {
+            "label": "yes",
+            "score": 0.2291993796825409
+          },
+          {
+            "label": "deaf",
+            "score": 0.12612298130989075
+          },
+          {
+            "label": "drink",
+            "score": 0.044657230377197266
+          },
+          {
+            "label": "computer",
+            "score": 0.03437791392207146
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 29,
+      "label": "sorry",
+      "source": "aslense",
+      "signer_id": "aslense_010369524824967558-SORRY",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/18_aslense_sorry_010369524824967558-SORRY.mp4",
+      "vanilla_open": {
+        "top1": "enjoy",
+        "correct": false,
+        "latency_ms": 503.51329194381833,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "enjoy",
+            "score": 0.19257813692092896
+          },
+          {
+            "label": "emotion",
+            "score": 0.11695897579193115
+          },
+          {
+            "label": "army",
+            "score": 0.08462890982627869
+          },
+          {
+            "label": "which",
+            "score": 0.04356065392494202
+          },
+          {
+            "label": "bread",
+            "score": 0.023902662098407745
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "yes",
+        "correct": false,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.6008298397064209
+          },
+          {
+            "label": "bowling",
+            "score": 0.16874730587005615
+          },
+          {
+            "label": "computer",
+            "score": 0.0953822061419487
+          },
+          {
+            "label": "deaf",
+            "score": 0.09084631502628326
+          },
+          {
+            "label": "drink",
+            "score": 0.04419438913464546
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "bowling",
+        "correct": false,
+        "confidence": 0.6272280216217041,
+        "latency_ms": 1145.9554159082472,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.6272280216217041
+          },
+          {
+            "label": "yes",
+            "score": 0.2021784484386444
+          },
+          {
+            "label": "deaf",
+            "score": 0.10121186822652817
+          },
+          {
+            "label": "drink",
+            "score": 0.04346965253353119
+          },
+          {
+            "label": "computer",
+            "score": 0.025912035256624222
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 30,
+      "label": "doubt",
+      "source": "wlasl",
+      "signer_id": "wlasl_17400",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/19_wlasl_doubt_17400.mp4",
+      "vanilla_open": {
+        "top1": "doubt",
+        "correct": true,
+        "latency_ms": 2241.3668748922646,
+        "windows": 5,
+        "topk": [
+          {
+            "label": "doubt",
+            "score": 0.9187461733818054
+          },
+          {
+            "label": "cat",
+            "score": 0.025196144357323647
+          },
+          {
+            "label": "blind",
+            "score": 0.015579275786876678
+          },
+          {
+            "label": "flower",
+            "score": 0.0038161936681717634
+          },
+          {
+            "label": "delicious",
+            "score": 0.002985782455652952
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "drink",
+        "correct": false,
+        "topk": [
+          {
+            "label": "drink",
+            "score": 0.4266621172428131
+          },
+          {
+            "label": "bowling",
+            "score": 0.2204706370830536
+          },
+          {
+            "label": "yes",
+            "score": 0.21599233150482178
+          },
+          {
+            "label": "deaf",
+            "score": 0.10383778810501099
+          },
+          {
+            "label": "computer",
+            "score": 0.03303716704249382
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "yes",
+        "correct": false,
+        "confidence": 0.30973681807518005,
+        "latency_ms": 2768.816916970536,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.30973681807518005
+          },
+          {
+            "label": "deaf",
+            "score": 0.27125707268714905
+          },
+          {
+            "label": "drink",
+            "score": 0.26023098826408386
+          },
+          {
+            "label": "computer",
+            "score": 0.09087805449962616
+          },
+          {
+            "label": "bowling",
+            "score": 0.06789704412221909
+          }
+        ]
+      }
+    },
+    {
+      "sample_index": 31,
+      "label": "doubt",
+      "source": "aslense",
+      "signer_id": "aslense_7216694804458137-DOUBT",
+      "variant_id": "v1",
+      "clip": "../../multisource_videos/20_aslense_doubt_7216694804458137-DOUBT.mp4",
+      "vanilla_open": {
+        "top1": "hot",
+        "correct": false,
+        "latency_ms": 486.2663340754807,
+        "windows": 1,
+        "topk": [
+          {
+            "label": "hot",
+            "score": 0.7517988085746765
+          },
+          {
+            "label": "perfect",
+            "score": 0.08099504560232162
+          },
+          {
+            "label": "sit",
+            "score": 0.015514696948230267
+          },
+          {
+            "label": "warm",
+            "score": 0.008692151866853237
+          },
+          {
+            "label": "chicken",
+            "score": 0.0064705973491072655
+          }
+        ]
+      },
+      "vanilla_closed": {
+        "top1": "bowling",
+        "correct": false,
+        "topk": [
+          {
+            "label": "bowling",
+            "score": 0.7495844960212708
+          },
+          {
+            "label": "drink",
+            "score": 0.093688003718853
+          },
+          {
+            "label": "yes",
+            "score": 0.08832462131977081
+          },
+          {
+            "label": "deaf",
+            "score": 0.04208846017718315
+          },
+          {
+            "label": "computer",
+            "score": 0.02631448209285736
+          }
+        ]
+      },
+      "landmark": {
+        "top1": "yes",
+        "correct": false,
+        "confidence": 0.35531139373779297,
+        "latency_ms": 1983.3363750949502,
+        "topk": [
+          {
+            "label": "yes",
+            "score": 0.35531139373779297
+          },
+          {
+            "label": "deaf",
+            "score": 0.2916005551815033
+          },
+          {
+            "label": "drink",
+            "score": 0.19804902374744415
+          },
+          {
+            "label": "computer",
+            "score": 0.08206424117088318
+          },
+          {
+            "label": "bowling",
+            "score": 0.07297482341527939
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "conf_threshold": 0.95,
+  "margin_threshold": 0.0,
+  "target_risk": 0.05,
+  "coverage": 0.0,
+  "selective_accuracy": null,
+  "confident_wrong_rate": 0.0,
+  "calibrated_on": {
+    "report": "eval/benchmark/g1/g1_directional_report.json",
+    "view": "landmark",
+    "decision_grade": false
+  },
+  "note": "directional until decision-grade G1 data exists"
+}

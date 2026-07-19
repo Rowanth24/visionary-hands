@@ -34,6 +34,9 @@ def parse_args():
                    help="Optional ambiguity-margin guard (top1 - top2).")
     p.add_argument("--by-source", action="store_true",
                    help="Also print per-source risk/coverage at the recommended threshold.")
+    p.add_argument("--write-json", default=None,
+                   help="Write the recommended thresholds to this JSON path "
+                        "(schema: conf_threshold/margin_threshold, read by deploy/run_live.py).")
     return p.parse_args()
 
 
@@ -75,6 +78,22 @@ def main():
           f"confident_wrong_rate={rec['confident_wrong_rate']}")
     if rec["confident_wrong_rate"] is not None and rec["confident_wrong_rate"] > args.target_risk:
         print(f"  ⚠️  no threshold meets the target on this data; this is the lowest-risk option.")
+
+    if args.write_json:
+        out = Path(args.write_json)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({
+            "conf_threshold": rec["conf_threshold"],
+            "margin_threshold": rec["margin_threshold"],
+            "target_risk": args.target_risk,
+            "coverage": rec["coverage"],
+            "selective_accuracy": rec["selective_accuracy"],
+            "confident_wrong_rate": rec["confident_wrong_rate"],
+            "calibrated_on": {"report": args.report, "view": args.model,
+                              "decision_grade": decision_grade},
+            "note": "directional until decision-grade G1 data exists" if not decision_grade else "",
+        }, indent=2), encoding="utf-8")
+        print(f"wrote {out}")
 
     if args.by_source:
         from abstention import AbstentionPolicy, selective_metrics
